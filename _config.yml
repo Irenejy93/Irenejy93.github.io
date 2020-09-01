@@ -21,13 +21,13 @@ title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Irene Kim"
 description              : " website."
-url                      : "https://irenejy93.github.io"
-baseurl                  : "https://irenejy93.github.io/blog"
-repository               : "https://github.com/Irenejy93/Irenejy93.github.io"
+url                      : "https://Irenejy93.github.io"
+baseurl                  : #"https://Irenejy93.github.io/blog"
+repository               : "Irenejy93/Irenejy93.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : "Irene in WonderAILand"
-# breadcrumbs            : false # true, false (default)
+breadcrumbs            :  true
 words_per_minute         : 200
 comments:
   provider               : # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"
@@ -94,7 +94,7 @@ analytics:
 # Site Author
 author:
   name             : "Irene Kim"
-  avatar           : "irene/Downloads/my_icon.jpeg"
+  avatar           : "/assets/my_icon.jpg"
   bio              : "Striving to be Data Scientist"
   location         : "Somewhere over the Rainbow"
   email            : "irenee.jy93@gmail.com"
