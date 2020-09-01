@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-09-01T16:17:59+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Site Title</title><subtitle>An amazing website.</subtitle><author><name>Your Name</name></author><entry><title type="html">Hello Jekyll!!</title><link href="http://localhost:4000/blog/my-first-post/" rel="alternate" type="text/html" title="Hello Jekyll!!" /><published>2020-09-01T00:00:00+09:00</published><updated>2020-09-01T00:00:00+09:00</updated><id>http://localhost:4000/blog/my-first-post</id><content type="html" xml:base="http://localhost:4000/blog/my-first-post/">&lt;h2 id=&quot;why-jekyll&quot;&gt;Why Jekyll?&lt;/h2&gt;
+
+&lt;p&gt;uhm…&lt;/p&gt;
+
+&lt;p&gt;안녕하세요&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;와우&lt;/li&gt;
+  &lt;li&gt;하하&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;안녕앙ㄴ녕&quot;&gt;안녕앙ㄴ녕&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;ㅎㅎㅎㅎ&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Your Name</name></author><category term="blog" /><category term="wow" /><category term="hey" /><summary type="html">Why Jekyll?</summary></entry></feed>
