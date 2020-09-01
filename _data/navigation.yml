@@ -1,12 +1,10 @@
 # main links
 main:
-  - title: "Quick-Start Guide"
-    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
-  # - title: "About"
-  #   url: https://mmistakes.github.io/minimal-mistakes/about/
-  - title: "Categories"
-    url: /categories/
-  # - title: "Sample Collections"
-  #   url: /collection-archive/
-  # - title: "Sitemap"
-  #   url: /sitemap/
+  - title: "About"
+    url: /About/
+  - title: "Machine Learning"
+    url: /Machine Learning/
+  - title: "Deep Learning"
+    url: /Deep Learning/
+  - title: "Spark"
+    url: /Spark/
