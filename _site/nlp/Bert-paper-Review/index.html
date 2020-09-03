@@ -1,0 +1,701 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.20.1 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Bert paper Review - Scribbling every Miscellaneous things</title>
+<meta name="description" content="Bert 01 what is Bert?    Bert Architecture   State of Art">
+
+
+  <meta name="author" content="Irene Kim">
+  
+  <meta property="article:author" content="Irene Kim">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Scribbling every Miscellaneous things  ">
+<meta property="og:title" content="Bert paper Review">
+<meta property="og:url" content="http://localhost:4000/nlp/Bert-paper-Review/">
+
+
+  <meta property="og:description" content="Bert 01 what is Bert?    Bert Architecture   State of Art">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2020-09-03T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/nlp/Bert-paper-Review/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Irene Kim",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Scribbling every Miscellaneous things   Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Irene in Wonder_AI_land
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/posts/">연도별 포스트</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#nlp" itemprop="item"><span itemprop="name">Nlp</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">Bert paper Review</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/my_icon.jpeg" alt="Irene Kim" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Irene Kim</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Striving to be Data Scientist</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Somewhere over the Rainbow</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/irenejy93" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:irenee.jy93@gmail.com">
+            <meta itemprop="email" content="irenee.jy93@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Bert paper Review">
+    <meta itemprop="description" content="Bert01 what is Bert?  Bert Architecture  State of Art">
+    <meta itemprop="datePublished" content="2020-09-03T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Bert paper Review
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> contents</h4></header>
+              <ul class="toc__menu">
+  <li><a href="#01-what-is-bert">01 what is Bert?</a></li>
+  <li><a href="#02-bert-architecture">02 Bert Architecture</a>
+    <ul>
+      <li><a href="#기존-자연어-처리-신경망">기존 자연어 처리 신경망</a></li>
+    </ul>
+  </li>
+  <li><a href="#1-pre-training-tasks">1. pre-training tasks</a></li>
+  <li><a href="#2-embedding-">2. Embedding :</a></li>
+  <li><a href="#3-encoding-layers">3. Encoding Layers</a></li>
+  <li><a href="#task-lists">Task Lists</a></li>
+</ul>
+
+            </nav>
+          </aside>
+        
+        <p>Bert</p>
+<h3 id="01-what-is-bert">01 what is Bert?</h3>
+<ol>
+  <li>Bert Architecture</li>
+  <li>State of Art</li>
+</ol>
+
+<h3 id="02-bert-architecture">02 Bert Architecture</h3>
+<ol>
+  <li>Pre-training task</li>
+  <li>Input Embedding</li>
+  <li>Encoding</li>
+  <li>Fine-tuning</li>
+</ol>
+
+<h4 id="기존-자연어-처리-신경망">기존 자연어 처리 신경망</h4>
+<p><img src="http://localhost:4000/assets/images/Bert_.png" alt="Git repository 신규 생성 이미지" class="align-center" /></p>
+
+<ol>
+  <li>RNN ( 순환 신경망 ) : 각 새로운 입력층마다 hidden layer 를 저장/수정 하여 새로운 정보를 점차 업데이트 해나아가는 신경망</li>
+  <li>LSTM : RNN의 응용모델로 각 신경망에 hidden state 와 cell state 를 더해주어 오랜시간 이전 정보를 기억</li>
+  <li>Transformer (Encoder-Decoder): 기존 RNN base 모델과 다르게 문장 전체를 입력후 각 단어의 위치를 학습하여 Encoding ( 수치화 ) 후 Decoding (번역 ) 하는 신경망</li>
+  <li>Attention: Transformer 의 응용으로 문장중 중요한 단어에 가중치를 부여</li>
+  <li>Bert : Transformer의 Encoder 에 Self Attenion 을 적용한 학습법으로  단어의 양 위치 (Bi-directional) 을 학습, 문맥의 흐름을 이해</li>
+</ol>
+
+<h2 id="bert--bi-directional-encoder-representation-from-transformers">BERT ( Bi-directional Encoder Representation from Transformers)</h2>
+
+<p>Purpose: 문장/문단의 문맥을 이해하는 언어 이해 모델로서 사용자의 니즈에 따라 다양하게 사용할수있는 모델</p>
+
+<ul>
+  <li>기존의 좋은 평가를 받아온 ELMO 보다 좋은 성능</li>
+  <li>ELMO : Uni-directional LSTM Model</li>
+  <li>
+    <p>GPT : left to right, and right to left transformer model</p>
+  </li>
+  <li>NLP 의 11 개 테스크에서 state of art 기록</li>
+  <li>SQuAD 기록 갱신</li>
+  <li>사용자는 Transfer Learning 을 통해 학습된 모델을 가져와     Fine -tuning 을 통해 필요에 맞게 사용 가능하다.</li>
+  <li>Transformer 모델 기반
+    <ul>
+      <li>Encoder 부분 사용</li>
+      <li>Speed, Accuracy , Long-term decedency 에서 우수한 모델</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="bert-architecture">BERT ARCHITECTURE</h2>
+<p><img src="http://localhost:4000/assets/images/Transformer.png" alt="Git repository 신규 생성 이미지" class="align-center" />
+‘Attention is All’ 논문에서 발표된 Transformer 모델의 Encoding 부분 차용</p>
+
+<ol>
+  <li>Pre-training task</li>
+  <li>Fine-Tuning <br /></li>
+</ol>
+
+<p>※ 2 가지 버전 :</p>
+<ul>
+  <li>Bert-Base ( L=12, H=768, A=12) <br /></li>
+  <li>Bert-Large( L=24, H=1024, A=16)<br /></li>
+  <li>해당 문서에서는 Base 버전 으로 진행</li>
+</ul>
+
+<hr />
+
+<h2 id="1-pre---training">1. Pre - training</h2>
+
+<h3 id="1-pre-training-tasks">1. pre-training tasks</h3>
+<p><img src="http://localhost:4000/assets/images/pretrain.png" alt="Git repository 신규 생성 이미지" class="align-center" /></p>
+
+<ul>
+  <li>Masked Language Modelling
+    <ul>
+      <li>문장내의 15% 의 랜덤한 단어를 가린다 <MASK> 
+  단
+</MASK>        <ul>
+          <li>80% [‘MASK’] Token</li>
+          <li>10% Random 단어, 10% 정상 단어</li>
+          <li>해당 방법을 통해, mask 뿐만 아니라 정상, 랜덤 단어 역시 학습하여 모든단어에 대한 문맥 표현을 학습</li>
+        </ul>
+      </li>
+      <li>Next Sentence Prediction
+        <ul>
+          <li>문장 B 가 문장 A 의 바로 다음에 오는 문장이 맞는지에 대한 여부를 예측</li>
+          <li>문장의 50% 비율로 두 문장의 연결을 랜덤하게 구성</li>
+          <li>문장 B가 문장 A의 이어지는 문장일경우 IsNext 라고 레이블링, 아닐경우 NotNext
+            <ul>
+              <li>예) Input = [CLS] the man went to [MASK] store [SEP] he bought a gallon [MASK] milk [SEP] LABEL = IsNext</li>
+              <li>예) Input = [CLS] the man [MASK] to the store [SEP] penguin [MASK] are flight ##less birds [SEP] Label = NotNext
+<br />
+<br /></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="2-embedding-">2. Embedding :</h3>
+
+<p>각 단어 Token 을 Vectorize 하는 과정
+<img src="http://localhost:4000/assets/images/embedding.png" alt="Git repository 신규 생성 이미지" class="align-center" /></p>
+
+<p>Input = Token Embedding + Segment Embedding + Position Embedding</p>
+
+<ul>
+  <li>Position Encoding 대신 Postion embedding 사용</li>
+  <li>Token : 각 단어의 의미를 숫자세트로 표현한 Vector</li>
+  <li>Segment : 문단의 문장의 순서/위치 ( 첫번째 문장 0, 두번째 문장 1 etc)</li>
+  <li>Position:  총 문단안의 단어의 순서/위치</li>
+  <li>입력값 : 각 3개의 임베딩을 합산한 결과를
+    <ul>
+      <li>(Base 의 경우 768 차원의 Vector Large 의 경우 1024)</li>
+      <li>즉 단어의 의미 + 문장의 위치 + 단어의 위치를 뜻하는 768 차원의 vector 로 Embedding</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="3-encoding-layers">3. Encoding Layers</h3>
+<p><img src="http://localhost:4000/assets/images/encoding.png" alt="Git repository 신규 생성 이미지" class="align-center" />
+<br /></p>
+<ol>
+  <li>Multi-Head Attention : 여러 문장속 동일한/연관이 높은 단어에 가중치 를 높여주는 과정
+    <ol>
+      <li>768 차원의 input vector 를 12개의 head 로 나누어 각 헤드별로 64차원의 Vector 를 Q,K,V값으로 지정한다.</li>
+      <li>Q 와 K vector의 값을 곱해 연관성을 구한다.<br />
+예) dog Q [0.3, -0.2 0.4] * ‘The’ K [0.5, -0.9, 0.2]  = 0.4</li>
+      <li>구해진 값에 soft max 를 적용하여 0~1 사이 값으로 scaling 하여 너무높은 또는 낮은 Score 값이 사라지는 문제를 줄인다<br />
+예) [0.4 0,6 -0.6] –&gt; [0.4 0.5 0.1]</li>
+      <li>각 구해진 softmax(score) 에 V vector 을 곱한다 (64차원)</li>
+      <li>나누어진 12개의 Head에 동일한 작업 진행후 나온 12개의 64차원 vector 를 sum 하여 최초와 동일한 768개의 vector 생성
+<br />
+<br /></li>
+    </ol>
+  </li>
+  <li>Add &amp; Normalize
+<img src="http://localhost:4000/assets/images/addnorm.png" alt="Git repository 신규 생성 이미지" class="align-center" />
+    <ul>
+      <li>
+        <p>ResNet : 기존의 Embedding input vector 를 Self-Attention 값에 더하고 Normalize</p>
+      </li>
+      <li>
+        <p>Normalize: 정규화로 인해, Layer를 효과적으로 Stablize
+<br /></p>
+      </li>
+    </ul>
+
+    <p>Encoding Layer  N번의 Layer 에서 반복 실행</p>
+  </li>
+</ol>
+
+<h3 id="task-lists">Task Lists</h3>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Finish my changes</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Push my commits to GitHub</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Open a pull request
+    <ul class="task-list">
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Follow discussions</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Push new commits</li>
+    </ul>
+  </li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#attention" class="page__taxonomy-item" rel="tag">Attention</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#bert" class="page__taxonomy-item" rel="tag">Bert</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#multi-head-attention" class="page__taxonomy-item" rel="tag">Multi-head Attention</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#nlp" class="page__taxonomy-item" rel="tag">NLP</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#transformer" class="page__taxonomy-item" rel="tag">Transformer</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#nlp" class="page__taxonomy-item" rel="tag">NLP</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-09-03T00:00:00+09:00">September 3, 2020</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Bert+paper+Review%20http%3A%2F%2Flocalhost%3A4000%2Fnlp%2FBert-paper-Review%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fnlp%2FBert-paper-Review%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fnlp%2FBert-paper-Review%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+            
+      </div>
+    </div>
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:irenee.jy93@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/irenejy93" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2020 Irene Kim. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
