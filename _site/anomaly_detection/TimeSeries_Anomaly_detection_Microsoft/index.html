@@ -1,0 +1,774 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.20.1 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Survival Ensembles - Scribbling every Miscellaneous things</title>
+<meta name="description" content="Anomaly Detection Time series Anomaly detection at Microsoft">
+
+
+  <meta name="author" content="Irene Kim">
+  
+  <meta property="article:author" content="Irene Kim">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Scribbling every Miscellaneous things  ">
+<meta property="og:title" content="Survival Ensembles">
+<meta property="og:url" content="https://irenejy93.github.io/anomaly_detection/TimeSeries_Anomaly_detection_Microsoft/">
+
+
+  <meta property="og:description" content="Anomaly Detection Time series Anomaly detection at Microsoft">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-07-15T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://irenejy93.github.io/anomaly_detection/TimeSeries_Anomaly_detection_Microsoft/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Irene Kim",
+      "url": "https://irenejy93.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Scribbling every Miscellaneous things   Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Irene in Wonder_AI_land
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/posts/">연도별 포스트</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="https://Irenejy93.github.io/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#anomaly_detection" itemprop="item"><span itemprop="name">Anomaly_detection</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">Survival Ensembles</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/my_icon.jpeg" alt="Irene Kim" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Irene Kim</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Striving to be Data Scientist</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Somewhere over the Rainbow</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/irenejy93" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:irenee.jy93@gmail.com">
+            <meta itemprop="email" content="irenee.jy93@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Survival Ensembles">
+    <meta itemprop="description" content="Anomaly DetectionTime series Anomaly detection at Microsoft">
+    <meta itemprop="datePublished" content="2021-07-15T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Survival Ensembles
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> contents</h4></header>
+              <ul class="toc__menu">
+  <li><a href="#anomaly-detection">Anomaly Detection</a></li>
+  <li><a href="#a-saliency-detection-spectral-residual-approach">A. Saliency Detection: Spectral Residual Approach</a></li>
+  <li><a href="#b-sr--cnn">B. SR- CNN</a></li>
+</ul>
+
+            </nav>
+          </aside>
+        
+        <h4 id="anomaly-detection">Anomaly Detection</h4>
+<h1 id="time-series-anomaly-detection-at-microsoft">Time series Anomaly detection at Microsoft</h1>
+
+<h3 id="01-introduction">01. Introduction</h3>
+
+<ol>
+  <li>Lack of label: 실용적일수있도록 레이블링을 따로하지않은 모델</li>
+  <li>Generalization : 다양한 데이터에 적용할수있는 일반적인 모델</li>
+  <li>Efficiency : 효율적인 모델</li>
+</ol>
+
+<p>구성</p>
+<ol>
+  <li>데이터 입력
+    <ul>
+      <li>데이터 입력의 빈번도 (granularity) &amp; 사용자의 저장시스템으로부터 이상치 감지 시스템의 연결 (connect string) 
+  e.g. granularity 를 1분이라고 설정하면 , 매분 마다 새로운 데이터 포인트가 생성된다. 타임시리즈 데이터 포인트는 influxDB 와 kafka 에 넣어진다.</li>
+      <li>해당 모듈은 매초마다 10,000 ~100,000 데이터 포인트가 생성된다.</li>
+    </ul>
+  </li>
+  <li>
+    <p>실험 : 다음장 에서 설명</p>
+  </li>
+  <li>온라인 대입
+    <ul>
+      <li>입력되는 데이터에 대해 긴급하게 이상치를 감지하기 위해, sliding window 가 필요하다. 따라서 Flink 를 사용하여 메모리안의 포인트들을 빠르게 최적화 시킨다.</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="02-method">02 Method</h3>
+
+<h4 id="a-saliency-detection-spectral-residual-approach">A. Saliency Detection: Spectral Residual Approach</h4>
+<p>Survival Ensemble Models</p>
+
+<ul>
+  <li>
+    <p>컴퓨터 비전에서 쓰이는 saliency Detection 방법으로, 컴퓨터 또는 사람이 사진을 인식할때, 중요하다고 인식하는 부분 H(innovation) 과 눈또는 뇌가 기존에 이미 인식했던 부분 H(Prior Knowledge) 로 이루어져있다.</p>
+  </li>
+  <li>
+    <p>Saliency detection 과 time series anomaly detection 는 유사한 부분이 있다.</p>
+  </li>
+  <li>
+    <p>Spectral Residual &lt;3 단계&gt;</p>
+    <ol>
+      <li>
+        <p>Fast Fourier Transform ( TFF) : 퓨리에 전환 , 2차원의 이미지 또는 시간 데이터(time series)를 주파수 (frequency) 영역 으로 분해한것</p>
+
+        <ul>
+          <li>주어진  각 sliding window 구간의 시계열 데이터에대한 퓨리에 전환후 최근 위치로 부터 임의의 m=5 시간 스텝의 구간에 대한 estimate point 를 추가하여 low latency 를 제공한다.</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<p><img src="https://Irenejy93.github.io/assets/images/churn/img2.png" alt="Git repository 신규 생성 이미지" class="align-center" /></p>
+
+<ol>
+  <li>Spectral Residual 계산 :
+    <ul>
+      <li>SR 계산법 : 푸리에 변환을 통해 구해진 log spectrum curve 에대해 평균값을 뺄때 나오는 값이 Spectral residual curve 이다</li>
+    </ul>
+  </li>
+  <li>푸리에 역변환 :
+    <ul>
+      <li>
+        <p>푸리에 역변환 을 통해 주파수 형태의 데이터를 시간데이터로 되돌린다.</p>
+
+        <p>→ 이 결과를 saliency map 이라고 부른다</p>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<p><img src="https://Irenejy93.github.io/assets/images/churn/img3.png" alt="Git repository 신규 생성 이미지" class="align-center" /></p>
+
+<h4 id="b-sr--cnn">B. SR- CNN</h4>
+
+<ul>
+  <li>주어진 saliency map 에  기존의 값의 label 을 0 , 가상의 anomaly 값을 추가하여 1 로 정한다.</li>
+  <li>가상의 값은  𝑥=(𝑥 ̅+𝑚𝑒𝑎𝑛)(1+𝑣𝑎𝑟)∙𝑟+𝑥 으로 계산한다.</li>
+  <li>CNN은 saliency detection에 주로 사용되는 지도학습 모델로 해당 논문에서 역시 주어진 label 을 구분하는 학습모델로 사용한다</li>
+  <li>CNN 네트워크는 두개의 1D-convolutional 네트워크 구성되어있다.
+    <ul>
+      <li>sliding window 사이즈와 동일한 채널사이즈의 은닉층과  그 채널의 두배의 사이즈의 은닉층 으로 이루어진 2개의 층으로 구성되어있다.</li>
+    </ul>
+  </li>
+</ul>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#paper" class="page__taxonomy-item" rel="tag">Paper</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#anomaly-detection" class="page__taxonomy-item" rel="tag">Anomaly_Detection</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-07-15T00:00:00+09:00">July 15, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Survival+Ensembles%20https%3A%2F%2Firenejy93.github.io%2Fanomaly_detection%2FTimeSeries_Anomaly_detection_Microsoft%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Firenejy93.github.io%2Fanomaly_detection%2FTimeSeries_Anomaly_detection_Microsoft%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Firenejy93.github.io%2Fanomaly_detection%2FTimeSeries_Anomaly_detection_Microsoft%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/churnprediction/Survival_Ensembels/" class="pagination--pager" title="Survival Ensembles
+">Previous</a>
+    
+    
+      <a href="/nlp/text_summary/" class="pagination--pager" title="Text Summarization
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/recommendation/multi_field_category/" rel="permalink">Deep Learning over Multi-field Cateogorical Data
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Deep Learning over Multi-field Cateogorical Data
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/recommendation/Wide&DeepLearning/" rel="permalink">Wide &amp; Deep Learning for Recommendation System
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">추천 시스템
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/recommendation/Product-based/" rel="permalink">Product-based Neural Network
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Product-based Neural Network
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/recommendation/Factorization_Machine/" rel="permalink">Factorization Machine
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Factorization Machine
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:irenee.jy93@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/irenejy93" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 Irene Kim. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

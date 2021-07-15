@@ -1,7 +1,976 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-09-03T18:19:21+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Scribbling every Miscellaneous things  </title><subtitle> website.</subtitle><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><entry><title type="html">Bert paper Review</title><link href="http://localhost:4000/nlp/Bert-paper-Review/" rel="alternate" type="text/html" title="Bert paper Review" /><published>2020-09-03T00:00:00+09:00</published><updated>2020-09-03T00:00:00+09:00</updated><id>http://localhost:4000/nlp/Bert-paper-Review</id><content type="html" xml:base="http://localhost:4000/nlp/Bert-paper-Review/">&lt;h1 id=&quot;01-what-is-bert&quot;&gt;01 what is Bert?&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://irenejy93.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://irenejy93.github.io/" rel="alternate" type="text/html" /><updated>2021-07-15T14:29:52+09:00</updated><id>https://irenejy93.github.io/feed.xml</id><title type="html">Scribbling every Miscellaneous things  </title><subtitle> website.</subtitle><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><entry><title type="html">Wide &amp;amp; Deep Learning for Recommendation System</title><link href="https://irenejy93.github.io/recommendation/Wide&DeepLearning/" rel="alternate" type="text/html" title="Wide &amp;amp; Deep Learning for Recommendation System" /><published>2021-07-15T00:00:00+09:00</published><updated>2021-07-15T00:00:00+09:00</updated><id>https://irenejy93.github.io/recommendation/Wide&amp;DeepLearning</id><content type="html" xml:base="https://irenejy93.github.io/recommendation/Wide&amp;DeepLearning/">&lt;h3 id=&quot;추천-시스템&quot;&gt;추천 시스템&lt;/h3&gt;
+
+&lt;p&gt;기존 추천 시스템 구성 :&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Memorization Model
+    &lt;ul&gt;
+      &lt;li&gt;각 특성의 곱(cross-product transformation)을 통해, 데이터상에서 공출현한 특성과 특성 사이의 직접적인 상관관계 추출&lt;/li&gt;
+      &lt;li&gt;E.g. : Logistic regression Model&lt;/li&gt;
+      &lt;li&gt;단점 :
+        &lt;ul&gt;
+          &lt;li&gt;기존 공출현하지 않은 새로운 특성과의 상관관계 추출 불가&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Generalized Model
+    &lt;ul&gt;
+      &lt;li&gt;고차원의 희소 데이터를 저차원의 데이터로 학습 (Embedding)&lt;/li&gt;
+      &lt;li&gt;기존에 없었던 새로운 특성의 상관관계를 찾아냄&lt;/li&gt;
+      &lt;li&gt;E.g. Factorization Machine, Deep Neural Network&lt;/li&gt;
+      &lt;li&gt;단점
+        &lt;ul&gt;
+          &lt;li&gt;over-generalize 로 인해 관련없는 아이템들을 추천할수 있음&lt;/li&gt;
+          &lt;li&gt;학습을 위해 특성을 만들어내는 feature engineering 필요&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;wide--deep-learning&quot;&gt;Wide &amp;amp; Deep Learning&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Wide component
+    &lt;ul&gt;
+      &lt;li&gt;Generalized linear model 𝑦=𝑤^𝑇 𝑥+𝑏
+  e.g. AND(gender=female, language =en)&lt;/li&gt;
+      &lt;li&gt;특성 상관관계 추출, 및 선형모델에 비선형 추가&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Deep component
+    &lt;ol&gt;
+      &lt;li&gt;Embedding vector 통해 고차원의 sparse 한 범주형 특성을 저차원의 dense 한 데이터로 변화&lt;/li&gt;
+      &lt;li&gt;비용 함수 축소를 위해 학습&lt;/li&gt;
+      &lt;li&gt;은닉층에 입력
+        &lt;ul&gt;
+          &lt;li&gt;ReLU 활성화 함수&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;joint-training-of-wide--deep-model&quot;&gt;Joint Training of Wide &amp;amp; Deep Model&lt;/h3&gt;
+
+&lt;p&gt;Joint Training : Wide component 와  Deep component 의 출력을 weighted sum 을 이용하여 병합&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Weighted sum : Wide component 중 부분만 추출하여 Deep model의 단점을 보완&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Back-propagating using Stochastic Gradient Descendent
+    &lt;ul&gt;
+      &lt;li&gt;Stochastic 경사 하강법을 이용한 역전파 함수 로 병합된 모델 훈련&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;ReLU 활성화 함수를 이용한 3개의 은닉층 학습&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Logtistic 활성화 함수이용한 출력층 생성&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://Irenejy93.github.io/assets/images/widedeep/img1.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;</content><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><category term="Recommendation" /><category term="Paper" /><summary type="html">추천 시스템</summary></entry><entry><title type="html">Text Summarization</title><link href="https://irenejy93.github.io/nlp/text_summary/" rel="alternate" type="text/html" title="Text Summarization" /><published>2021-07-15T00:00:00+09:00</published><updated>2021-07-15T00:00:00+09:00</updated><id>https://irenejy93.github.io/nlp/text_summary</id><content type="html" xml:base="https://irenejy93.github.io/nlp/text_summary/">&lt;h3 id=&quot;bert-vs-textrank&quot;&gt;Bert vs. TextRank&lt;/h3&gt;
+&lt;h1 id=&quot;text-summarization&quot;&gt;Text Summarization&lt;/h1&gt;
+&lt;h3 id=&quot;01-text-summarization&quot;&gt;01. Text Summarization&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Abstraction vs. Extraction :
+    &lt;ul&gt;
+      &lt;li&gt;vAbstraction : 원본텍스트를 이해하여, 원본텍스트게 없던 단어, 문장으로 재구성한 요약
+        &lt;ul&gt;
+          &lt;li&gt;문서의 내용을 압축하여 새로운 문서 작성&lt;/li&gt;
+          &lt;li&gt;자연어 이해 및 생성 기술이 필수적&lt;/li&gt;
+          &lt;li&gt;Labelled data필요&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Extraction:
+        &lt;ul&gt;
+          &lt;li&gt;문서에 존재하는 단어나 구, 문장을 그대로 추출&lt;/li&gt;
+          &lt;li&gt;보다 쉬운 접근 방법&lt;/li&gt;
+          &lt;li&gt;요약문의 응집도나 가독성이 다소 부족&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;예) 개미는(뚠뚠) 오늘도(뚠뚠) 열심히 일을 하네(뚠뚠) 개미는(뚠뚠) 언제나(뚠뚠) 열심히일을하네(뚠뚠) 개미는아무말도하지않지만(띵가띵가) 땀을뻘뻘흘리면서(띵가띵가) 매일매일을살기위해서열심히일하네(띵가띵가)  한치앞도(뚠뚠) 모르는(뚠뚠) 험한이세상개미도배짱이도알수없지만그렇지만오늘도행복하다네(뚠뚠) 개미는(뚠뚠) 오늘도(뚠뚠) 열심히 일을 하네(뚠뚠) 개미는(뚠뚠) 언제나(뚠뚠) 열심히일을하네(뚠뚠) 개미는아무말도하지않지만(띵가띵가) 땀을뻘뻘흘리면서(띵가띵가) 매일매일을살기위해서열심히일하네(띵가띵가) 한치앞도(뚠뚠) 모르는(뚠뚠) 험한이세상개미도배짱이도알수없지만그렇지만오늘도행복하다네(뚠뚠)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Abstraction : 이세상은 한치앞을 알수없이 험난하지만 그럼에도불구하고 개미는 열씸히 일을한다.&lt;/li&gt;
+      &lt;li&gt;Extraction : 개미는아무말도하지않지만(띵가띵가) 땀을뻘뻘흘리면서(띵가띵가) 매일매일을살기위해서열심히일하네(띵가띵가).&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;textrank-vs-bert_extractive-summarization&quot;&gt;TextRank vs. Bert_Extractive Summarization&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;TextRank : Word Graph 나 Sentence Graph 를 구축한뒤  Graph ranking 알고리즘인 Page Rank를 이용하여 각각 키워드와 핵심 문장을 추출한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Bert Extractive Summarization : 2018년 NLP 경쟁 부문에서 대부분 우승한 Bert 를 가지고 문맥 흐름상 중요한 문장 추출&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;textrank&quot;&gt;TextRank&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;https://Irenejy93.github.io/assets/images/textrank.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;PageRank : 여러 페이지에서 많은 유입을 받는 페이지가 중요한 페이지라고 정의, 유입이 많은 페이지 순으로 Ranking 하는 graph ranking 알고리즘&lt;/li&gt;
+  &lt;li&gt;문장 속 단어들 중 빈번하게 나온 단어들을 개수로 순위를 정한다
+    &lt;ul&gt;
+      &lt;li&gt;문장 속에서 그, 을, 를, 과 같은 빈번한 불용어를 제거한다. 그 후 여러 문장에서 나온 같은 단어의 개수를 카운트한다&lt;/li&gt;
+      &lt;li&gt;가장 빈번하게 등장한 단어일수록, 해당 문서에서 중요한 키워드일 확률이 높다.&lt;/li&gt;
+      &lt;li&gt;문장안에 Ranking 이 높은 단어가 여러 개 가지고 문서내의 비슷한 문장이 많다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Ranking 이 높은 단어가 여러 개 가지고 있을 수록 중요한 문서내의 중요한 문장일 확률이 높다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;bert-extractive-summarization&quot;&gt;Bert Extractive Summarization&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Bert Extractive Summarization 논문 참조&lt;/li&gt;
+  &lt;li&gt;뉴욕타임즈 데이터셋, 일별 이메일 데이터셋 요약부분 에서 State of art 달성함&lt;/li&gt;
+  &lt;li&gt;Bert : 입력층을 단어로 받아 단어 위치, 문장의 위치, 단어의 뜻등을 학습
+    &lt;ul&gt;
+      &lt;li&gt;따라서, 문맥중 중요한 문장을 추출하기위해서는 입력층을 문장단위로 변경해줘야함&lt;/li&gt;
+      &lt;li&gt;Embedding :
+        &lt;ul&gt;
+          &lt;li&gt;문장 A 문장 B 로 번갈아가면서 서로 문장이 다른문장이라는걸 인식하는 Embedding&lt;/li&gt;
+          &lt;li&gt;문장의 시작, 끝과 동일 문장등을 입력하는 Token Embedding&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://Irenejy93.github.io/assets/images/bertextra.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;fine-tuning-with-summarization-layers&quot;&gt;Fine-tuning with Summarization Layers&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Summarize Layers: embedding 된 Bert 출력층을 또다른 Layer로 학습시켜 문서단위에서 문장요약을 한다.
+    &lt;ul&gt;
+      &lt;li&gt;3가지 방식으로 각 문장을 비교분석
+        &lt;ul&gt;
+          &lt;li&gt;중요한정도의 예측값 Yi을 계산한다. 여러 예측값 Yi 를 비교, 손실함수를 계산하여, 각 예측값중 평균값에 가장 가까운 문장을 추출
+            &lt;ol&gt;
+              &lt;li&gt;Simple Classifier :단순한 선형 분류 레이어
+                &lt;ul&gt;
+                  &lt;li&gt;각 출력값에 대한 sigmoid (0과1사이값) 예측값을 계산&lt;/li&gt;
+                  &lt;li&gt;예측값에 대한 손실함수 계산 및 비교&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+              &lt;li&gt;
+                &lt;p&gt;Inter-sentence Transformer
+     $ℎ ̃^𝑙=𝐿𝑁(ℎ^{𝑙 −1}+𝑀𝐻𝐴𝑡𝑡(ℎ^{𝑙 −1}))$&lt;/p&gt;
+
+                &lt;ul&gt;
+                  &lt;li&gt;다시한번 Transformer 학습층을 통해, 문서내의 문장간의 관계를 학습.&lt;/li&gt;
+                  &lt;li&gt;Multihead Attention 을 통해 문서내의 의미가 비슷한 문장이거나 연관성이 높을수록, 높은값을 가진다.&lt;/li&gt;
+                  &lt;li&gt;Normalize 를 통해, 나온값을 정규화한다&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+              &lt;li&gt;Recurrent Neural Network
+                &lt;ul&gt;
+                  &lt;li&gt;Bert 출력에 대해 LSTM 을 학습, 각 Forgot gate, input gates, ouput gates 에 학습
+  해당 결과를 sigmoid 를 취해 학습&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+            &lt;/ol&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><category term="NLP" /><category term="Method" /><category term="code" /><summary type="html">Bert vs. TextRank Text Summarization 01. Text Summarization</summary></entry><entry><title type="html">Survival Ensembles</title><link href="https://irenejy93.github.io/churnprediction/Survival_Ensembels/" rel="alternate" type="text/html" title="Survival Ensembles" /><published>2021-07-15T00:00:00+09:00</published><updated>2021-07-15T00:00:00+09:00</updated><id>https://irenejy93.github.io/churnprediction/Survival_Ensembels</id><content type="html" xml:base="https://irenejy93.github.io/churnprediction/Survival_Ensembels/">&lt;h4 id=&quot;churn-prediction&quot;&gt;Churn Prediction&lt;/h4&gt;
+&lt;h1 id=&quot;survival-ensembles&quot;&gt;Survival Ensembles&lt;/h1&gt;
+
+&lt;h2 id=&quot;01-introduction&quot;&gt;01. Introduction&lt;/h2&gt;
+
+&lt;p&gt;목적 : 고래고객 (접속 확률이 높고, In-app purchase 구매력이 높은 고객 ) 의 F2P 게임의 이탈 예측&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;F2P games :
+    &lt;ul&gt;
+      &lt;li&gt;비-계약: 계약이없으므로, 이탈이 계약의 끝과 상관없이 일어남&lt;/li&gt;
+      &lt;li&gt;이탈 : 10일 이상의 비접속&lt;/li&gt;
+      &lt;li&gt;기존의 이탈 예측법
+        &lt;ul&gt;
+          &lt;li&gt;binary classification
+            &lt;ul&gt;
+              &lt;li&gt;직관적이지만 언제 이탈하는지 정확한 때를 예측할수없음&lt;/li&gt;
+              &lt;li&gt;특성이 정적변수 이어야만 함&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;Regression
+            &lt;ul&gt;
+              &lt;li&gt;모든 플레이어가 게임을 그만두었을때만 이 모델이 가장 적합하다&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;발전된-모델&quot;&gt;발전된 모델&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;이탈할때의 시간 예측&lt;/li&gt;
+  &lt;li&gt;Censorted 데이터를 서로 비교하여, 이탈 예측의 차원을 포착&lt;/li&gt;
+  &lt;li&gt;Survival ensembles : 고객이 언제 이탈할지 예측
+    &lt;ul&gt;
+      &lt;li&gt;고객 이탈에 영향을 주는 risk factor에 대한 정보 추출&lt;/li&gt;
+      &lt;li&gt;y~f(time) 으로 시간에 따라 생존률 예측
+        &lt;ul&gt;
+          &lt;li&gt;고객을 곧이탈, 최근미래 이탈, 먼미래 이탈 의 3개의 집단으로 분류 가능&lt;/li&gt;
+          &lt;li&gt;생존률이 영향있는 variable 추출 가능&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;생존률-분석방법&quot;&gt;생존률 분석방법&lt;/h2&gt;
+
+&lt;h4 id=&quot;a-survival-analysis&quot;&gt;A. Survival analysis&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;이탈(죽음) 까지의 시간을 예측하는 통계적 기술&lt;/li&gt;
+  &lt;li&gt;이벤트 ( 이탈/죽음 )이 발생하기 전까지의 시간에 관한 학문&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Data are censored&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;
+        &lt;p&gt;Estimated through non-parametric Kaplan-Meier estimator  (비모수적 )&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;
+            &lt;p&gt;Kaplan –meier : 사건(사망이) 발생한 시점마다 구간생존율을 구하여 이들의 누적 생존률을 추정&lt;/p&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;K players churn during the period of time T $(t_1 &amp;lt;t_2 &amp;lt; … &amp;lt; t_n)$&lt;/p&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;$𝑆(𝑡_𝑗 )=𝑆(𝑡_(𝑗−1) )( 1−𝑑_𝑗/𝑛_𝑗 )$ number of surviver nj before time tj&lt;/p&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;semi-parametric survival technique : cox proportional-hazard models&lt;/p&gt;
+        &lt;ul&gt;
+          &lt;li&gt;다변량 선형분석 또는 다변량 logistic 선형과 흡사하게 다양한 risk factor을 평가&lt;/li&gt;
+          &lt;li&gt;Hazard rate 이란 ? : 주어진 시간에 생존할 확률 ( expected number of events / unit of time )
+            &lt;ul&gt;
+              &lt;li&gt;can exceed 1&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;단점 : Has several assumption
+            &lt;ul&gt;
+              &lt;li&gt;Covariate or predictors는 이탈 징후에 대해 연관성을 가지고 있어야한다&lt;/li&gt;
+              &lt;li&gt;가려진 문제를, 비슷한 정도를 비교하는 maximizing partial likelihood 를 이용하여 비교&lt;/li&gt;
+              &lt;li&gt;Variable 과 ouput 이 변하지 않는 고정된 관계를 가지고 있어야하며 model selection 에 영향이 있어야함&lt;/li&gt;
+              &lt;li&gt;involves important effort in the model selection&lt;/li&gt;
+              &lt;li&gt;Difficult to scale big data&lt;/li&gt;
+              &lt;li&gt;Constant hazard ratio over time&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;기존-생존률-예측-모델&quot;&gt;기존 생존률 예측 모델&lt;/h2&gt;
+
+&lt;h4 id=&quot;survival-trees-and-ensembles&quot;&gt;Survival Trees and Ensembles&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;Decision Tree
+    &lt;ul&gt;
+      &lt;li&gt;non-parametric (비모수적)&lt;/li&gt;
+      &lt;li&gt;같은 특성을 가진 집단끼리 grouping&lt;/li&gt;
+      &lt;li&gt;Impurities 를 최소화 한다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Survival trees ;
+    &lt;ul&gt;
+      &lt;li&gt;Root node is then divided into 2 daughter nodes&lt;/li&gt;
+      &lt;li&gt;Maximize survival differences between 2 group of individual&lt;/li&gt;
+      &lt;li&gt;단점 : 결정트리 1개는 안정적이지 않기 때문에, 변동이 있을경우 예측에 큰 차이가 생길 수 있다.
+        &lt;ul&gt;
+          &lt;li&gt;해결 : emsemble 사용&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;conditional-inference-survival-ensembles&quot;&gt;conditional inference survival ensembles&lt;/h2&gt;
+
+&lt;h4 id=&quot;b-survival-trees-and-ensembles&quot;&gt;B. Survival Trees and Ensembles&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Random forest
+    &lt;ul&gt;
+      &lt;li&gt;Nelson-Aalan estimates&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;conditional inference survival ensembles
+    &lt;ul&gt;
+      &lt;li&gt;Uses weighted Kaplan Meier function (가중된 Kaplan meier function 사용 )&lt;/li&gt;
+      &lt;li&gt;Introduce weight to the nodes ( 각각 노드 마다 가중치 사용 )&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;dataset&quot;&gt;Dataset&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Player attention :
+    &lt;ul&gt;
+      &lt;li&gt;Time spent per day in the game 하루에 게임에 사용하는 시간&lt;/li&gt;
+      &lt;li&gt;Lifetime : numer of days since registration until churn 이탈할때까지 총 가입기간&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Player loyalty :
+    &lt;ul&gt;
+      &lt;li&gt;Number of days at least one playing session 한번이라도 접속한 날짜의 수&lt;/li&gt;
+      &lt;li&gt;Loyalty index 접속한 날짜수 / 이탈할때까지 총 가입기간&lt;/li&gt;
+      &lt;li&gt;Days from registration to first purchase 가입날짜부터 처음 결제한 날짜 사이의 기간&lt;/li&gt;
+      &lt;li&gt;Days since last purchase 마지막 결제일&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Playing intensity
+    &lt;ul&gt;
+      &lt;li&gt;Number of action 활동 횟수&lt;/li&gt;
+      &lt;li&gt;Session 접속 횟수&lt;/li&gt;
+      &lt;li&gt;In-app purchase 결제 횟수&lt;/li&gt;
+      &lt;li&gt;Action activity distance ( average number of action over life time) 평균 활동 횟수&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Player level&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;conditional-inference-survival-ensemble&quot;&gt;Conditional inference survival ensemble&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Kaplan – meier 을 이용하여 고래이용자들의 이탈률을 시각화
+    &lt;ul&gt;
+      &lt;li&gt;각 그룹 ( 고래, 비 지불 사용자, 지불 사용자 ) 의 생존률을 비교 가능&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Conditional inference survival ensemble
+    &lt;ul&gt;
+      &lt;li&gt;1000 trees  to predict the exit time of whales&lt;/li&gt;
+      &lt;li&gt;Kaplan-meier survival curve represent the group of player included in the node lassifciation&lt;/li&gt;
+      &lt;li&gt;integrated brier score (IBS) 이용하여 각 특성의 중요성을 비교 및 feature selection
+        &lt;ul&gt;
+          &lt;li&gt;주어진 시간 t 에 예측 생존률과 실제 생존률을 오차 비교&lt;/li&gt;
+          &lt;li&gt;낮은 점수의 IBS 는 더 나은 예측률을 가짐 (between 0 to 1,  0 is better )&lt;/li&gt;
+          &lt;li&gt;Binary /categorical outcome 에 알맞음&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://Irenejy93.github.io/assets/images/churn/img1.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;</content><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><category term="ChurnPrediction" /><category term="Paper" /><summary type="html">Churn Prediction Survival Ensembles</summary></entry><entry><title type="html">Survival Ensembles</title><link href="https://irenejy93.github.io/anomaly_detection/TimeSeries_Anomaly_detection_Microsoft/" rel="alternate" type="text/html" title="Survival Ensembles" /><published>2021-07-15T00:00:00+09:00</published><updated>2021-07-15T00:00:00+09:00</updated><id>https://irenejy93.github.io/anomaly_detection/TimeSeries_Anomaly_detection_Microsoft</id><content type="html" xml:base="https://irenejy93.github.io/anomaly_detection/TimeSeries_Anomaly_detection_Microsoft/">&lt;h4 id=&quot;anomaly-detection&quot;&gt;Anomaly Detection&lt;/h4&gt;
+&lt;h1 id=&quot;time-series-anomaly-detection-at-microsoft&quot;&gt;Time series Anomaly detection at Microsoft&lt;/h1&gt;
+
+&lt;h3 id=&quot;01-introduction&quot;&gt;01. Introduction&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Lack of label: 실용적일수있도록 레이블링을 따로하지않은 모델&lt;/li&gt;
+  &lt;li&gt;Generalization : 다양한 데이터에 적용할수있는 일반적인 모델&lt;/li&gt;
+  &lt;li&gt;Efficiency : 효율적인 모델&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;구성&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;데이터 입력
+    &lt;ul&gt;
+      &lt;li&gt;데이터 입력의 빈번도 (granularity) &amp;amp; 사용자의 저장시스템으로부터 이상치 감지 시스템의 연결 (connect string) 
+  e.g. granularity 를 1분이라고 설정하면 , 매분 마다 새로운 데이터 포인트가 생성된다. 타임시리즈 데이터 포인트는 influxDB 와 kafka 에 넣어진다.&lt;/li&gt;
+      &lt;li&gt;해당 모듈은 매초마다 10,000 ~100,000 데이터 포인트가 생성된다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;실험 : 다음장 에서 설명&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;온라인 대입
+    &lt;ul&gt;
+      &lt;li&gt;입력되는 데이터에 대해 긴급하게 이상치를 감지하기 위해, sliding window 가 필요하다. 따라서 Flink 를 사용하여 메모리안의 포인트들을 빠르게 최적화 시킨다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;02-method&quot;&gt;02 Method&lt;/h3&gt;
+
+&lt;h4 id=&quot;a-saliency-detection-spectral-residual-approach&quot;&gt;A. Saliency Detection: Spectral Residual Approach&lt;/h4&gt;
+&lt;p&gt;Survival Ensemble Models&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;컴퓨터 비전에서 쓰이는 saliency Detection 방법으로, 컴퓨터 또는 사람이 사진을 인식할때, 중요하다고 인식하는 부분 H(innovation) 과 눈또는 뇌가 기존에 이미 인식했던 부분 H(Prior Knowledge) 로 이루어져있다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Saliency detection 과 time series anomaly detection 는 유사한 부분이 있다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Spectral Residual &amp;lt;3 단계&amp;gt;&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;
+        &lt;p&gt;Fast Fourier Transform ( TFF) : 퓨리에 전환 , 2차원의 이미지 또는 시간 데이터(time series)를 주파수 (frequency) 영역 으로 분해한것&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;주어진  각 sliding window 구간의 시계열 데이터에대한 퓨리에 전환후 최근 위치로 부터 임의의 m=5 시간 스텝의 구간에 대한 estimate point 를 추가하여 low latency 를 제공한다.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://Irenejy93.github.io/assets/images/churn/img2.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Spectral Residual 계산 :
+    &lt;ul&gt;
+      &lt;li&gt;SR 계산법 : 푸리에 변환을 통해 구해진 log spectrum curve 에대해 평균값을 뺄때 나오는 값이 Spectral residual curve 이다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;푸리에 역변환 :
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;푸리에 역변환 을 통해 주파수 형태의 데이터를 시간데이터로 되돌린다.&lt;/p&gt;
+
+        &lt;p&gt;→ 이 결과를 saliency map 이라고 부른다&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://Irenejy93.github.io/assets/images/churn/img3.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;b-sr--cnn&quot;&gt;B. SR- CNN&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;주어진 saliency map 에  기존의 값의 label 을 0 , 가상의 anomaly 값을 추가하여 1 로 정한다.&lt;/li&gt;
+  &lt;li&gt;가상의 값은  𝑥=(𝑥 ̅+𝑚𝑒𝑎𝑛)(1+𝑣𝑎𝑟)∙𝑟+𝑥 으로 계산한다.&lt;/li&gt;
+  &lt;li&gt;CNN은 saliency detection에 주로 사용되는 지도학습 모델로 해당 논문에서 역시 주어진 label 을 구분하는 학습모델로 사용한다&lt;/li&gt;
+  &lt;li&gt;CNN 네트워크는 두개의 1D-convolutional 네트워크 구성되어있다.
+    &lt;ul&gt;
+      &lt;li&gt;sliding window 사이즈와 동일한 채널사이즈의 은닉층과  그 채널의 두배의 사이즈의 은닉층 으로 이루어진 2개의 층으로 구성되어있다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><category term="Anomaly_Detection" /><category term="Paper" /><summary type="html">Anomaly Detection Time series Anomaly detection at Microsoft</summary></entry><entry><title type="html">Deep Learning over Multi-field Cateogorical Data</title><link href="https://irenejy93.github.io/recommendation/multi_field_category/" rel="alternate" type="text/html" title="Deep Learning over Multi-field Cateogorical Data" /><published>2021-07-15T00:00:00+09:00</published><updated>2021-07-15T00:00:00+09:00</updated><id>https://irenejy93.github.io/recommendation/multi_field_category</id><content type="html" xml:base="https://irenejy93.github.io/recommendation/multi_field_category/">&lt;h2 id=&quot;deep-learning-over-multi-field-cateogorical-data&quot;&gt;Deep Learning over Multi-field Cateogorical Data&lt;/h2&gt;
+
+&lt;h2 id=&quot;1-ctr-모델&quot;&gt;1. CTR 모델&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;모델 비교
+    &lt;ul&gt;
+      &lt;li&gt;기존 CTR 예측 선형 모델 : : Logistic linear regression, naïve Bayes, FTRL logistic regression
+        &lt;ul&gt;
+          &lt;li&gt;장점 : 쉬운 활용법&lt;/li&gt;
+          &lt;li&gt;단점 : 낮은 효율성, 독립적인 입력데이터의 상관관계를 찾지 못함&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;기존 CTR 예측 비선형 모델 : Factorization Machine, Gradient Boosting Tree
+        &lt;ul&gt;
+          &lt;li&gt;장점 : 다른 특성들의 상관관계를 찾을수있음&lt;/li&gt;
+          &lt;li&gt;단점 :
+            &lt;ul&gt;
+              &lt;li&gt;모든 특성의 상관관계를 찾지는 못함&lt;/li&gt;
+              &lt;li&gt;각 모델에 특성화된 input 을 제공 해야함&lt;/li&gt;
+              &lt;li&gt;복잡하고 무거운 데이터를 표현하는데 제한된 모델&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;2-deep-learning&quot;&gt;2. Deep Learning&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Deep Learning :
+    &lt;ul&gt;
+      &lt;li&gt;고차원의 feature 를 저 차원의 feature 로 변형&lt;/li&gt;
+      &lt;li&gt;Sparse data  dense data&lt;/li&gt;
+      &lt;li&gt;데이터간의 연관성 탐색 (local dependency)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;비지도 학습 ( Unsupervised Learning )
+    &lt;ul&gt;
+      &lt;li&gt;고차원의 희소한 데이터를 저 차원의 밀집한 데이터로 학습시키는 Embedding method&lt;/li&gt;
+      &lt;li&gt;숨겨진 데이터 패턴 탐색&lt;/li&gt;
+      &lt;li&gt;DNN : Factorization Machine&lt;/li&gt;
+      &lt;li&gt;SNN : SNN-RBM, SNN-DAE&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;지도학습 ( Supervised Learning )
+    &lt;ul&gt;
+      &lt;li&gt;역전파 (Backpropagation) 지도 학습을 통한 fine-tuning&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;1-unsupervised-learning&quot;&gt;1. Unsupervised Learning&lt;/h3&gt;
+&lt;p&gt;Factorization- machine supported Neural Network ( RNN ) 
+&lt;img src=&quot;https://Irenejy93.github.io/assets/images/snn.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;구성 :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;입력층은 Factorization machine층을 지나 희소한 데이터가 dense 한 데이터로 학습&lt;/li&gt;
+  &lt;li&gt;Tanh 활성화 함수를 이용한 은닉층
+    &lt;ul&gt;
+      &lt;li&gt;큰 데이터에서 가장 빠르게 수렴됨(converges faster)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Sigmoid 활성화 함수를 이용한 출력층&lt;/li&gt;
+  &lt;li&gt;각각의 입력 데이터가 은닉층의 specific 한 필드와 연결&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;contrasting-unsupervised-learning&quot;&gt;Contrasting Unsupervised Learning&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://Irenejy93.github.io/assets/images/ctrrate.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;AUC (area under ROC curve) 결과, Logistic regression 과 Factorial Machine 에 비해 FNN 과 SNN-DAE 와 SNN-RBM 이 더 나은 결과를 가짐&lt;/li&gt;
+  &lt;li&gt;FNN 제일 좋은 테스트 결과를 가짐&lt;/li&gt;
+  &lt;li&gt;SNN-DAE 와 SNN-RBM은 비슷한 결과를 가짐&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;2-supervised-learning&quot;&gt;2. Supervised Learning&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;가중치 업데이트&lt;/li&gt;
+  &lt;li&gt;Back-propagation 을 이용한 비용함수 최적화&lt;/li&gt;
+  &lt;li&gt;Drop-out 정규화로 overfit 관리&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><category term="Recommendation" /><category term="Paper" /><summary type="html">Deep Learning over Multi-field Cateogorical Data</summary></entry><entry><title type="html">DeepFM</title><link href="https://irenejy93.github.io/recommendation/Deepfm/" rel="alternate" type="text/html" title="DeepFM" /><published>2021-07-15T00:00:00+09:00</published><updated>2021-07-15T00:00:00+09:00</updated><id>https://irenejy93.github.io/recommendation/Deepfm</id><content type="html" xml:base="https://irenejy93.github.io/recommendation/Deepfm/">&lt;h1 id=&quot;deepfm&quot;&gt;DeepFM&lt;/h1&gt;
+&lt;h5 id=&quot;a-factorization-machine-based-neural-network&quot;&gt;A Factorization-Machine based Neural Network&lt;/h5&gt;
+&lt;h2 id=&quot;01-what-is-ctr-&quot;&gt;01. what is CTR ?&lt;/h2&gt;
+&lt;h4 id=&quot;ctr--click-through--rate&quot;&gt;CTR : click Through  rate&lt;/h4&gt;
+
+&lt;p&gt;CTR 이란 ?&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;사용자의 클릭 안에 숨겨져 있는 사용자의 특성 또는 어플의 특성 사이의 상관관계 학습&lt;/li&gt;
+  &lt;li&gt;예) 식사 시간 에 음식 배달 어플의 다운로드 수 증가 ( 2 차 상관관계)
+    &lt;ul&gt;
+      &lt;li&gt;10대 남자는 총 게임 과 RPG 게임을 선호 ( 3 차 상관관계 )&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;사용자의 클릭 습관은 저,고차원의 특성 상관관계를 가지고 있다.&lt;/li&gt;
+  &lt;li&gt;효율적인 특성상관관계 모델링 방법:
+    &lt;ul&gt;
+      &lt;li&gt;대부분의 특성 상관관계의 원인을 특정하기 어려움&lt;/li&gt;
+      &lt;li&gt;저 / 고차원의 상관관계를 모두 효율적으로 출력&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;선형 모델
+    &lt;ul&gt;
+      &lt;li&gt;고차원의 상관관계 추출이 어려움&lt;/li&gt;
+      &lt;li&gt;E.g. FM&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Deep neural network e.g. CNN, RNN
+    &lt;ul&gt;
+      &lt;li&gt;CNN : biased to the interaction between neighboring features&lt;/li&gt;
+      &lt;li&gt;RNN suitable for click dta with sequential dependency&lt;/li&gt;
+      &lt;li&gt;FNN &amp;amp; PNN : 저차원의 상관관계를 잘 찾지 못함&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Hybrid network structure : linear model and deep model 의 합친? 모델
+    &lt;ul&gt;
+      &lt;li&gt;Wide : linear, Deep : deep network model&lt;/li&gt;
+      &lt;li&gt;단점 : 전문적인 feature engineering 이 필요함&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;02-what-is-deep-fm&quot;&gt;02 WHAT IS DEEP FM?&lt;/h2&gt;
+
+&lt;h4 id=&quot;deep-fm--a-factorization-machine-based-neural-network-for-ctr-prediction&quot;&gt;Deep FM : A factorization-Machine based Neural Network for CTR Prediction&lt;/h4&gt;
+
+&lt;h6 id=&quot;deep-fm-이란&quot;&gt;Deep FM 이란?:&lt;/h6&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;FM 과  DNN 을 통합시킨 구조
+    &lt;ul&gt;
+      &lt;li&gt;2차원 특성 상관관계 FM&lt;/li&gt;
+      &lt;li&gt;고차원 특성 상관관계 DNN&lt;/li&gt;
+      &lt;li&gt;$\hat{𝑌} =𝑠𝑖𝑔𝑚𝑜𝑖𝑑(𝑦_{𝐹𝑀}+𝑦_{𝐷𝑁𝑁})$&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;wide&amp;amp; Deep 모델과의 차이점 : feature engineering 이 필요가없음&lt;/li&gt;
+  &lt;li&gt;두개의 입력층이 아닌, 하나의 입력층,&lt;/li&gt;
+  &lt;li&gt;목표 : 저차원과 고차원의 상관관계 학습&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&quot;입력-데이터-x&quot;&gt;입력 데이터 X:&lt;/h6&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;사용자와 아이템의 Multifield data&lt;/li&gt;
+  &lt;li&gt;범주형데이터(성별, 위치), 연속형 데이터(나이) 으로 이루어진 복합데이터
+    &lt;ul&gt;
+      &lt;li&gt;범주형 데이터는 one hot encoding 으로 변환&lt;/li&gt;
+      &lt;li&gt;연속형 데이터는 각 값 또는 범주형 데이터로 변형 후 one hot encoding 으로 표현&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;최종 형태 : X = [xfield1, xfield2, xfield3, …, xfieldm]&lt;/li&gt;
+  &lt;li&gt;D – 차원의 벡터 형태 데이터 , 고차원 + extremely sparse&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&quot;structure--embedding-layer&quot;&gt;Structure : Embedding Layer&lt;/h6&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://Irenejy93.github.io/assets/images/deepfm/struct1.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;fm-component&quot;&gt;FM component&lt;/h5&gt;
+&lt;p&gt;&lt;img src=&quot;https://Irenejy93.github.io/assets/images/deepfm/struct2.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;deep-component&quot;&gt;Deep component&lt;/h5&gt;
+&lt;p&gt;&lt;img src=&quot;https://Irenejy93.github.io/assets/images/deepfm/struct3.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;deepfm-model&quot;&gt;DeepFM model&lt;/h5&gt;
+&lt;p&gt;&lt;img src=&quot;https://Irenejy93.github.io/assets/images/deepfm/struct4.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;03-contrast&quot;&gt;03 Contrast&lt;/h2&gt;
+
+&lt;h4 id=&quot;contrast-with-existing-models&quot;&gt;Contrast with existing models&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://Irenejy93.github.io/assets/images/deepfm/cont1.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;효율성-비교&quot;&gt;효율성 비교&lt;/h5&gt;
+&lt;p&gt;&lt;img src=&quot;https://Irenejy93.github.io/assets/images/deepfm/cont2.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://Irenejy93.github.io/assets/images/deepfm/cont3.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;</content><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><category term="Recommendation" /><category term="Paper" /><summary type="html">DeepFM A Factorization-Machine based Neural Network 01. what is CTR ? CTR : click Through rate</summary></entry><entry><title type="html">Factorization Machine</title><link href="https://irenejy93.github.io/recommendation/Factorization_Machine/" rel="alternate" type="text/html" title="Factorization Machine" /><published>2021-07-15T00:00:00+09:00</published><updated>2021-07-15T00:00:00+09:00</updated><id>https://irenejy93.github.io/recommendation/Factorization_Machine</id><content type="html" xml:base="https://irenejy93.github.io/recommendation/Factorization_Machine/">&lt;h2 id=&quot;factorization-machine&quot;&gt;Factorization Machine&lt;/h2&gt;
+
+&lt;h3 id=&quot;01-factorization-matrix&quot;&gt;01. Factorization Matrix&lt;/h3&gt;
+&lt;h4 id=&quot;01--sparse-data&quot;&gt;01 ) sparse Data&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;대부분의 x 의 element xi 가 0 인 희소한 (sparse) 한 데이터
+    &lt;ul&gt;
+      &lt;li&gt;추천 시스템, 텍스트 분석&lt;/li&gt;
+      &lt;li&gt;범주형 변수&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;사용자 = {영희(A), 바둑이(B), 철수(C) … } , 영화아이템 = {타이타닉(TI), 노팅힐(NH), 스타워즈(SW), 스타트렉(ST)}
+&lt;a href=&quot;https://Irenejy93.github.io/assets/images/factorizemachine/factor1.png&quot; class=&quot;align-center&quot;&gt;Git repository 신규 생성 이미지&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;02--factorization-matrix&quot;&gt;02 ) Factorization Matrix&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://Irenejy93.github.io/assets/images/factorizemachine/factor2.png&quot; class=&quot;align-center&quot;&gt;Git repository 신규 생성 이미지&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;factorization matrix 는 위의 데이터 처럼  희소하지만 User - Item matrix 를 행렬분해를 통해 User matrix, Item matrix 로 분해하여 각 사용자의 잠재요인(latent factor)를 찾아낸다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;factorization-machine--svm--fms&quot;&gt;Factorization Machine : SVM + FMs&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;SVM 과 다른 factorization model의 장점을 접목시킨 새로운 모델&lt;/li&gt;
+  &lt;li&gt;factorized parameter 를 이용하여, 여러 상호작용을 모델링&lt;/li&gt;
+  &lt;li&gt;희소한 (sparse) 한 데이터에서도 상호작용 예측가능&lt;/li&gt;
+  &lt;li&gt;‘선형 시간’ 계산복잡도
+    &lt;ul&gt;
+      &lt;li&gt;입력한 길이 n 에 대하여 선형 알고리즘 실행시간이 O(n)&lt;/li&gt;
+      &lt;li&gt;최적화 및 훈련 데이터에 저장할 필요없이 모델 저장&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;입력에 따라, 다양한 factorzation model 과 비슷한 형태의 모델을 준의&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;𝑦 ̂”(x) := + “ 𝑤_0 “ +” ∑&lt;em&gt;(𝑖=1)^𝑛▒〖𝑤_𝑖 𝑥_𝑖 〗+∑&lt;/em&gt;(𝑖=1)^𝑛▒〖∑_(𝑗=𝑖+1)^𝑛▒〖&amp;lt;𝑣_𝑖,𝑣_𝑗&amp;gt;〗 𝑥_𝑖 𝑥_𝑗 〗&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;편향 + 각 변수 가중치 + 상관관계&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Matrix Factorization 을 통해 , 하나의 상관관계를 이용하여 다른 상관관계를 예측한다.
+    &lt;ul&gt;
+      &lt;li&gt;영희는 스타트랙을 좋아한다&lt;/li&gt;
+      &lt;li&gt;철수와 바둑이는 스타워즈를 좋아한다.&lt;/li&gt;
+      &lt;li&gt;바둑이는 스타트랙도 좋다한다, 영희와 바둑이가 비슷한정도로 스타트랙을 좋아한다&lt;/li&gt;
+      &lt;li&gt;영희는 바둑이가 스타워즈를 좋아하는만큼 좋아할것이다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;각 interaction matrix 를 인수분해함을 통해, 데이터가 희소하더라도 𝑦 ̂고차함수의 상관관계 역시  interaction matrix를 표현할수있다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;fm-vs-svm&quot;&gt;FM vs. SVM&lt;/h2&gt;
+
+&lt;h3 id=&quot;svm--support-vector-machine-&quot;&gt;SVM ( Support Vector Machine )&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;SVM : 데이터를 분류하는 hyperplane 을 찾는 알고리즘&lt;/li&gt;
+  &lt;li&gt;다중차원의 희소한 데이터에서 적합한 hyperplane 을 찾을수없다&lt;/li&gt;
+  &lt;li&gt;훈련데이터에 의존하여 예측 
+&lt;a href=&quot;https://Irenejy93.github.io/assets/images/factorizemachine/factor3.png&quot; class=&quot;align-center&quot;&gt;Git repository 신규 생성 이미지&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;fm-vs-svms&quot;&gt;FM vs. SVMs&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;SVM
+    &lt;ul&gt;
+      &lt;li&gt;dense 한 훈련데이터&lt;/li&gt;
+      &lt;li&gt;dual form = SVM은 저차원에서 고차원으로 mapping 후 내적 (inner product)&lt;/li&gt;
+      &lt;li&gt;독립적인 상관관계&lt;/li&gt;
+      &lt;li&gt;Linear SVM : 해당 USER, ITEM 의 편향&lt;/li&gt;
+      &lt;li&gt;Polynomial SVM : 해당 User, Item 의 상관관계&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Factorization Machine
+    &lt;ul&gt;
+      &lt;li&gt;Overlapping 하는 의존적인 상관관계&lt;/li&gt;
+      &lt;li&gt;Sparse 한 데이터&lt;/li&gt;
+      &lt;li&gt;Primal form&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;fm-vs-fms&quot;&gt;FM vs. FMs&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://Irenejy93.github.io/assets/images/factorizemachine/factor4.png&quot; class=&quot;align-center&quot;&gt;Git repository 신규 생성 이미지&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;factorization-machine--svm--fm&quot;&gt;Factorization Machine = SVM + FM&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://Irenejy93.github.io/assets/images/factorizemachine/factor5.png&quot; class=&quot;align-center&quot;&gt;Git repository 신규 생성 이미지&lt;/a&gt;
+A.Matrix Factorization model&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;추천시스템의 협업시스템Collaborative filtering algorithm&lt;/li&gt;
+  &lt;li&gt;User-item 의 matrix 에서 하위 matrix 로 행렬 인수분해 하여 비평가 된 항목을 채움&lt;/li&gt;
+  &lt;li&gt;Matrix Factorization 은 범주형 이진 입력 데이터가 필요함&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;fm--vs-svd&quot;&gt;FM  vs. SVD++&lt;/h2&gt;
+
+&lt;p&gt;B) SVD++&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;명백한 피드백 : 사용자와 영화에 준 평점에 대해 높은평점을 받은 영화와 낮은 평점을 받은 영화를 부여한다 이를 명백한 피드백이라고 함&lt;/li&gt;
+  &lt;li&gt;암묵적인 피드백 : 사용자가 점수를 준 영화와 점수를 주지 않은 영화에도 의미를 부여한다.&lt;/li&gt;
+  &lt;li&gt;아직 선택하지 않은 영화에 대하여 점수를 예측&lt;/li&gt;
+  &lt;li&gt;FM can mimic this model by using   &lt;a href=&quot;https://Irenejy93.github.io/assets/images/factorizemachine/factor6.png&quot; class=&quot;align-center&quot;&gt;Git repository 신규 생성 이미지&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Nu&lt;/td&gt;
+              &lt;td&gt;는 한번이라도 평점을 준 모든영화&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;fm--vs-pitf-for-tag-recommendation&quot;&gt;FM  vs. PITF for tag Recommendation&lt;/h3&gt;
+
+&lt;p&gt;C) PITF&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;User 와 item 짝의 ranking tag 예측&lt;/li&gt;
+  &lt;li&gt;FM 의 이진변수 모델에 ranking 변수 tA 를 tB 추가&lt;/li&gt;
+  &lt;li&gt;(u,I,tA) 와 (u,I,tB)의 차이점을 예측한 모델이 PITF 모델과 흡사하다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;fm--vs-fpmc-factorized-personalized-markov-chains-&quot;&gt;FM  vs. FPMC (Factorized Personalized Markov Chains )&lt;/h3&gt;
+&lt;p&gt;D)FPMC&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;사용자의 지난 구매 이력으로 현재 구매순위를 예측&lt;/li&gt;
+  &lt;li&gt;FM can mimic this model by using 
+&lt;a href=&quot;https://Irenejy93.github.io/assets/images/factorizemachine/factor7.png&quot; class=&quot;align-center&quot;&gt;Git repository 신규 생성 이미지&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;𝐵_(𝑡−1)^𝑢&lt;/td&gt;
+          &lt;td&gt;는 지난번에 장바구니에 넣어졌던 아이템&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><category term="Recommendation" /><category term="Paper" /><summary type="html">Factorization Machine</summary></entry><entry><title type="html">Product-based Neural Network</title><link href="https://irenejy93.github.io/recommendation/Product-based/" rel="alternate" type="text/html" title="Product-based Neural Network" /><published>2021-07-15T00:00:00+09:00</published><updated>2021-07-15T00:00:00+09:00</updated><id>https://irenejy93.github.io/recommendation/Product-based</id><content type="html" xml:base="https://irenejy93.github.io/recommendation/Product-based/">&lt;h2 id=&quot;product-based-neural-network&quot;&gt;Product-based Neural Network&lt;/h2&gt;
+
+&lt;h3 id=&quot;01--multi-field-dataset&quot;&gt;01 . Multi-field Dataset&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;클릭률 모델 입력 데이터 : multiple field categorical data
+    &lt;ul&gt;
+      &lt;li&gt;e.g. [weekday = Tuesday , Gender = Male, city=London]&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;One-hot encoding  고차원의 희소 데이터
+    &lt;ul&gt;
+      &lt;li&gt;e.g. [0, 1, 0, 0, 0] [0, 1]&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;기존 모델: logistic regression, 비선형 gradient boosting trees , Factorization machine
+    &lt;ul&gt;
+      &lt;li&gt;고차원의 희소한 데이터에서 특성의 패턴을 추려내기가 어려움&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;02-기존-ctr-모델&quot;&gt;02. 기존 CTR 모델&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;factorization machine supported neural network (FNN):
+    &lt;ul&gt;
+      &lt;li&gt;Deep learning Neural Network with factorization machine pre-training&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Convolutional Click Prediction Model (CCPM):
+    &lt;ul&gt;
+      &lt;li&gt;Convolutional Neural Network 을 이용한 예측&lt;/li&gt;
+      &lt;li&gt;Non-neighbor feature 과의 상관관계 분석 불가&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Product unit neural network (PUNN)
+    &lt;ul&gt;
+      &lt;li&gt;특성사이의 의존도 학습 불가&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;03-product-based-neural-network&quot;&gt;03. Product-based Neural Network&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Product-based Neural Network (PNN)
+&lt;img src=&quot;https://Irenejy93.github.io/assets/images/pdnn/struct1.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;Pre- training 없이, 각 field 에서 embedding layer 로 특성연결&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;각 특성 간의 연관관계를 inner product 또는 outer product-based neural network 를 product Layer 로 pair-wise 연결&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;고차원의 특성들을 hidden layer 에 전부 연결,패턴 추출
+        &lt;ul&gt;
+          &lt;li&gt;Relu 활성화 함수&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;지도 학습을 통해, 비용함수 최적화 및 CTR 예측&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;inner-product-based-neural-network-ipnn&quot;&gt;Inner Product-based Neural Network (IPNN)&lt;/h3&gt;
+
+&lt;p&gt;Inner product –based neural network&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;입력: Linear information signal 𝑙&lt;/li&gt;
+  &lt;li&gt;Pairwise feature interaction 𝑔(𝑓_𝑖, 𝑓_𝑗 )= &amp;lt;𝑓_𝑖, 𝑓_𝑗&amp;gt; 정의&lt;/li&gt;
+  &lt;li&gt;Linear 형태의 𝑙_z + 상관관계 𝑙_p 신경망 학습&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Inner product&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;𝑙_z  : inner product 형태의 가중치와 선형정보 보존&lt;/li&gt;
+  &lt;li&gt;𝑙_p  : Pairwise feature interaction 의 inner product ;  이차원의 square matrix
+    &lt;ul&gt;
+      &lt;li&gt;행렬 분해 (decomposition) 통한 시간 및 공간 복잡도 축소&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;outer-product-based-neural-network-opnn&quot;&gt;Outer Product-based Neural Network (OPNN)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;각 선형 vector 데이터 의 Pair 의 Outer product&lt;/li&gt;
+  &lt;li&gt;Matrix 형태의 출력
+    &lt;ul&gt;
+      &lt;li&gt;시간, 공간 복잡도 증가&lt;/li&gt;
+      &lt;li&gt;Element-wise superposition 를 통한 시간및 공간 복잡도 축소 
+  Eelement-wise : 두벡터의 행렬이 같은 원소 끼리 계산&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://Irenejy93.github.io/assets/images/pdnn/struct2.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Superposition :&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;T(cu)=cT(u)&lt;/li&gt;
+  &lt;li&gt;T(u+v)=T(u)+T(v)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;기존-모델과-성능-비교&quot;&gt;기존 모델과 성능 비교&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://Irenejy93.github.io/assets/images/pdnn/struct3.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;</content><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><category term="Recommendation" /><category term="Paper" /><summary type="html">Product-based Neural Network</summary></entry><entry><title type="html">Sentiment Analysis</title><link href="https://irenejy93.github.io/nlp/Sentiment_anlyze/" rel="alternate" type="text/html" title="Sentiment Analysis" /><published>2021-07-11T00:00:00+09:00</published><updated>2021-07-11T00:00:00+09:00</updated><id>https://irenejy93.github.io/nlp/Sentiment_anlyze</id><content type="html" xml:base="https://irenejy93.github.io/nlp/Sentiment_anlyze/">&lt;h1 id=&quot;sentimental-analysis&quot;&gt;Sentimental Analysis&lt;/h1&gt;
+
+&lt;h2 id=&quot;1-sentiment-analysis-methods&quot;&gt;1. Sentiment Analysis Methods&lt;/h2&gt;
+&lt;h3 id=&quot;1-rule-based&quot;&gt;1. Rule-based&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;축약단어 풀기&lt;/li&gt;
+  &lt;li&gt;특수 문자 제거 와 같은 특정 조건으로 가능한 방법&lt;/li&gt;
+  &lt;li&gt;Stemming, lemmatization&lt;/li&gt;
+  &lt;li&gt;Removing stopwords (.,!? Etc)&lt;/li&gt;
+  &lt;li&gt;Dictionary 비교 ( 100 of News about Apple )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://Irenejy93.github.io/assets/images/sent_alz/graph1.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;TextBlob
+      * Medium ~0.1
+      * left tailed&lt;/li&gt;
+  &lt;li&gt;Afinn
+      * Medium ~0
+      * Right tailed&lt;/li&gt;
+  &lt;li&gt;SentiWordNet
+      * 1 negative news&lt;/li&gt;
+  &lt;li&gt;Vader
+      * Medium ~0
+      * Right tailed&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;results-on-positive-news&quot;&gt;Results on positive news&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;https://Irenejy93.github.io/assets/images/sent_alz/comp1.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;results-on-negative-news&quot;&gt;Results on negative news&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;https://Irenejy93.github.io/assets/images/sent_alz/comp2.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;affin-dictionary-sentiment&quot;&gt;Affin dictionary Sentiment&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;https://Irenejy93.github.io/assets/images/sent_alz/dict.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;2-machine-learning&quot;&gt;2. Machine learning&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Tokenization&lt;/li&gt;
+  &lt;li&gt;SVM, linear regression, SVM etc&lt;/li&gt;
+  &lt;li&gt;Disadvantage: require Tagging&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;3-deep-learning&quot;&gt;3. Deep Learning&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Embedding with given word dictionary e.g. Glove&lt;/li&gt;
+  &lt;li&gt;LSTM, RNN etc&lt;/li&gt;
+  &lt;li&gt;Heavy model compare to Rule based&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><category term="NLP" /><category term="Method" /><summary type="html">Sentimental Analysis</summary></entry><entry><title type="html">Bert paper Review</title><link href="https://irenejy93.github.io/nlp/Bert-paper-Review/" rel="alternate" type="text/html" title="Bert paper Review" /><published>2020-09-03T00:00:00+09:00</published><updated>2020-09-03T00:00:00+09:00</updated><id>https://irenejy93.github.io/nlp/Bert-paper-Review</id><content type="html" xml:base="https://irenejy93.github.io/nlp/Bert-paper-Review/">&lt;h1 id=&quot;01-what-is-bert&quot;&gt;01 what is Bert?&lt;/h1&gt;
 &lt;p&gt;BERT ( Bi-directional Encoder Representation from Transformers)&lt;/p&gt;
 &lt;h5 id=&quot;기존-자연어-처리-신경망&quot;&gt;기존 자연어 처리 신경망&lt;/h5&gt;
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/Bert_.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://Irenejy93.github.io/assets/images/Bert_.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;RNN ( 순환 신경망 ) : 각 새로운 입력층마다 hidden layer 를 저장/수정 하여 새로운 정보를 점차 업데이트 해나아가는 신경망&lt;/li&gt;
@@ -37,7 +1006,7 @@
 
 &lt;h1 id=&quot;03--bert-architecture&quot;&gt;03 . Bert Architecture&lt;/h1&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/Transformer.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;https://Irenejy93.github.io/assets/images/Transformer.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
 ‘Attention is All’ 논문에서 발표된 Transformer 모델의 Encoding 부분 차용&lt;/p&gt;
 
 &lt;p&gt;※ 2 가지 버전 :&lt;/p&gt;
@@ -50,7 +1019,7 @@
 &lt;h2 id=&quot;1-pre-train&quot;&gt;[1] Pre-train&lt;/h2&gt;
 &lt;h3 id=&quot;1-pre-training-task&quot;&gt;1. Pre-training task&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/pretrain.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://Irenejy93.github.io/assets/images/pretrain.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Masked Language Modelling&lt;/li&gt;
@@ -80,7 +1049,7 @@
 &lt;h3 id=&quot;2-input-embedding&quot;&gt;2. Input Embedding&lt;/h3&gt;
 
 &lt;p&gt;각 단어 Token 을 Vectorize 하는 과정
-&lt;img src=&quot;http://localhost:4000/assets/images/embedding.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;https://Irenejy93.github.io/assets/images/embedding.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Input = Token Embedding + Segment Embedding + Position Embedding&lt;/p&gt;
 
@@ -95,7 +1064,7 @@
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;3-encoding-layers&quot;&gt;3. Encoding Layers&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/encoding.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;https://Irenejy93.github.io/assets/images/encoding.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
 &lt;br /&gt;&lt;/p&gt;
 &lt;ol&gt;
   &lt;li&gt;Multi-Head Attention : 여러 문장속 동일한/연관이 높은 단어에 가중치 를 높여주는 과정
@@ -115,7 +1084,7 @@
 
 &lt;h2 id=&quot;2-fine-tuning&quot;&gt;[2] Fine-tuning&lt;/h2&gt;
 &lt;h3 id=&quot;add--normalize&quot;&gt;Add &amp;amp; Normalize&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/addnorm.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://Irenejy93.github.io/assets/images/addnorm.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;
     &lt;p&gt;ResNet : 기존의 Embedding input vector 를 Self-Attention 값에 더하고 Normalize&lt;/p&gt;
@@ -126,4 +1095,4 @@
 
     &lt;p&gt;Encoding Layer  N번의 Layer 에서 반복 실행&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><category term="NLP" /><category term="Bert" /><category term="Attention" /><category term="NLP" /><category term="Transformer" /><category term="Multi-head Attention" /><summary type="html">01 what is Bert? BERT ( Bi-directional Encoder Representation from Transformers) 기존 자연어 처리 신경망</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><category term="NLP" /><category term="Paper" /><summary type="html">01 what is Bert? BERT ( Bi-directional Encoder Representation from Transformers) 기존 자연어 처리 신경망</summary></entry></feed>

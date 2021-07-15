@@ -1,0 +1,807 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.20.1 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Text Summarization - Scribbling every Miscellaneous things</title>
+<meta name="description" content="Bert vs. TextRank Text Summarization 01. Text Summarization">
+
+
+  <meta name="author" content="Irene Kim">
+  
+  <meta property="article:author" content="Irene Kim">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Scribbling every Miscellaneous things  ">
+<meta property="og:title" content="Text Summarization">
+<meta property="og:url" content="https://irenejy93.github.io/nlp/text_summary/">
+
+
+  <meta property="og:description" content="Bert vs. TextRank Text Summarization 01. Text Summarization">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-07-15T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://irenejy93.github.io/nlp/text_summary/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Irene Kim",
+      "url": "https://irenejy93.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Scribbling every Miscellaneous things   Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Irene in Wonder_AI_land
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/posts/">연도별 포스트</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="https://Irenejy93.github.io/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#nlp" itemprop="item"><span itemprop="name">Nlp</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">Text Summarization</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/my_icon.jpeg" alt="Irene Kim" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Irene Kim</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Striving to be Data Scientist</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Somewhere over the Rainbow</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/irenejy93" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:irenee.jy93@gmail.com">
+            <meta itemprop="email" content="irenee.jy93@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Text Summarization">
+    <meta itemprop="description" content="Bert vs. TextRankText Summarization01. Text Summarization">
+    <meta itemprop="datePublished" content="2021-07-15T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Text Summarization
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> contents</h4></header>
+              <ul class="toc__menu">
+  <li><a href="#bert-vs-textrank">Bert vs. TextRank</a></li>
+  <li><a href="#01-text-summarization">01. Text Summarization</a></li>
+  <li><a href="#textrank-vs-bert_extractive-summarization">TextRank vs. Bert_Extractive Summarization</a></li>
+  <li><a href="#textrank">TextRank</a></li>
+  <li><a href="#bert-extractive-summarization">Bert Extractive Summarization</a></li>
+  <li><a href="#fine-tuning-with-summarization-layers">Fine-tuning with Summarization Layers</a></li>
+</ul>
+
+            </nav>
+          </aside>
+        
+        <h3 id="bert-vs-textrank">Bert vs. TextRank</h3>
+<h1 id="text-summarization">Text Summarization</h1>
+<h3 id="01-text-summarization">01. Text Summarization</h3>
+
+<ul>
+  <li>Abstraction vs. Extraction :
+    <ul>
+      <li>vAbstraction : 원본텍스트를 이해하여, 원본텍스트게 없던 단어, 문장으로 재구성한 요약
+        <ul>
+          <li>문서의 내용을 압축하여 새로운 문서 작성</li>
+          <li>자연어 이해 및 생성 기술이 필수적</li>
+          <li>Labelled data필요</li>
+        </ul>
+      </li>
+      <li>Extraction:
+        <ul>
+          <li>문서에 존재하는 단어나 구, 문장을 그대로 추출</li>
+          <li>보다 쉬운 접근 방법</li>
+          <li>요약문의 응집도나 가독성이 다소 부족</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>예) 개미는(뚠뚠) 오늘도(뚠뚠) 열심히 일을 하네(뚠뚠) 개미는(뚠뚠) 언제나(뚠뚠) 열심히일을하네(뚠뚠) 개미는아무말도하지않지만(띵가띵가) 땀을뻘뻘흘리면서(띵가띵가) 매일매일을살기위해서열심히일하네(띵가띵가)  한치앞도(뚠뚠) 모르는(뚠뚠) 험한이세상개미도배짱이도알수없지만그렇지만오늘도행복하다네(뚠뚠) 개미는(뚠뚠) 오늘도(뚠뚠) 열심히 일을 하네(뚠뚠) 개미는(뚠뚠) 언제나(뚠뚠) 열심히일을하네(뚠뚠) 개미는아무말도하지않지만(띵가띵가) 땀을뻘뻘흘리면서(띵가띵가) 매일매일을살기위해서열심히일하네(띵가띵가) 한치앞도(뚠뚠) 모르는(뚠뚠) 험한이세상개미도배짱이도알수없지만그렇지만오늘도행복하다네(뚠뚠)</p>
+
+    <ul>
+      <li>Abstraction : 이세상은 한치앞을 알수없이 험난하지만 그럼에도불구하고 개미는 열씸히 일을한다.</li>
+      <li>Extraction : 개미는아무말도하지않지만(띵가띵가) 땀을뻘뻘흘리면서(띵가띵가) 매일매일을살기위해서열심히일하네(띵가띵가).</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="textrank-vs-bert_extractive-summarization">TextRank vs. Bert_Extractive Summarization</h3>
+
+<ul>
+  <li>
+    <p>TextRank : Word Graph 나 Sentence Graph 를 구축한뒤  Graph ranking 알고리즘인 Page Rank를 이용하여 각각 키워드와 핵심 문장을 추출한다.</p>
+  </li>
+  <li>
+    <p>Bert Extractive Summarization : 2018년 NLP 경쟁 부문에서 대부분 우승한 Bert 를 가지고 문맥 흐름상 중요한 문장 추출</p>
+  </li>
+</ul>
+
+<h3 id="textrank">TextRank</h3>
+<p><img src="https://Irenejy93.github.io/assets/images/textrank.png" alt="Git repository 신규 생성 이미지" class="align-center" /></p>
+
+<ul>
+  <li>PageRank : 여러 페이지에서 많은 유입을 받는 페이지가 중요한 페이지라고 정의, 유입이 많은 페이지 순으로 Ranking 하는 graph ranking 알고리즘</li>
+  <li>문장 속 단어들 중 빈번하게 나온 단어들을 개수로 순위를 정한다
+    <ul>
+      <li>문장 속에서 그, 을, 를, 과 같은 빈번한 불용어를 제거한다. 그 후 여러 문장에서 나온 같은 단어의 개수를 카운트한다</li>
+      <li>가장 빈번하게 등장한 단어일수록, 해당 문서에서 중요한 키워드일 확률이 높다.</li>
+      <li>문장안에 Ranking 이 높은 단어가 여러 개 가지고 문서내의 비슷한 문장이 많다.</li>
+    </ul>
+  </li>
+  <li>Ranking 이 높은 단어가 여러 개 가지고 있을 수록 중요한 문서내의 중요한 문장일 확률이 높다</li>
+</ul>
+
+<h3 id="bert-extractive-summarization">Bert Extractive Summarization</h3>
+
+<ul>
+  <li>Bert Extractive Summarization 논문 참조</li>
+  <li>뉴욕타임즈 데이터셋, 일별 이메일 데이터셋 요약부분 에서 State of art 달성함</li>
+  <li>Bert : 입력층을 단어로 받아 단어 위치, 문장의 위치, 단어의 뜻등을 학습
+    <ul>
+      <li>따라서, 문맥중 중요한 문장을 추출하기위해서는 입력층을 문장단위로 변경해줘야함</li>
+      <li>Embedding :
+        <ul>
+          <li>문장 A 문장 B 로 번갈아가면서 서로 문장이 다른문장이라는걸 인식하는 Embedding</li>
+          <li>문장의 시작, 끝과 동일 문장등을 입력하는 Token Embedding</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="https://Irenejy93.github.io/assets/images/bertextra.png" alt="Git repository 신규 생성 이미지" class="align-center" /></p>
+
+<h3 id="fine-tuning-with-summarization-layers">Fine-tuning with Summarization Layers</h3>
+<ul>
+  <li>Summarize Layers: embedding 된 Bert 출력층을 또다른 Layer로 학습시켜 문서단위에서 문장요약을 한다.
+    <ul>
+      <li>3가지 방식으로 각 문장을 비교분석
+        <ul>
+          <li>중요한정도의 예측값 Yi을 계산한다. 여러 예측값 Yi 를 비교, 손실함수를 계산하여, 각 예측값중 평균값에 가장 가까운 문장을 추출
+            <ol>
+              <li>Simple Classifier :단순한 선형 분류 레이어
+                <ul>
+                  <li>각 출력값에 대한 sigmoid (0과1사이값) 예측값을 계산</li>
+                  <li>예측값에 대한 손실함수 계산 및 비교</li>
+                </ul>
+              </li>
+              <li>
+                <p>Inter-sentence Transformer
+     $ℎ ̃^𝑙=𝐿𝑁(ℎ^{𝑙 −1}+𝑀𝐻𝐴𝑡𝑡(ℎ^{𝑙 −1}))$</p>
+
+                <ul>
+                  <li>다시한번 Transformer 학습층을 통해, 문서내의 문장간의 관계를 학습.</li>
+                  <li>Multihead Attention 을 통해 문서내의 의미가 비슷한 문장이거나 연관성이 높을수록, 높은값을 가진다.</li>
+                  <li>Normalize 를 통해, 나온값을 정규화한다</li>
+                </ul>
+              </li>
+              <li>Recurrent Neural Network
+                <ul>
+                  <li>Bert 출력에 대해 LSTM 을 학습, 각 Forgot gate, input gates, ouput gates 에 학습
+  해당 결과를 sigmoid 를 취해 학습</li>
+                </ul>
+              </li>
+            </ol>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#code" class="page__taxonomy-item" rel="tag">code</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#method" class="page__taxonomy-item" rel="tag">Method</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#nlp" class="page__taxonomy-item" rel="tag">NLP</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-07-15T00:00:00+09:00">July 15, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Text+Summarization%20https%3A%2F%2Firenejy93.github.io%2Fnlp%2Ftext_summary%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Firenejy93.github.io%2Fnlp%2Ftext_summary%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Firenejy93.github.io%2Fnlp%2Ftext_summary%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/anomaly_detection/TimeSeries_Anomaly_detection_Microsoft/" class="pagination--pager" title="Survival Ensembles
+">Previous</a>
+    
+    
+      <a href="/recommendation/Deepfm/" class="pagination--pager" title="DeepFM
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/recommendation/multi_field_category/" rel="permalink">Deep Learning over Multi-field Cateogorical Data
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Deep Learning over Multi-field Cateogorical Data
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/recommendation/Wide&DeepLearning/" rel="permalink">Wide &amp; Deep Learning for Recommendation System
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">추천 시스템
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/recommendation/Product-based/" rel="permalink">Product-based Neural Network
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Product-based Neural Network
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/recommendation/Factorization_Machine/" rel="permalink">Factorization Machine
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Factorization Machine
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:irenee.jy93@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/irenejy93" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 Irene Kim. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

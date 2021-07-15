@@ -13,11 +13,7 @@ toc_sticky: true
 toc_label: contents
 decription: How Bert is working and how the architecture looks like
 tags:
-- Bert
-- Attention
-- NLP
-- Transformer
-- Multi-head Attention
+- Paper
 ---
 
 # 01 what is Bert?

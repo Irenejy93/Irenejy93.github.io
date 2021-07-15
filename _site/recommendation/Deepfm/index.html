@@ -1,0 +1,804 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.20.1 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>DeepFM - Scribbling every Miscellaneous things</title>
+<meta name="description" content="DeepFM A Factorization-Machine based Neural Network 01. what is CTR ? CTR : click Through  rate">
+
+
+  <meta name="author" content="Irene Kim">
+  
+  <meta property="article:author" content="Irene Kim">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Scribbling every Miscellaneous things  ">
+<meta property="og:title" content="DeepFM">
+<meta property="og:url" content="https://irenejy93.github.io/recommendation/Deepfm/">
+
+
+  <meta property="og:description" content="DeepFM A Factorization-Machine based Neural Network 01. what is CTR ? CTR : click Through  rate">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-07-15T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://irenejy93.github.io/recommendation/Deepfm/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Irene Kim",
+      "url": "https://irenejy93.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Scribbling every Miscellaneous things   Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Irene in Wonder_AI_land
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/posts/">연도별 포스트</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="https://Irenejy93.github.io/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#recommendation" itemprop="item"><span itemprop="name">Recommendation</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">DeepFM</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/my_icon.jpeg" alt="Irene Kim" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Irene Kim</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Striving to be Data Scientist</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Somewhere over the Rainbow</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/irenejy93" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:irenee.jy93@gmail.com">
+            <meta itemprop="email" content="irenee.jy93@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="DeepFM">
+    <meta itemprop="description" content="DeepFMA Factorization-Machine based Neural Network01. what is CTR ?CTR : click Through  rate">
+    <meta itemprop="datePublished" content="2021-07-15T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">DeepFM
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> contents</h4></header>
+              <ul class="toc__menu">
+  <li><a href="#deepfm">DeepFM</a>
+              - {:.} <a href="#a-factorization-machine-based-neural-network">A Factorization-Machine based Neural Network</a>
+    <ul>
+      <li><a href="#01-what-is-ctr-">01. what is CTR ?</a>
+      - {:.} <a href="#ctr--click-through--rate">CTR : click Through  rate</a></li>
+      <li><a href="#02-what-is-deep-fm">02 WHAT IS DEEP FM?</a>
+      - {:.} <a href="#deep-fm--a-factorization-machine-based-neural-network-for-ctr-prediction">Deep FM : A factorization-Machine based Neural Network for CTR Prediction</a>
+              - {:.} <a href="#deep-fm-이란">Deep FM 이란?:</a>
+              - {:.} <a href="#입력-데이터-x">입력 데이터 X:</a>
+              - {:.} <a href="#structure--embedding-layer">Structure : Embedding Layer</a>
+          - {:.} <a href="#fm-component">FM component</a>
+          - {:.} <a href="#deep-component">Deep component</a>
+          - {:.} <a href="#deepfm-model">DeepFM model</a></li>
+      <li><a href="#03-contrast">03 Contrast</a>
+      - {:.} <a href="#contrast-with-existing-models">Contrast with existing models</a>
+          - {:.} <a href="#효율성-비교">효율성 비교</a></li>
+    </ul>
+  </li>
+</ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="deepfm">DeepFM</h1>
+<h5 id="a-factorization-machine-based-neural-network">A Factorization-Machine based Neural Network</h5>
+<h2 id="01-what-is-ctr-">01. what is CTR ?</h2>
+<h4 id="ctr--click-through--rate">CTR : click Through  rate</h4>
+
+<p>CTR 이란 ?</p>
+<ul>
+  <li>사용자의 클릭 안에 숨겨져 있는 사용자의 특성 또는 어플의 특성 사이의 상관관계 학습</li>
+  <li>예) 식사 시간 에 음식 배달 어플의 다운로드 수 증가 ( 2 차 상관관계)
+    <ul>
+      <li>10대 남자는 총 게임 과 RPG 게임을 선호 ( 3 차 상관관계 )</li>
+    </ul>
+  </li>
+  <li>사용자의 클릭 습관은 저,고차원의 특성 상관관계를 가지고 있다.</li>
+  <li>효율적인 특성상관관계 모델링 방법:
+    <ul>
+      <li>대부분의 특성 상관관계의 원인을 특정하기 어려움</li>
+      <li>저 / 고차원의 상관관계를 모두 효율적으로 출력</li>
+    </ul>
+  </li>
+</ul>
+
+<ol>
+  <li>선형 모델
+    <ul>
+      <li>고차원의 상관관계 추출이 어려움</li>
+      <li>E.g. FM</li>
+    </ul>
+  </li>
+  <li>Deep neural network e.g. CNN, RNN
+    <ul>
+      <li>CNN : biased to the interaction between neighboring features</li>
+      <li>RNN suitable for click dta with sequential dependency</li>
+      <li>FNN &amp; PNN : 저차원의 상관관계를 잘 찾지 못함</li>
+    </ul>
+  </li>
+  <li>Hybrid network structure : linear model and deep model 의 합친? 모델
+    <ul>
+      <li>Wide : linear, Deep : deep network model</li>
+      <li>단점 : 전문적인 feature engineering 이 필요함</li>
+    </ul>
+  </li>
+</ol>
+
+<p><br /></p>
+
+<h2 id="02-what-is-deep-fm">02 WHAT IS DEEP FM?</h2>
+
+<h4 id="deep-fm--a-factorization-machine-based-neural-network-for-ctr-prediction">Deep FM : A factorization-Machine based Neural Network for CTR Prediction</h4>
+
+<h6 id="deep-fm-이란">Deep FM 이란?:</h6>
+
+<ul>
+  <li>FM 과  DNN 을 통합시킨 구조
+    <ul>
+      <li>2차원 특성 상관관계 FM</li>
+      <li>고차원 특성 상관관계 DNN</li>
+      <li>$\hat{𝑌} =𝑠𝑖𝑔𝑚𝑜𝑖𝑑(𝑦_{𝐹𝑀}+𝑦_{𝐷𝑁𝑁})$</li>
+    </ul>
+  </li>
+  <li>wide&amp; Deep 모델과의 차이점 : feature engineering 이 필요가없음</li>
+  <li>두개의 입력층이 아닌, 하나의 입력층,</li>
+  <li>목표 : 저차원과 고차원의 상관관계 학습</li>
+</ul>
+
+<h6 id="입력-데이터-x">입력 데이터 X:</h6>
+
+<ul>
+  <li>사용자와 아이템의 Multifield data</li>
+  <li>범주형데이터(성별, 위치), 연속형 데이터(나이) 으로 이루어진 복합데이터
+    <ul>
+      <li>범주형 데이터는 one hot encoding 으로 변환</li>
+      <li>연속형 데이터는 각 값 또는 범주형 데이터로 변형 후 one hot encoding 으로 표현</li>
+    </ul>
+  </li>
+  <li>최종 형태 : X = [xfield1, xfield2, xfield3, …, xfieldm]</li>
+  <li>D – 차원의 벡터 형태 데이터 , 고차원 + extremely sparse</li>
+</ul>
+
+<h6 id="structure--embedding-layer">Structure : Embedding Layer</h6>
+
+<p><img src="https://Irenejy93.github.io/assets/images/deepfm/struct1.png" alt="Git repository 신규 생성 이미지" class="align-center" /></p>
+
+<h5 id="fm-component">FM component</h5>
+<p><img src="https://Irenejy93.github.io/assets/images/deepfm/struct2.png" alt="Git repository 신규 생성 이미지" class="align-center" /></p>
+
+<h5 id="deep-component">Deep component</h5>
+<p><img src="https://Irenejy93.github.io/assets/images/deepfm/struct3.png" alt="Git repository 신규 생성 이미지" class="align-center" /></p>
+
+<h5 id="deepfm-model">DeepFM model</h5>
+<p><img src="https://Irenejy93.github.io/assets/images/deepfm/struct4.png" alt="Git repository 신규 생성 이미지" class="align-center" /></p>
+
+<p><br /></p>
+
+<h2 id="03-contrast">03 Contrast</h2>
+
+<h4 id="contrast-with-existing-models">Contrast with existing models</h4>
+
+<p><img src="https://Irenejy93.github.io/assets/images/deepfm/cont1.png" alt="Git repository 신규 생성 이미지" class="align-center" /></p>
+
+<h5 id="효율성-비교">효율성 비교</h5>
+<p><img src="https://Irenejy93.github.io/assets/images/deepfm/cont2.png" alt="Git repository 신규 생성 이미지" class="align-center" /></p>
+
+<p><img src="https://Irenejy93.github.io/assets/images/deepfm/cont3.png" alt="Git repository 신규 생성 이미지" class="align-center" /></p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#paper" class="page__taxonomy-item" rel="tag">Paper</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#recommendation" class="page__taxonomy-item" rel="tag">Recommendation</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-07-15T00:00:00+09:00">July 15, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=DeepFM%20https%3A%2F%2Firenejy93.github.io%2Frecommendation%2FDeepfm%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Firenejy93.github.io%2Frecommendation%2FDeepfm%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Firenejy93.github.io%2Frecommendation%2FDeepfm%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/nlp/text_summary/" class="pagination--pager" title="Text Summarization
+">Previous</a>
+    
+    
+      <a href="/recommendation/Factorization_Machine/" class="pagination--pager" title="Factorization Machine
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/recommendation/multi_field_category/" rel="permalink">Deep Learning over Multi-field Cateogorical Data
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Deep Learning over Multi-field Cateogorical Data
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/recommendation/Wide&DeepLearning/" rel="permalink">Wide &amp; Deep Learning for Recommendation System
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">추천 시스템
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/recommendation/Product-based/" rel="permalink">Product-based Neural Network
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Product-based Neural Network
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/recommendation/Factorization_Machine/" rel="permalink">Factorization Machine
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Factorization Machine
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:irenee.jy93@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/irenejy93" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 Irene Kim. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

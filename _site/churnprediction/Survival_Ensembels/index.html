@@ -1,0 +1,879 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.20.1 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Survival Ensembles - Scribbling every Miscellaneous things</title>
+<meta name="description" content="Churn Prediction Survival Ensembles">
+
+
+  <meta name="author" content="Irene Kim">
+  
+  <meta property="article:author" content="Irene Kim">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Scribbling every Miscellaneous things  ">
+<meta property="og:title" content="Survival Ensembles">
+<meta property="og:url" content="https://irenejy93.github.io/churnprediction/Survival_Ensembels/">
+
+
+  <meta property="og:description" content="Churn Prediction Survival Ensembles">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-07-15T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://irenejy93.github.io/churnprediction/Survival_Ensembels/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Irene Kim",
+      "url": "https://irenejy93.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Scribbling every Miscellaneous things   Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Irene in Wonder_AI_land
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/posts/">연도별 포스트</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="https://Irenejy93.github.io/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#churnprediction" itemprop="item"><span itemprop="name">Churnprediction</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">Survival Ensembles</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/my_icon.jpeg" alt="Irene Kim" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Irene Kim</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Striving to be Data Scientist</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Somewhere over the Rainbow</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/irenejy93" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:irenee.jy93@gmail.com">
+            <meta itemprop="email" content="irenee.jy93@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Survival Ensembles">
+    <meta itemprop="description" content="Churn PredictionSurvival Ensembles">
+    <meta itemprop="datePublished" content="2021-07-15T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Survival Ensembles
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> contents</h4></header>
+              <ul class="toc__menu">
+  <li><a href="#churn-prediction">Churn Prediction</a></li>
+  <li><a href="#발전된-모델">발전된 모델</a></li>
+  <li><a href="#a-survival-analysis">A. Survival analysis</a></li>
+  <li><a href="#survival-trees-and-ensembles">Survival Trees and Ensembles</a></li>
+  <li><a href="#b-survival-trees-and-ensembles">B. Survival Trees and Ensembles</a></li>
+  <li><a href="#dataset">Dataset</a></li>
+  <li><a href="#conditional-inference-survival-ensemble">Conditional inference survival ensemble</a></li>
+</ul>
+
+            </nav>
+          </aside>
+        
+        <h4 id="churn-prediction">Churn Prediction</h4>
+<h1 id="survival-ensembles">Survival Ensembles</h1>
+
+<h2 id="01-introduction">01. Introduction</h2>
+
+<p>목적 : 고래고객 (접속 확률이 높고, In-app purchase 구매력이 높은 고객 ) 의 F2P 게임의 이탈 예측</p>
+<ul>
+  <li>F2P games :
+    <ul>
+      <li>비-계약: 계약이없으므로, 이탈이 계약의 끝과 상관없이 일어남</li>
+      <li>이탈 : 10일 이상의 비접속</li>
+      <li>기존의 이탈 예측법
+        <ul>
+          <li>binary classification
+            <ul>
+              <li>직관적이지만 언제 이탈하는지 정확한 때를 예측할수없음</li>
+              <li>특성이 정적변수 이어야만 함</li>
+            </ul>
+          </li>
+          <li>Regression
+            <ul>
+              <li>모든 플레이어가 게임을 그만두었을때만 이 모델이 가장 적합하다</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="발전된-모델">발전된 모델</h4>
+<ul>
+  <li>이탈할때의 시간 예측</li>
+  <li>Censorted 데이터를 서로 비교하여, 이탈 예측의 차원을 포착</li>
+  <li>Survival ensembles : 고객이 언제 이탈할지 예측
+    <ul>
+      <li>고객 이탈에 영향을 주는 risk factor에 대한 정보 추출</li>
+      <li>y~f(time) 으로 시간에 따라 생존률 예측
+        <ul>
+          <li>고객을 곧이탈, 최근미래 이탈, 먼미래 이탈 의 3개의 집단으로 분류 가능</li>
+          <li>생존률이 영향있는 variable 추출 가능</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="생존률-분석방법">생존률 분석방법</h2>
+
+<h4 id="a-survival-analysis">A. Survival analysis</h4>
+<ul>
+  <li>이탈(죽음) 까지의 시간을 예측하는 통계적 기술</li>
+  <li>이벤트 ( 이탈/죽음 )이 발생하기 전까지의 시간에 관한 학문</li>
+  <li>
+    <p>Data are censored</p>
+
+    <ol>
+      <li>
+        <p>Estimated through non-parametric Kaplan-Meier estimator  (비모수적 )</p>
+
+        <ul>
+          <li>
+            <p>Kaplan –meier : 사건(사망이) 발생한 시점마다 구간생존율을 구하여 이들의 누적 생존률을 추정</p>
+          </li>
+          <li>
+            <p>K players churn during the period of time T $(t_1 &lt;t_2 &lt; … &lt; t_n)$</p>
+          </li>
+          <li>
+            <p>$𝑆(𝑡_𝑗 )=𝑆(𝑡_(𝑗−1) )( 1−𝑑_𝑗/𝑛_𝑗 )$ number of surviver nj before time tj</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>semi-parametric survival technique : cox proportional-hazard models</p>
+        <ul>
+          <li>다변량 선형분석 또는 다변량 logistic 선형과 흡사하게 다양한 risk factor을 평가</li>
+          <li>Hazard rate 이란 ? : 주어진 시간에 생존할 확률 ( expected number of events / unit of time )
+            <ul>
+              <li>can exceed 1</li>
+            </ul>
+          </li>
+          <li>단점 : Has several assumption
+            <ul>
+              <li>Covariate or predictors는 이탈 징후에 대해 연관성을 가지고 있어야한다</li>
+              <li>가려진 문제를, 비슷한 정도를 비교하는 maximizing partial likelihood 를 이용하여 비교</li>
+              <li>Variable 과 ouput 이 변하지 않는 고정된 관계를 가지고 있어야하며 model selection 에 영향이 있어야함</li>
+              <li>involves important effort in the model selection</li>
+              <li>Difficult to scale big data</li>
+              <li>Constant hazard ratio over time</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<h2 id="기존-생존률-예측-모델">기존 생존률 예측 모델</h2>
+
+<h4 id="survival-trees-and-ensembles">Survival Trees and Ensembles</h4>
+<ol>
+  <li>Decision Tree
+    <ul>
+      <li>non-parametric (비모수적)</li>
+      <li>같은 특성을 가진 집단끼리 grouping</li>
+      <li>Impurities 를 최소화 한다</li>
+    </ul>
+  </li>
+  <li>Survival trees ;
+    <ul>
+      <li>Root node is then divided into 2 daughter nodes</li>
+      <li>Maximize survival differences between 2 group of individual</li>
+      <li>단점 : 결정트리 1개는 안정적이지 않기 때문에, 변동이 있을경우 예측에 큰 차이가 생길 수 있다.
+        <ul>
+          <li>해결 : emsemble 사용</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<p><br /></p>
+
+<h2 id="conditional-inference-survival-ensembles">conditional inference survival ensembles</h2>
+
+<h4 id="b-survival-trees-and-ensembles">B. Survival Trees and Ensembles</h4>
+<ul>
+  <li>Random forest
+    <ul>
+      <li>Nelson-Aalan estimates</li>
+    </ul>
+  </li>
+  <li>conditional inference survival ensembles
+    <ul>
+      <li>Uses weighted Kaplan Meier function (가중된 Kaplan meier function 사용 )</li>
+      <li>Introduce weight to the nodes ( 각각 노드 마다 가중치 사용 )</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="dataset">Dataset</h4>
+<ul>
+  <li>Player attention :
+    <ul>
+      <li>Time spent per day in the game 하루에 게임에 사용하는 시간</li>
+      <li>Lifetime : numer of days since registration until churn 이탈할때까지 총 가입기간</li>
+    </ul>
+  </li>
+  <li>Player loyalty :
+    <ul>
+      <li>Number of days at least one playing session 한번이라도 접속한 날짜의 수</li>
+      <li>Loyalty index 접속한 날짜수 / 이탈할때까지 총 가입기간</li>
+      <li>Days from registration to first purchase 가입날짜부터 처음 결제한 날짜 사이의 기간</li>
+      <li>Days since last purchase 마지막 결제일</li>
+    </ul>
+  </li>
+  <li>Playing intensity
+    <ul>
+      <li>Number of action 활동 횟수</li>
+      <li>Session 접속 횟수</li>
+      <li>In-app purchase 결제 횟수</li>
+      <li>Action activity distance ( average number of action over life time) 평균 활동 횟수</li>
+    </ul>
+  </li>
+  <li>Player level</li>
+</ul>
+
+<h4 id="conditional-inference-survival-ensemble">Conditional inference survival ensemble</h4>
+
+<ol>
+  <li>Kaplan – meier 을 이용하여 고래이용자들의 이탈률을 시각화
+    <ul>
+      <li>각 그룹 ( 고래, 비 지불 사용자, 지불 사용자 ) 의 생존률을 비교 가능</li>
+    </ul>
+  </li>
+  <li>Conditional inference survival ensemble
+    <ul>
+      <li>1000 trees  to predict the exit time of whales</li>
+      <li>Kaplan-meier survival curve represent the group of player included in the node lassifciation</li>
+      <li>integrated brier score (IBS) 이용하여 각 특성의 중요성을 비교 및 feature selection
+        <ul>
+          <li>주어진 시간 t 에 예측 생존률과 실제 생존률을 오차 비교</li>
+          <li>낮은 점수의 IBS 는 더 나은 예측률을 가짐 (between 0 to 1,  0 is better )</li>
+          <li>Binary /categorical outcome 에 알맞음</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<p><img src="https://Irenejy93.github.io/assets/images/churn/img1.png" alt="Git repository 신규 생성 이미지" class="align-center" /></p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#paper" class="page__taxonomy-item" rel="tag">Paper</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#churnprediction" class="page__taxonomy-item" rel="tag">ChurnPrediction</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-07-15T00:00:00+09:00">July 15, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Survival+Ensembles%20https%3A%2F%2Firenejy93.github.io%2Fchurnprediction%2FSurvival_Ensembels%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Firenejy93.github.io%2Fchurnprediction%2FSurvival_Ensembels%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Firenejy93.github.io%2Fchurnprediction%2FSurvival_Ensembels%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/nlp/Sentiment_anlyze/" class="pagination--pager" title="Sentiment Analysis
+">Previous</a>
+    
+    
+      <a href="/anomaly_detection/TimeSeries_Anomaly_detection_Microsoft/" class="pagination--pager" title="Survival Ensembles
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/recommendation/multi_field_category/" rel="permalink">Deep Learning over Multi-field Cateogorical Data
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Deep Learning over Multi-field Cateogorical Data
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/recommendation/Wide&DeepLearning/" rel="permalink">Wide &amp; Deep Learning for Recommendation System
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">추천 시스템
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/recommendation/Product-based/" rel="permalink">Product-based Neural Network
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Product-based Neural Network
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/recommendation/Factorization_Machine/" rel="permalink">Factorization Machine
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Factorization Machine
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:irenee.jy93@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/irenejy93" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 Irene Kim. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
