@@ -60,14 +60,20 @@ var store = [{
         "teaser": null
       },{
         "title": "Self Learning improves NLU",
-        "excerpt":"youtube review                    ","categories": [],
-        "tags": [],
-        "url": "http://localhost:4000/self_learning_improves_NLU/",
+        "excerpt":"youtube review                    ","categories": ["NLP"],
+        "tags": ["Paper"],
+        "url": "http://localhost:4000/nlp/self_learning_improves_NLU/",
         "teaser": null
       },{
         "title": "Fine-grained Interest Matching for Neural News Recommendation",
-        "excerpt":"Review on Youtube                      ","categories": [],
-        "tags": [],
-        "url": "http://localhost:4000/Finegrained/",
+        "excerpt":"Review on Youtube                      ","categories": ["Recommendation"],
+        "tags": ["Paper"],
+        "url": "http://localhost:4000/recommendation/Finegrained/",
+        "teaser": null
+      },{
+        "title": "최단경로",
+        "excerpt":"최단 경로 : 가장 빠른 길 찾기 모든 지점에서 다른 모든 지점까지의 최단 경로를 모두 구해야하는 경우 다익스트라 최단경로 알고리즘 플로이드 워셜 벨만 포드 알고리즘 이중 다익스르라와 폴로이드 워셜 알고리즘이 코딩 테스트 문제에서 가장 많이 등장하는 유형 그리디 알고리즘과 다이나믹 프로그래밍 알고리즘이 최단경로 알고리즘에 그대로 적용된다. 다익스트라 출발 노드 설정...","categories": ["CodeTest"],
+        "tags": ["code"],
+        "url": "http://localhost:4000/codetest/%EC%B5%9C%EB%8B%A8%EA%B2%BD%EB%A1%9C/",
         "teaser": null
       }]

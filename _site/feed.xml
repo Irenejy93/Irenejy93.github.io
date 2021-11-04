@@ -1,21 +1,349 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-11-02T23:44:49+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Scribbling every Miscellaneous thing</title><subtitle> website.</subtitle><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><entry><title type="html">Self Learning improves NLU</title><link href="http://localhost:4000/self_learning_improves_NLU/" rel="alternate" type="text/html" title="Self Learning improves NLU" /><published>2021-11-02T00:00:00+09:00</published><updated>2021-11-02T00:00:00+09:00</updated><id>http://localhost:4000/self_learning_improves_NLU</id><content type="html" xml:base="http://localhost:4000/self_learning_improves_NLU/">&lt;p&gt;&lt;a href=&quot;https://youtu.be/9iJLzmrUN-8&quot;&gt;youtube review&lt;/a&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-11-04T23:29:14+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Scribbling every Miscellaneous thing</title><subtitle> website.</subtitle><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><entry><title type="html">최단경로</title><link href="http://localhost:4000/codetest/%EC%B5%9C%EB%8B%A8%EA%B2%BD%EB%A1%9C/" rel="alternate" type="text/html" title="최단경로" /><published>2021-11-03T00:00:00+09:00</published><updated>2021-11-03T00:00:00+09:00</updated><id>http://localhost:4000/codetest/%EC%B5%9C%EB%8B%A8%EA%B2%BD%EB%A1%9C</id><content type="html" xml:base="http://localhost:4000/codetest/%EC%B5%9C%EB%8B%A8%EA%B2%BD%EB%A1%9C/">&lt;h4 id=&quot;최단-경로--가장-빠른-길-찾기&quot;&gt;최단 경로 : 가장 빠른 길 찾기&lt;/h4&gt;
+&lt;p&gt;모든 지점에서 다른 모든 지점까지의 최단 경로를 모두 구해야하는 경우&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-0.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
-&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-1.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
-&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-2.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
-&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-3.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
-&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-4.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
-&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-5.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
-&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-6.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
-&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-7.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
-&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-8.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
-&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-9.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
-&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-10.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
-&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-11.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
-&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-12.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
-&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-13.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
-&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-14.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
-&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-15.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;</content><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><summary type="html">youtube review</summary></entry><entry><title type="html">Fine-grained Interest Matching for Neural News Recommendation</title><link href="http://localhost:4000/Finegrained/" rel="alternate" type="text/html" title="Fine-grained Interest Matching for Neural News Recommendation" /><published>2021-11-02T00:00:00+09:00</published><updated>2021-11-02T00:00:00+09:00</updated><id>http://localhost:4000/Finegrained</id><content type="html" xml:base="http://localhost:4000/Finegrained/">&lt;p&gt;&lt;a href=&quot;https://youtu.be/XW93QvbFlaQ&quot;&gt;Review on Youtube&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;다익스트라 최단경로 알고리즘&lt;/li&gt;
+  &lt;li&gt;플로이드 워셜&lt;/li&gt;
+  &lt;li&gt;벨만 포드 알고리즘&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;이중 다익스르라와 폴로이드 워셜 알고리즘이 코딩 테스트 문제에서 가장 많이 등장하는 유형 
+그리디 알고리즘과 다이나믹 프로그래밍 알고리즘이 최단경로 알고리즘에 그대로 적용된다.&lt;/p&gt;
+
+&lt;h4 id=&quot;다익스트라&quot;&gt;다익스트라&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;출발 노드 설정&lt;/li&gt;
+  &lt;li&gt;최단거리 테이블 초기화&lt;/li&gt;
+  &lt;li&gt;방문하지 않는 노드중에서 최단 거리가 가장 짧은 노드를 선택&lt;/li&gt;
+  &lt;li&gt;해당 노드를 거쳐 다른 노드로 가는 비용을 계산하여 최단 거리 테이블을 갱신&lt;/li&gt;
+  &lt;li&gt;3-4 반복&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;구현하는 방법 2가지&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;구현이 쉽지만 느리게 동작하는코드&lt;/li&gt;
+  &lt;li&gt;구현하기에 조금 더 까다롭지만 빠르게 동작하는 코드&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;2 가 될때까지 이해하고 구현할수있도록 연습해야한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;방문하지-않은-노드중-최단거리가-가장-짧은-노드를-선택하기-위해-매-단계마다-1차원의-리스트의-모든-원소를-순차탐색해야함&quot;&gt;방문하지 않은 노드중 최단거리가 가장 짧은 노드를 선택하기 위해 매 단계마다 1차원의 리스트의 모든 원소를 순차탐색해야함&lt;/h3&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sys&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stdin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;readline&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;INF&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1e9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+
+
+&lt;span class=&quot;c1&quot;&gt;# 각 노드에 연결되어있는 노드에 대한 정보를 담는 리스트 
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;#방문한적있는 체크 목적의 리스트 만들기
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;visited&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;#최단 거리 테이블 모두 무기한으로 초기화 
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;distance&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;INF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# a 번노드에서 b로 가능 비용이 c 라는 의미
+&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get_smallest_node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;min_value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;INF&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;distance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min_value&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;visited&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;min_value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;distance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+            
+            &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;dijkstra&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;distance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;visited&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;distance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;now&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;get_smallest_node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;visited&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
+        
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;distance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+            
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;distance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]:&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;distance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;
+                
+&lt;span class=&quot;n&quot;&gt;dijkstra&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;distance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;INF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;INFINITY&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;distance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;방법2--개선된-다익스트라-알고리즘&quot;&gt;방법2 : 개선된 다익스트라 알고리즘&lt;/h3&gt;
+
+&lt;p&gt;힙 : 힙 라죠구조는 큐를 구현하기 위한 자료구조중 하나 
+우선순위 큐 : 우선순위가 가장 높은 데이터를 가장 먼저 삭제  headq 또는 PriorityQueue 사용
+현재 가장 가까운 노드를 저장하기 위한 목적으로만 우선순위 큐를 추가로 이용&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;heapq&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sys&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stdin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;readline&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;n&quot;&gt;INF&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1e9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;distance&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;INF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;dijkstra&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# 시작 노드의 최단 경로는 0 으로 설정 큐에삽입
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;heapq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;heappush&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;distance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;dist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;now&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;heapq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;heappop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;distance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;continue&lt;/span&gt;
+            
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dist&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;distance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]:&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;distance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;heapq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;heappush&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+                
+&lt;span class=&quot;n&quot;&gt;dijkstra&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;distance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;INF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;INFINITY&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;distance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;플로이드-워셜-알고리즘&quot;&gt;플로이드 워셜 알고리즘&lt;/h3&gt;
+&lt;p&gt;다익스트라 알고리즘은 한지점에서 다른 특정 지점까지의 초단경로를 구하는 경우에 사용하느 최단경우이면
+플로이드 워셜 알고리즘은 모든 지점에서다른 모든 지점까지의 최단 경로를 모두 구해야하는 경우 사용할수있는 알고리즘&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;INF&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1e9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;INF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 자기 자신으로 가는 비용은 0
+&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+        
+            
+&lt;span class=&quot;c1&quot;&gt;# 각 간선에 따라 정보를 받아 그 값으로 고치화 
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;
+    
+&lt;span class=&quot;c1&quot;&gt;# 점화식에 따라 플로이드 위셜 알고리즘을 수행 
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+            
+&lt;span class=&quot;c1&quot;&gt;#수행된 결과 출력 
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;INF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;INFINITY&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;' '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; 
+            &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot; &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;n&quot;&gt;INF&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1e9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;INF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 자기 자신으로 가는 비용은 0
+&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+            
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#노드와  노드 사이 거리
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;#수행된 결과 출력 
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;INF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;INFINITY&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;' '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; 
+            &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot; &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;0 4 8 6&lt;br /&gt;
+3 0 7 9&lt;br /&gt;
+5 9 0 4&lt;br /&gt;
+7 11 2 0&lt;/p&gt;
+
+&lt;h3 id=&quot;q2-미래도시&quot;&gt;Q2. 미래도시&lt;/h3&gt;
+&lt;p&gt;방문 판매원 A는 많은 회사가 모여있는 미래 도시에 있다. 1~N 까지의 회사가있고 특정회사들은 서로 도로를 통해연결되어있다. A는 현재 1번회사에 있으며 x회사에 방문해 물건을 팔려고한다. 회사에서 다른 회사로 가는방법은 특정 도로만을 사용해야하고 양방향으로 이동 가능 거리는 1. 
+방문판배원은 소개팅도 가는데, X 회사에 가기전에 소개팅 사앧 회사 k 회사를방문한후 X방문 최소 시간을 계산하는 프로그램 계산&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;INF&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1e9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;INF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+            
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;graph&lt;/p&gt;
+
+&lt;p&gt;[[1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000],&lt;br /&gt;
+ [1000000000, 0, 1, 1, 1, 1000000000],&lt;br /&gt;
+ [1000000000, 1, 0, 1000000000, 1, 1000000000],&lt;br /&gt;
+ [1000000000, 1, 1000000000, 0, 1, 1],&lt;br /&gt;
+ [1000000000, 1, 1, 1, 0, 1],&lt;br /&gt;
+ [1000000000, 1000000000, 1000000000, 1, 1, 0]]&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;        4 5
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;graph&lt;/p&gt;
+
+&lt;p&gt;[[1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000],&lt;br /&gt;
+ [1000000000, 0, 1, 1, 1, 2],&lt;br /&gt;
+ [1000000000, 1, 0, 2, 1, 2],&lt;br /&gt;
+ [1000000000, 1, 2, 0, 1, 1],&lt;br /&gt;
+ [1000000000, 1, 1, 1, 0, 1],&lt;br /&gt;
+ [1000000000, 2, 2, 1, 1, 0]]&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;distance&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;distance&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;INF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'-1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;distance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;        3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;q3-전보&quot;&gt;Q3. 전보&lt;/h3&gt;
+
+&lt;p&gt;n 개 도시 , 도시 x –&amp;gt; 도시 y 통로만 통해서 가능&lt;br /&gt;
+도시 c 에 위급 상황 발생, 도시 c에서 출발하여 모든 도시에 메시지를 보냄&lt;br /&gt;
+받을수있는 도시의 개수와, 매사자룰 받는데 걸리는 시간 계산&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;heapq&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# import sys
+&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# input = sys.stdin.readline/
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;INF&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1e9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[[]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;distance&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;INF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;z&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;3 2 1  
+1 2 4  
+1 3 2  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;graph&lt;/p&gt;
+
+&lt;p&gt;[[], [(2, 4), (3, 2)], [], []]&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;dijkstar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# 시작 노드로 가기 위한 최단경로는 0 으로 설정 큐에 삽입
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;heapq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;heappush&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;distance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#q 가 비어있지않으면
+&lt;/span&gt;        &lt;span class=&quot;c1&quot;&gt;#가장 최단거리의 짧은 노드에 대한 정보 꺼내기
+&lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;dist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;now&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;heapq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;heappop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;distance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;continue&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;#현재 노드와 연결된 다른 인접한 노드 확인
+&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dist&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+            
+            &lt;span class=&quot;c1&quot;&gt;# 현재 노드를 거쳐서 다른 노드로 이동하는 거리가 더 짧은경우
+&lt;/span&gt;            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;distance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]:&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;distance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;heapq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;heappush&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt;
+
+                
+&lt;span class=&quot;n&quot;&gt;dijkstar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;max_distance&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;distance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;INF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;max_distance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;max_distance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;max_distance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;2 4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><category term="CodeTest" /><category term="code" /><summary type="html">최단 경로 : 가장 빠른 길 찾기 모든 지점에서 다른 모든 지점까지의 최단 경로를 모두 구해야하는 경우</summary></entry><entry><title type="html">Fine-grained Interest Matching for Neural News Recommendation</title><link href="http://localhost:4000/recommendation/Finegrained/" rel="alternate" type="text/html" title="Fine-grained Interest Matching for Neural News Recommendation" /><published>2021-11-02T00:00:00+09:00</published><updated>2021-11-02T00:00:00+09:00</updated><id>http://localhost:4000/recommendation/Finegrained</id><content type="html" xml:base="http://localhost:4000/recommendation/Finegrained/">&lt;p&gt;&lt;a href=&quot;https://youtu.be/XW93QvbFlaQ&quot;&gt;Review on Youtube&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/NeuralNewsRec/pg-0.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
 &lt;img src=&quot;http://localhost:4000/assets/NeuralNewsRec/pg-1.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
@@ -34,95 +362,24 @@
 &lt;img src=&quot;http://localhost:4000/assets/NeuralNewsRec/pg-14.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
 &lt;img src=&quot;http://localhost:4000/assets/NeuralNewsRec/pg-15.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
 &lt;img src=&quot;http://localhost:4000/assets/NeuralNewsRec/pg-16.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
-&lt;img src=&quot;http://localhost:4000/assets/NeuralNewsRec/pg-17.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;</content><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><summary type="html">Review on Youtube</summary></entry><entry><title type="html">Deep Learning over Multi-field Cateogorical Data</title><link href="http://localhost:4000/recommendation/multi_field_category/" rel="alternate" type="text/html" title="Deep Learning over Multi-field Cateogorical Data" /><published>2021-07-15T00:00:00+09:00</published><updated>2021-07-15T00:00:00+09:00</updated><id>http://localhost:4000/recommendation/multi_field_category</id><content type="html" xml:base="http://localhost:4000/recommendation/multi_field_category/">&lt;h2 id=&quot;deep-learning-over-multi-field-cateogorical-data&quot;&gt;Deep Learning over Multi-field Cateogorical Data&lt;/h2&gt;
+&lt;img src=&quot;http://localhost:4000/assets/NeuralNewsRec/pg-17.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;</content><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><category term="Recommendation" /><category term="Paper" /><summary type="html">Review on Youtube</summary></entry><entry><title type="html">Self Learning improves NLU</title><link href="http://localhost:4000/nlp/self_learning_improves_NLU/" rel="alternate" type="text/html" title="Self Learning improves NLU" /><published>2021-11-02T00:00:00+09:00</published><updated>2021-11-02T00:00:00+09:00</updated><id>http://localhost:4000/nlp/self_learning_improves_NLU</id><content type="html" xml:base="http://localhost:4000/nlp/self_learning_improves_NLU/">&lt;p&gt;&lt;a href=&quot;https://youtu.be/9iJLzmrUN-8&quot;&gt;youtube review&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;1-ctr-모델&quot;&gt;1. CTR 모델&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;모델 비교
-    &lt;ul&gt;
-      &lt;li&gt;기존 CTR 예측 선형 모델 : : Logistic linear regression, naïve Bayes, FTRL logistic regression
-        &lt;ul&gt;
-          &lt;li&gt;장점 : 쉬운 활용법&lt;/li&gt;
-          &lt;li&gt;단점 : 낮은 효율성, 독립적인 입력데이터의 상관관계를 찾지 못함&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;기존 CTR 예측 비선형 모델 : Factorization Machine, Gradient Boosting Tree
-        &lt;ul&gt;
-          &lt;li&gt;장점 : 다른 특성들의 상관관계를 찾을수있음&lt;/li&gt;
-          &lt;li&gt;단점 :
-            &lt;ul&gt;
-              &lt;li&gt;모든 특성의 상관관계를 찾지는 못함&lt;/li&gt;
-              &lt;li&gt;각 모델에 특성화된 input 을 제공 해야함&lt;/li&gt;
-              &lt;li&gt;복잡하고 무거운 데이터를 표현하는데 제한된 모델&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;2-deep-learning&quot;&gt;2. Deep Learning&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Deep Learning :
-    &lt;ul&gt;
-      &lt;li&gt;고차원의 feature 를 저 차원의 feature 로 변형&lt;/li&gt;
-      &lt;li&gt;Sparse data  dense data&lt;/li&gt;
-      &lt;li&gt;데이터간의 연관성 탐색 (local dependency)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;비지도 학습 ( Unsupervised Learning )
-    &lt;ul&gt;
-      &lt;li&gt;고차원의 희소한 데이터를 저 차원의 밀집한 데이터로 학습시키는 Embedding method&lt;/li&gt;
-      &lt;li&gt;숨겨진 데이터 패턴 탐색&lt;/li&gt;
-      &lt;li&gt;DNN : Factorization Machine&lt;/li&gt;
-      &lt;li&gt;SNN : SNN-RBM, SNN-DAE&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;지도학습 ( Supervised Learning )
-    &lt;ul&gt;
-      &lt;li&gt;역전파 (Backpropagation) 지도 학습을 통한 fine-tuning&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;1-unsupervised-learning&quot;&gt;1. Unsupervised Learning&lt;/h3&gt;
-&lt;p&gt;Factorization- machine supported Neural Network ( RNN ) 
-&lt;img src=&quot;http://localhost:4000/assets/images/snn.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;구성 :&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;입력층은 Factorization machine층을 지나 희소한 데이터가 dense 한 데이터로 학습&lt;/li&gt;
-  &lt;li&gt;Tanh 활성화 함수를 이용한 은닉층
-    &lt;ul&gt;
-      &lt;li&gt;큰 데이터에서 가장 빠르게 수렴됨(converges faster)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Sigmoid 활성화 함수를 이용한 출력층&lt;/li&gt;
-  &lt;li&gt;각각의 입력 데이터가 은닉층의 specific 한 필드와 연결&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;contrasting-unsupervised-learning&quot;&gt;Contrasting Unsupervised Learning&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/ctrrate.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;AUC (area under ROC curve) 결과, Logistic regression 과 Factorial Machine 에 비해 FNN 과 SNN-DAE 와 SNN-RBM 이 더 나은 결과를 가짐&lt;/li&gt;
-  &lt;li&gt;FNN 제일 좋은 테스트 결과를 가짐&lt;/li&gt;
-  &lt;li&gt;SNN-DAE 와 SNN-RBM은 비슷한 결과를 가짐&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;2-supervised-learning&quot;&gt;2. Supervised Learning&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;가중치 업데이트&lt;/li&gt;
-  &lt;li&gt;Back-propagation 을 이용한 비용함수 최적화&lt;/li&gt;
-  &lt;li&gt;Drop-out 정규화로 overfit 관리&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><category term="Recommendation" /><category term="Paper" /><summary type="html">Deep Learning over Multi-field Cateogorical Data</summary></entry><entry><title type="html">DeepFM</title><link href="http://localhost:4000/recommendation/Deepfm/" rel="alternate" type="text/html" title="DeepFM" /><published>2021-07-15T00:00:00+09:00</published><updated>2021-07-15T00:00:00+09:00</updated><id>http://localhost:4000/recommendation/Deepfm</id><content type="html" xml:base="http://localhost:4000/recommendation/Deepfm/">&lt;h1 id=&quot;deepfm&quot;&gt;DeepFM&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-0.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-1.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-2.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-3.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-4.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-5.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-6.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-7.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-8.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-9.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-10.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-11.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-12.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-13.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-14.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-15.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;</content><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><category term="NLP" /><category term="Paper" /><summary type="html">youtube review</summary></entry><entry><title type="html">DeepFM</title><link href="http://localhost:4000/recommendation/Deepfm/" rel="alternate" type="text/html" title="DeepFM" /><published>2021-07-15T00:00:00+09:00</published><updated>2021-07-15T00:00:00+09:00</updated><id>http://localhost:4000/recommendation/Deepfm</id><content type="html" xml:base="http://localhost:4000/recommendation/Deepfm/">&lt;h1 id=&quot;deepfm&quot;&gt;DeepFM&lt;/h1&gt;
 &lt;h5 id=&quot;a-factorization-machine-based-neural-network&quot;&gt;A Factorization-Machine based Neural Network&lt;/h5&gt;
 &lt;h2 id=&quot;01-what-is-ctr-&quot;&gt;01. what is CTR ?&lt;/h2&gt;
 &lt;h4 id=&quot;ctr--click-through--rate&quot;&gt;CTR : click Through  rate&lt;/h4&gt;
@@ -618,7 +875,95 @@
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><category term="NLP" /><category term="Method" /><category term="code" /><summary type="html">Bert vs. TextRank Text Summarization 01. Text Summarization</summary></entry><entry><title type="html">Factorization Machine</title><link href="http://localhost:4000/recommendation/Factorization_Machine/" rel="alternate" type="text/html" title="Factorization Machine" /><published>2021-07-15T00:00:00+09:00</published><updated>2021-07-15T00:00:00+09:00</updated><id>http://localhost:4000/recommendation/Factorization_Machine</id><content type="html" xml:base="http://localhost:4000/recommendation/Factorization_Machine/">&lt;h2 id=&quot;factorization-machine&quot;&gt;Factorization Machine&lt;/h2&gt;
+&lt;/ul&gt;</content><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><category term="NLP" /><category term="Method" /><category term="code" /><summary type="html">Bert vs. TextRank Text Summarization 01. Text Summarization</summary></entry><entry><title type="html">Deep Learning over Multi-field Cateogorical Data</title><link href="http://localhost:4000/recommendation/multi_field_category/" rel="alternate" type="text/html" title="Deep Learning over Multi-field Cateogorical Data" /><published>2021-07-15T00:00:00+09:00</published><updated>2021-07-15T00:00:00+09:00</updated><id>http://localhost:4000/recommendation/multi_field_category</id><content type="html" xml:base="http://localhost:4000/recommendation/multi_field_category/">&lt;h2 id=&quot;deep-learning-over-multi-field-cateogorical-data&quot;&gt;Deep Learning over Multi-field Cateogorical Data&lt;/h2&gt;
+
+&lt;h2 id=&quot;1-ctr-모델&quot;&gt;1. CTR 모델&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;모델 비교
+    &lt;ul&gt;
+      &lt;li&gt;기존 CTR 예측 선형 모델 : : Logistic linear regression, naïve Bayes, FTRL logistic regression
+        &lt;ul&gt;
+          &lt;li&gt;장점 : 쉬운 활용법&lt;/li&gt;
+          &lt;li&gt;단점 : 낮은 효율성, 독립적인 입력데이터의 상관관계를 찾지 못함&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;기존 CTR 예측 비선형 모델 : Factorization Machine, Gradient Boosting Tree
+        &lt;ul&gt;
+          &lt;li&gt;장점 : 다른 특성들의 상관관계를 찾을수있음&lt;/li&gt;
+          &lt;li&gt;단점 :
+            &lt;ul&gt;
+              &lt;li&gt;모든 특성의 상관관계를 찾지는 못함&lt;/li&gt;
+              &lt;li&gt;각 모델에 특성화된 input 을 제공 해야함&lt;/li&gt;
+              &lt;li&gt;복잡하고 무거운 데이터를 표현하는데 제한된 모델&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;2-deep-learning&quot;&gt;2. Deep Learning&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Deep Learning :
+    &lt;ul&gt;
+      &lt;li&gt;고차원의 feature 를 저 차원의 feature 로 변형&lt;/li&gt;
+      &lt;li&gt;Sparse data  dense data&lt;/li&gt;
+      &lt;li&gt;데이터간의 연관성 탐색 (local dependency)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;비지도 학습 ( Unsupervised Learning )
+    &lt;ul&gt;
+      &lt;li&gt;고차원의 희소한 데이터를 저 차원의 밀집한 데이터로 학습시키는 Embedding method&lt;/li&gt;
+      &lt;li&gt;숨겨진 데이터 패턴 탐색&lt;/li&gt;
+      &lt;li&gt;DNN : Factorization Machine&lt;/li&gt;
+      &lt;li&gt;SNN : SNN-RBM, SNN-DAE&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;지도학습 ( Supervised Learning )
+    &lt;ul&gt;
+      &lt;li&gt;역전파 (Backpropagation) 지도 학습을 통한 fine-tuning&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;1-unsupervised-learning&quot;&gt;1. Unsupervised Learning&lt;/h3&gt;
+&lt;p&gt;Factorization- machine supported Neural Network ( RNN ) 
+&lt;img src=&quot;http://localhost:4000/assets/images/snn.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;구성 :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;입력층은 Factorization machine층을 지나 희소한 데이터가 dense 한 데이터로 학습&lt;/li&gt;
+  &lt;li&gt;Tanh 활성화 함수를 이용한 은닉층
+    &lt;ul&gt;
+      &lt;li&gt;큰 데이터에서 가장 빠르게 수렴됨(converges faster)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Sigmoid 활성화 함수를 이용한 출력층&lt;/li&gt;
+  &lt;li&gt;각각의 입력 데이터가 은닉층의 specific 한 필드와 연결&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;contrasting-unsupervised-learning&quot;&gt;Contrasting Unsupervised Learning&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/ctrrate.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;AUC (area under ROC curve) 결과, Logistic regression 과 Factorial Machine 에 비해 FNN 과 SNN-DAE 와 SNN-RBM 이 더 나은 결과를 가짐&lt;/li&gt;
+  &lt;li&gt;FNN 제일 좋은 테스트 결과를 가짐&lt;/li&gt;
+  &lt;li&gt;SNN-DAE 와 SNN-RBM은 비슷한 결과를 가짐&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;2-supervised-learning&quot;&gt;2. Supervised Learning&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;가중치 업데이트&lt;/li&gt;
+  &lt;li&gt;Back-propagation 을 이용한 비용함수 최적화&lt;/li&gt;
+  &lt;li&gt;Drop-out 정규화로 overfit 관리&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><category term="Recommendation" /><category term="Paper" /><summary type="html">Deep Learning over Multi-field Cateogorical Data</summary></entry><entry><title type="html">Factorization Machine</title><link href="http://localhost:4000/recommendation/Factorization_Machine/" rel="alternate" type="text/html" title="Factorization Machine" /><published>2021-07-15T00:00:00+09:00</published><updated>2021-07-15T00:00:00+09:00</updated><id>http://localhost:4000/recommendation/Factorization_Machine</id><content type="html" xml:base="http://localhost:4000/recommendation/Factorization_Machine/">&lt;h2 id=&quot;factorization-machine&quot;&gt;Factorization Machine&lt;/h2&gt;
 
 &lt;h3 id=&quot;01-factorization-matrix&quot;&gt;01. Factorization Matrix&lt;/h3&gt;
 &lt;h4 id=&quot;01--sparse-data&quot;&gt;01 ) sparse Data&lt;/h4&gt;
@@ -878,78 +1223,4 @@ A.Matrix Factorization model&lt;/p&gt;
 
 &lt;h4 id=&quot;기존-모델과-성능-비교&quot;&gt;기존 모델과 성능 비교&lt;/h4&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/pdnn/struct3.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;</content><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><category term="Recommendation" /><category term="Paper" /><summary type="html">Product-based Neural Network</summary></entry><entry><title type="html">Wide &amp;amp; Deep Learning for Recommendation System</title><link href="http://localhost:4000/recommendation/Wide&DeepLearning/" rel="alternate" type="text/html" title="Wide &amp;amp; Deep Learning for Recommendation System" /><published>2021-07-15T00:00:00+09:00</published><updated>2021-07-15T00:00:00+09:00</updated><id>http://localhost:4000/recommendation/Wide&amp;DeepLearning</id><content type="html" xml:base="http://localhost:4000/recommendation/Wide&amp;DeepLearning/">&lt;h3 id=&quot;추천-시스템&quot;&gt;추천 시스템&lt;/h3&gt;
-
-&lt;p&gt;기존 추천 시스템 구성 :&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;Memorization Model
-    &lt;ul&gt;
-      &lt;li&gt;각 특성의 곱(cross-product transformation)을 통해, 데이터상에서 공출현한 특성과 특성 사이의 직접적인 상관관계 추출&lt;/li&gt;
-      &lt;li&gt;E.g. : Logistic regression Model&lt;/li&gt;
-      &lt;li&gt;단점 :
-        &lt;ul&gt;
-          &lt;li&gt;기존 공출현하지 않은 새로운 특성과의 상관관계 추출 불가&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Generalized Model
-    &lt;ul&gt;
-      &lt;li&gt;고차원의 희소 데이터를 저차원의 데이터로 학습 (Embedding)&lt;/li&gt;
-      &lt;li&gt;기존에 없었던 새로운 특성의 상관관계를 찾아냄&lt;/li&gt;
-      &lt;li&gt;E.g. Factorization Machine, Deep Neural Network&lt;/li&gt;
-      &lt;li&gt;단점
-        &lt;ul&gt;
-          &lt;li&gt;over-generalize 로 인해 관련없는 아이템들을 추천할수 있음&lt;/li&gt;
-          &lt;li&gt;학습을 위해 특성을 만들어내는 feature engineering 필요&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;wide--deep-learning&quot;&gt;Wide &amp;amp; Deep Learning&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Wide component
-    &lt;ul&gt;
-      &lt;li&gt;Generalized linear model 𝑦=𝑤^𝑇 𝑥+𝑏
-  e.g. AND(gender=female, language =en)&lt;/li&gt;
-      &lt;li&gt;특성 상관관계 추출, 및 선형모델에 비선형 추가&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Deep component
-    &lt;ol&gt;
-      &lt;li&gt;Embedding vector 통해 고차원의 sparse 한 범주형 특성을 저차원의 dense 한 데이터로 변화&lt;/li&gt;
-      &lt;li&gt;비용 함수 축소를 위해 학습&lt;/li&gt;
-      &lt;li&gt;은닉층에 입력
-        &lt;ul&gt;
-          &lt;li&gt;ReLU 활성화 함수&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;joint-training-of-wide--deep-model&quot;&gt;Joint Training of Wide &amp;amp; Deep Model&lt;/h3&gt;
-
-&lt;p&gt;Joint Training : Wide component 와  Deep component 의 출력을 weighted sum 을 이용하여 병합&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Weighted sum : Wide component 중 부분만 추출하여 Deep model의 단점을 보완&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Back-propagating using Stochastic Gradient Descendent
-    &lt;ul&gt;
-      &lt;li&gt;Stochastic 경사 하강법을 이용한 역전파 함수 로 병합된 모델 훈련&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;ReLU 활성화 함수를 이용한 3개의 은닉층 학습&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Logtistic 활성화 함수이용한 출력층 생성&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/widedeep/img1.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;</content><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><category term="Recommendation" /><category term="Paper" /><summary type="html">추천 시스템</summary></entry></feed>
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/pdnn/struct3.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;</content><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><category term="Recommendation" /><category term="Paper" /><summary type="html">Product-based Neural Network</summary></entry></feed>

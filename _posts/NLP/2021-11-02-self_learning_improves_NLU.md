@@ -1,5 +1,9 @@
 ---
 title: Self Learning improves NLU
+categories:
+- NLP
+tags:
+- Paper
 ---
 
 [youtube review](https://youtu.be/9iJLzmrUN-8)

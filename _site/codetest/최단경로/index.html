@@ -1,0 +1,1017 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.20.1 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>최단경로 - Scribbling every Miscellaneous thing</title>
+<meta name="description" content="최단 경로 : 가장 빠른 길 찾기 모든 지점에서 다른 모든 지점까지의 최단 경로를 모두 구해야하는 경우">
+
+
+  <meta name="author" content="Irene Kim">
+  
+  <meta property="article:author" content="Irene Kim">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Scribbling every Miscellaneous thing">
+<meta property="og:title" content="최단경로">
+<meta property="og:url" content="http://localhost:4000/codetest/%EC%B5%9C%EB%8B%A8%EA%B2%BD%EB%A1%9C/">
+
+
+  <meta property="og:description" content="최단 경로 : 가장 빠른 길 찾기 모든 지점에서 다른 모든 지점까지의 최단 경로를 모두 구해야하는 경우">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-11-03T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/codetest/%EC%B5%9C%EB%8B%A8%EA%B2%BD%EB%A1%9C/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Irene Kim",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Scribbling every Miscellaneous thing Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Irene in Wonder_AI&
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/posts/">연도별 포스트</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#codetest" itemprop="item"><span itemprop="name">Codetest</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">최단경로</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/my_icon.jpeg" alt="Irene Kim" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Irene Kim</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Voyage to be Data Scientist</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Somewhere over the Rainbow</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/irenejy93" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:irenee.jy93@gmail.com">
+            <meta itemprop="email" content="irenee.jy93@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="최단경로">
+    <meta itemprop="description" content="최단 경로 : 가장 빠른 길 찾기모든 지점에서 다른 모든 지점까지의 최단 경로를 모두 구해야하는 경우">
+    <meta itemprop="datePublished" content="2021-11-03T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">최단경로
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <h4 id="최단-경로--가장-빠른-길-찾기">최단 경로 : 가장 빠른 길 찾기</h4>
+<p>모든 지점에서 다른 모든 지점까지의 최단 경로를 모두 구해야하는 경우</p>
+
+<ol>
+  <li>다익스트라 최단경로 알고리즘</li>
+  <li>플로이드 워셜</li>
+  <li>벨만 포드 알고리즘</li>
+</ol>
+
+<p>이중 다익스르라와 폴로이드 워셜 알고리즘이 코딩 테스트 문제에서 가장 많이 등장하는 유형 
+그리디 알고리즘과 다이나믹 프로그래밍 알고리즘이 최단경로 알고리즘에 그대로 적용된다.</p>
+
+<h4 id="다익스트라">다익스트라</h4>
+<ol>
+  <li>출발 노드 설정</li>
+  <li>최단거리 테이블 초기화</li>
+  <li>방문하지 않는 노드중에서 최단 거리가 가장 짧은 노드를 선택</li>
+  <li>해당 노드를 거쳐 다른 노드로 가는 비용을 계산하여 최단 거리 테이블을 갱신</li>
+  <li>3-4 반복</li>
+</ol>
+
+<p>구현하는 방법 2가지</p>
+<ol>
+  <li>구현이 쉽지만 느리게 동작하는코드</li>
+  <li>구현하기에 조금 더 까다롭지만 빠르게 동작하는 코드</li>
+</ol>
+
+<p>2 가 될때까지 이해하고 구현할수있도록 연습해야한다.</p>
+
+<h3 id="방문하지-않은-노드중-최단거리가-가장-짧은-노드를-선택하기-위해-매-단계마다-1차원의-리스트의-모든-원소를-순차탐색해야함">방문하지 않은 노드중 최단거리가 가장 짧은 노드를 선택하기 위해 매 단계마다 1차원의 리스트의 모든 원소를 순차탐색해야함</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sys</span>
+<span class="nb">input</span> <span class="o">=</span> <span class="n">sys</span><span class="p">.</span><span class="n">stdin</span><span class="p">.</span><span class="n">readline</span>
+<span class="n">INF</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">1e9</span><span class="p">)</span>
+
+
+
+<span class="c1"># 각 노드에 연결되어있는 노드에 대한 정보를 담는 리스트 
+</span><span class="n">graph</span> <span class="o">=</span> <span class="p">[[]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+
+<span class="c1">#방문한적있는 체크 목적의 리스트 만들기
+</span><span class="n">visited</span><span class="o">=</span> <span class="p">[</span><span class="bp">False</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1">#최단 거리 테이블 모두 무기한으로 초기화 
+</span><span class="n">distance</span> <span class="o">=</span> <span class="p">[</span><span class="n">INF</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+    <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">().</span><span class="n">split</span><span class="p">())</span>
+    <span class="c1"># a 번노드에서 b로 가능 비용이 c 라는 의미
+</span>
+    <span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">].</span><span class="n">append</span><span class="p">((</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">get_smallest_node</span><span class="p">():</span>
+    <span class="n">min_value</span> <span class="o">=</span> <span class="n">INF</span>
+    <span class="n">index</span> <span class="o">=</span><span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">distance</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">min_value</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">visited</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+            <span class="n">min_value</span> <span class="o">=</span> <span class="n">distance</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            
+            <span class="n">index</span> <span class="o">=</span><span class="n">i</span>
+    <span class="k">return</span> <span class="n">index</span>
+
+<span class="k">def</span> <span class="nf">dijkstra</span><span class="p">(</span><span class="n">start</span><span class="p">):</span>
+    <span class="n">distance</span><span class="p">[</span><span class="n">start</span><span class="p">]</span> <span class="o">=</span><span class="mi">0</span>
+    <span class="n">visited</span><span class="p">[</span><span class="n">start</span><span class="p">]</span> <span class="o">=</span><span class="bp">True</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="n">start</span><span class="p">]:</span>
+        <span class="n">distance</span><span class="p">[</span><span class="n">j</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span><span class="n">j</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">now</span> <span class="o">=</span> <span class="n">get_smallest_node</span><span class="p">()</span>
+        <span class="n">visited</span><span class="p">[</span><span class="n">now</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+        
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="n">now</span><span class="p">]:</span>
+            <span class="n">cost</span> <span class="o">=</span> <span class="n">distance</span><span class="p">[</span><span class="n">now</span><span class="p">]</span> <span class="o">+</span> <span class="n">j</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            
+            <span class="k">if</span> <span class="n">cost</span> <span class="o">&lt;</span> <span class="n">distance</span><span class="p">[</span><span class="n">j</span><span class="p">[</span><span class="mi">0</span><span class="p">]]:</span>
+                <span class="n">distance</span><span class="p">[</span><span class="n">j</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="n">cost</span>
+                
+<span class="n">dijkstra</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">distance</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span><span class="n">INF</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"INFINITY"</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">distance</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</code></pre></div></div>
+
+<h3 id="방법2--개선된-다익스트라-알고리즘">방법2 : 개선된 다익스트라 알고리즘</h3>
+
+<p>힙 : 힙 라죠구조는 큐를 구현하기 위한 자료구조중 하나 
+우선순위 큐 : 우선순위가 가장 높은 데이터를 가장 먼저 삭제  headq 또는 PriorityQueue 사용
+현재 가장 가까운 노드를 저장하기 위한 목적으로만 우선순위 큐를 추가로 이용</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">heapq</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="nb">input</span> <span class="o">=</span> <span class="n">sys</span><span class="p">.</span><span class="n">stdin</span><span class="p">.</span><span class="n">readline</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">INF</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">1e9</span><span class="p">)</span>
+<span class="n">n</span><span class="p">,</span><span class="n">m</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span> <span class="p">,</span> <span class="nb">input</span><span class="p">().</span><span class="n">split</span><span class="p">())</span>
+
+<span class="n">start</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+
+<span class="n">graph</span> <span class="o">=</span> <span class="p">[[]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+
+<span class="n">distance</span> <span class="o">=</span> <span class="p">[</span><span class="n">INF</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+    <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">().</span><span class="n">split</span><span class="p">())</span>
+    <span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">=</span> <span class="n">append</span><span class="p">((</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">))</span>
+    
+<span class="k">def</span> <span class="nf">dijkstra</span><span class="p">(</span><span class="n">start</span><span class="p">):</span>
+    <span class="n">q</span><span class="o">=</span><span class="p">[]</span>
+    <span class="c1"># 시작 노드의 최단 경로는 0 으로 설정 큐에삽입
+</span>    <span class="n">heapq</span><span class="p">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">start</span><span class="p">))</span>
+    <span class="n">distance</span><span class="p">[</span><span class="n">start</span><span class="p">]</span> <span class="o">=</span><span class="mi">0</span>
+    
+    <span class="k">while</span> <span class="n">q</span><span class="p">:</span>
+        <span class="n">dist</span><span class="p">,</span> <span class="n">now</span> <span class="o">=</span> <span class="n">heapq</span><span class="p">.</span><span class="n">heappop</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="n">distance</span><span class="p">[</span><span class="n">now</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">dist</span><span class="p">:</span>
+            <span class="k">continue</span>
+            
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="n">now</span><span class="p">]:</span>
+            <span class="n">cost</span> <span class="o">=</span> <span class="n">dist</span> <span class="o">+</span> <span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">cost</span> <span class="o">&lt;</span> <span class="n">distance</span><span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]]:</span>
+                <span class="n">distance</span><span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span><span class="n">cost</span>
+                <span class="n">heapq</span><span class="p">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">cost</span><span class="p">,</span> <span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                
+<span class="n">dijkstra</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">distance</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">INF</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"INFINITY"</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">distance</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</code></pre></div></div>
+
+<h3 id="플로이드-워셜-알고리즘">플로이드 워셜 알고리즘</h3>
+<p>다익스트라 알고리즘은 한지점에서 다른 특정 지점까지의 초단경로를 구하는 경우에 사용하느 최단경우이면
+플로이드 워셜 알고리즘은 모든 지점에서다른 모든 지점까지의 최단 경로를 모두 구해야하는 경우 사용할수있는 알고리즘</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">INF</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">1e9</span><span class="p">)</span> 
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">m</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+
+<span class="n">graph</span> <span class="o">=</span> <span class="p">[[</span><span class="n">INF</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+
+<span class="c1"># 자기 자신으로 가는 비용은 0
+</span>
+<span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span> <span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">a</span> <span class="o">==</span><span class="n">b</span> <span class="p">:</span>
+            <span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span><span class="mi">0</span>
+        
+            
+<span class="c1"># 각 간선에 따라 정보를 받아 그 값으로 고치화 
+</span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+    <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">().</span><span class="n">split</span><span class="p">())</span>
+    <span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">b</span><span class="p">]</span><span class="o">=</span><span class="n">c</span>
+    
+<span class="c1"># 점화식에 따라 플로이드 위셜 알고리즘을 수행 
+</span><span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">b</span><span class="p">]</span> <span class="p">,</span> <span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">+</span> <span class="n">graph</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">b</span><span class="p">])</span>
+            
+<span class="c1">#수행된 결과 출력 
+</span><span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">b</span><span class="p">]</span> <span class="o">==</span><span class="n">INF</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">"INFINITY"</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s">' '</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span> 
+            <span class="k">print</span><span class="p">(</span><span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">b</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="s">" "</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">INF</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">1e9</span><span class="p">)</span> 
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">m</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+
+<span class="n">graph</span> <span class="o">=</span> <span class="p">[[</span><span class="n">INF</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+
+<span class="c1"># 자기 자신으로 가는 비용은 0
+</span>
+<span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span> <span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">a</span> <span class="o">==</span><span class="n">b</span> <span class="p">:</span>
+            <span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span><span class="mi">0</span>
+            
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span> <span class="c1">#노드와  노드 사이 거리
+</span>    <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">().</span><span class="n">split</span><span class="p">())</span>
+    <span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">b</span><span class="p">]</span><span class="o">=</span><span class="n">c</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#수행된 결과 출력 
+</span><span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">b</span><span class="p">]</span> <span class="o">==</span><span class="n">INF</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">"INFINITY"</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s">' '</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span> 
+            <span class="k">print</span><span class="p">(</span><span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">b</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="s">" "</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>0 4 8 6<br />
+3 0 7 9<br />
+5 9 0 4<br />
+7 11 2 0</p>
+
+<h3 id="q2-미래도시">Q2. 미래도시</h3>
+<p>방문 판매원 A는 많은 회사가 모여있는 미래 도시에 있다. 1~N 까지의 회사가있고 특정회사들은 서로 도로를 통해연결되어있다. A는 현재 1번회사에 있으며 x회사에 방문해 물건을 팔려고한다. 회사에서 다른 회사로 가는방법은 특정 도로만을 사용해야하고 양방향으로 이동 가능 거리는 1. 
+방문판배원은 소개팅도 가는데, X 회사에 가기전에 소개팅 사앧 회사 k 회사를방문한후 X방문 최소 시간을 계산하는 프로그램 계산</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">INF</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">1e9</span><span class="p">)</span>
+
+<span class="n">n</span><span class="p">,</span><span class="n">m</span> <span class="o">=</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">input</span><span class="p">().</span><span class="n">split</span><span class="p">())</span>
+
+<span class="n">graph</span> <span class="o">=</span> <span class="p">[[</span><span class="n">INF</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+
+<span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">a</span><span class="o">==</span><span class="n">b</span><span class="p">:</span>
+            <span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span><span class="mi">0</span>
+            
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+    <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">().</span><span class="n">split</span><span class="p">())</span>
+    <span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">b</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span>
+    <span class="n">graph</span><span class="p">[</span><span class="n">b</span><span class="p">][</span><span class="n">a</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span>
+</code></pre></div></div>
+
+<p>graph</p>
+
+<p>[[1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000],<br />
+ [1000000000, 0, 1, 1, 1, 1000000000],<br />
+ [1000000000, 1, 0, 1000000000, 1, 1000000000],<br />
+ [1000000000, 1, 1000000000, 0, 1, 1],<br />
+ [1000000000, 1, 1, 1, 0, 1],<br />
+ [1000000000, 1000000000, 1000000000, 1, 1, 0]]</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">().</span><span class="n">split</span><span class="p">())</span>
+
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">b</span><span class="p">]</span> <span class="p">,</span> <span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">+</span> <span class="n">graph</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">b</span><span class="p">])</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        4 5
+</code></pre></div></div>
+
+<p>graph</p>
+
+<p>[[1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000],<br />
+ [1000000000, 0, 1, 1, 1, 2],<br />
+ [1000000000, 1, 0, 2, 1, 2],<br />
+ [1000000000, 1, 2, 0, 1, 1],<br />
+ [1000000000, 1, 1, 1, 0, 1],<br />
+ [1000000000, 2, 2, 1, 1, 0]]</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">distance</span> <span class="o">=</span> <span class="n">graph</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">+</span> <span class="n">graph</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">x</span><span class="p">]</span>
+
+<span class="k">if</span> <span class="n">distance</span> <span class="o">&gt;=</span> <span class="n">INF</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'-1'</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">distance</span><span class="p">)</span>
+    
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        3
+</code></pre></div></div>
+
+<h3 id="q3-전보">Q3. 전보</h3>
+
+<p>n 개 도시 , 도시 x –&gt; 도시 y 통로만 통해서 가능<br />
+도시 c 에 위급 상황 발생, 도시 c에서 출발하여 모든 도시에 메시지를 보냄<br />
+받을수있는 도시의 개수와, 매사자룰 받는데 걸리는 시간 계산</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">heapq</span>
+<span class="c1"># import sys
+</span>
+<span class="c1"># input = sys.stdin.readline/
+</span><span class="n">INF</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">1e9</span><span class="p">)</span>
+
+<span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">start</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">input</span><span class="p">().</span><span class="n">split</span><span class="p">())</span>
+
+<span class="n">graph</span><span class="o">=</span><span class="p">[[]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+
+<span class="n">distance</span> <span class="o">=</span> <span class="p">[</span><span class="n">INF</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+    <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">input</span><span class="p">().</span><span class="n">split</span><span class="p">())</span>
+    <span class="n">graph</span><span class="p">[</span><span class="n">x</span><span class="p">].</span><span class="n">append</span><span class="p">((</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">))</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3 2 1  
+1 2 4  
+1 3 2  
+</code></pre></div></div>
+
+<p>graph</p>
+
+<p>[[], [(2, 4), (3, 2)], [], []]</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">dijkstar</span><span class="p">(</span><span class="n">start</span><span class="p">):</span>
+    <span class="n">q</span><span class="o">=</span> <span class="p">[]</span>
+    <span class="c1"># 시작 노드로 가기 위한 최단경로는 0 으로 설정 큐에 삽입
+</span>    <span class="n">heapq</span><span class="p">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">start</span><span class="p">))</span>
+    <span class="n">distance</span><span class="p">[</span><span class="n">start</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span>
+    
+    <span class="k">while</span> <span class="n">q</span> <span class="p">:</span> <span class="c1">#q 가 비어있지않으면
+</span>        <span class="c1">#가장 최단거리의 짧은 노드에 대한 정보 꺼내기
+</span>        <span class="n">dist</span><span class="p">,</span> <span class="n">now</span> <span class="o">=</span> <span class="n">heapq</span><span class="p">.</span><span class="n">heappop</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="n">distance</span><span class="p">[</span><span class="n">now</span><span class="p">]</span> <span class="o">&lt;</span><span class="n">dist</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="c1">#현재 노드와 연결된 다른 인접한 노드 확인
+</span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="n">now</span><span class="p">]:</span>
+            <span class="n">cost</span> <span class="o">=</span> <span class="n">dist</span> <span class="o">+</span> <span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            
+            <span class="c1"># 현재 노드를 거쳐서 다른 노드로 이동하는 거리가 더 짧은경우
+</span>            <span class="k">if</span> <span class="n">cost</span> <span class="o">&lt;</span><span class="n">distance</span><span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]]:</span>
+                <span class="n">distance</span><span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="o">=</span><span class="n">cost</span>
+                <span class="n">heapq</span><span class="p">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="p">(</span><span class="n">cost</span><span class="p">,</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+
+                
+<span class="n">dijkstar</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+
+<span class="n">count</span> <span class="o">=</span><span class="mi">0</span>
+<span class="n">max_distance</span> <span class="o">=</span><span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">distance</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">d</span><span class="o">!=</span> <span class="n">INF</span><span class="p">:</span>
+        <span class="n">count</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="n">max_distance</span><span class="o">=</span><span class="nb">max</span><span class="p">(</span><span class="n">max_distance</span><span class="p">,</span><span class="n">d</span><span class="p">)</span>
+        
+<span class="k">print</span><span class="p">(</span><span class="n">count</span><span class="o">-</span><span class="mi">1</span> <span class="p">,</span> <span class="n">max_distance</span><span class="p">)</span>
+
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2 4
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#code" class="page__taxonomy-item" rel="tag">code</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#codetest" class="page__taxonomy-item" rel="tag">CodeTest</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-11-03T00:00:00+09:00">November 3, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%EC%B5%9C%EB%8B%A8%EA%B2%BD%EB%A1%9C%20http%3A%2F%2Flocalhost%3A4000%2Fcodetest%2F%25EC%25B5%259C%25EB%258B%25A8%25EA%25B2%25BD%25EB%25A1%259C%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fcodetest%2F%25EC%25B5%259C%25EB%258B%25A8%25EA%25B2%25BD%25EB%25A1%259C%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fcodetest%2F%25EC%25B5%259C%25EB%258B%25A8%25EA%25B2%25BD%25EB%25A1%259C%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/recommendation/Finegrained/" class="pagination--pager" title="Fine-grained Interest Matching for Neural News Recommendation
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/recommendation/Finegrained/" rel="permalink">Fine-grained Interest Matching for Neural News Recommendation
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Review on Youtube
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/nlp/self_learning_improves_NLU/" rel="permalink">Self Learning improves NLU
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">youtube review
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/recommendation/multi_field_category/" rel="permalink">Deep Learning over Multi-field Cateogorical Data
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Deep Learning over Multi-field Cateogorical Data
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/recommendation/Wide&DeepLearning/" rel="permalink">Wide &amp; Deep Learning for Recommendation System
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">추천 시스템
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:irenee.jy93@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/irenejy93" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 Irene Kim. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

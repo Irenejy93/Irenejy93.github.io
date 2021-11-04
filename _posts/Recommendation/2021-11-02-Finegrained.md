@@ -1,5 +1,9 @@
 ---
 title: Fine-grained Interest Matching for Neural News Recommendation
+tags:
+- Paper
+categories:
+- Recommendation
 ---
 
 [Review on Youtube](https://youtu.be/XW93QvbFlaQ)
