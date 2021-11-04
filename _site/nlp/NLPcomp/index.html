@@ -1,0 +1,1026 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.20.1 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>NLP 모델 비교 - Scribbling every Miscellaneous thing</title>
+<meta name="description" content="```python import random import happybase import hashlib import datetime from datetime import datetime, timezone,timedelta import furl">
+
+
+  <meta name="author" content="Irene Kim">
+  
+  <meta property="article:author" content="Irene Kim">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Scribbling every Miscellaneous thing">
+<meta property="og:title" content="NLP 모델 비교">
+<meta property="og:url" content="http://localhost:4000/nlp/NLPcomp/">
+
+
+  <meta property="og:description" content="```python import random import happybase import hashlib import datetime from datetime import datetime, timezone,timedelta import furl">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-11-05T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/nlp/NLPcomp/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Irene Kim",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Scribbling every Miscellaneous thing Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Irene in Wonder_AI&
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/posts/">연도별 포스트</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#nlp" itemprop="item"><span itemprop="name">Nlp</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">NLP 모델 비교</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/my_icon.jpeg" alt="Irene Kim" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Irene Kim</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Voyage to be Data Scientist</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Somewhere over the Rainbow</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/irenejy93" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:irenee.jy93@gmail.com">
+            <meta itemprop="email" content="irenee.jy93@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="NLP 모델 비교">
+    <meta itemprop="description" content="```pythonimport randomimport happybaseimport hashlibimport datetimefrom datetime import datetime, timezone,timedeltaimport furl">
+    <meta itemprop="datePublished" content="2021-11-05T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">NLP 모델 비교
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          7 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">happybase</span>
+<span class="kn">import</span> <span class="nn">hashlib</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timezone</span><span class="p">,</span><span class="n">timedelta</span>
+<span class="kn">import</span> <span class="nn">furl</span>
+
+
+<span class="kn">import</span> <span class="nn">requests</span><span class="p">,</span> <span class="n">json</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">npa</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+<span class="kn">from</span> <span class="nn">pyhive</span> <span class="kn">import</span> <span class="n">hive</span>
+<span class="kn">import</span> <span class="nn">urllib.request</span>
+
+<span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+<span class="kn">from</span> <span class="nn">furl</span> <span class="kn">import</span> <span class="n">furl</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">base64</span>
+<span class="kn">from</span> <span class="nn">hashlib</span> <span class="kn">import</span> <span class="n">md5</span>
+
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">input_dt</span> <span class="o">=</span> <span class="s">'20201228'</span>
+<span class="n">target_dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">input_dt</span><span class="p">,</span> <span class="s">"%Y%m%d"</span><span class="p">)</span>
+<span class="n">stop_dt</span><span class="o">=</span> <span class="n">target_dt</span><span class="p">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">"%Y-%m-%d"</span><span class="p">)</span>
+<span class="n">start_dt</span><span class="o">=</span> <span class="p">(</span><span class="n">target_dt</span> <span class="o">-</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span> <span class="o">=</span> <span class="mi">7</span><span class="p">)).</span><span class="n">strftime</span><span class="p">(</span><span class="s">"%Y-%m-%d"</span><span class="p">)</span>
+
+<span class="n">regions_n</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">test_data_size</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="n">hb_conn</span> <span class="o">=</span> <span class="n">happybase</span><span class="p">.</span><span class="n">Connection</span><span class="p">(</span><span class="s">'daou-bd-r01a01'</span><span class="p">,</span> <span class="mi">9090</span><span class="p">)</span>
+<span class="n">tb_news</span> <span class="o">=</span> <span class="n">hb_conn</span><span class="p">.</span><span class="n">table</span><span class="p">(</span><span class="s">"KWAM_NEWS"</span><span class="p">)</span>
+<span class="c1"># tb_lookup = hb_conn.table("KWAM_LOOKUP")
+</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># url = "https://www.cnbc.com/2020/12/28/biden-will-invoke-defense-production-act-to-boost-covid-vaccine-production-advisor-says.html"
+# enc_url = md5(url.encode()).hexdigest()
+</span></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># rct = tb_news.row(enc_url)[b'CF02:PARSED_CONTENT']
+</span></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># rct.decode()
+</span></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">regions_n</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">test_data_size</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="n">hb_conn</span> <span class="o">=</span> <span class="n">happybase</span><span class="p">.</span><span class="n">Connection</span><span class="p">(</span><span class="s">'daou-bd-r01a01'</span><span class="p">,</span> <span class="mi">9090</span><span class="p">)</span>
+<span class="n">tb_news</span> <span class="o">=</span> <span class="n">hb_conn</span><span class="p">.</span><span class="n">table</span><span class="p">(</span><span class="s">"KWAM_NEWS"</span><span class="p">)</span>
+<span class="c1"># tb_lookup = hb_conn.table("KWAM_LOOKUP")
+# tb_testlookup = hb_conn.table("TEST_KWAM_LOOKUP")
+</span></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">input_dt</span> <span class="o">=</span> <span class="s">'20201104'</span>
+<span class="n">target_dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">input_dt</span><span class="p">,</span> <span class="s">"%Y%m%d"</span><span class="p">)</span>
+<span class="n">stop_dt</span><span class="o">=</span> <span class="n">target_dt</span><span class="p">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">"%Y-%m-%dT%H:%M:%S"</span><span class="p">)</span>
+<span class="n">start_dt</span><span class="o">=</span> <span class="p">(</span><span class="n">target_dt</span> <span class="o">-</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span> <span class="o">=</span> <span class="mi">7</span><span class="p">)).</span><span class="n">strftime</span><span class="p">(</span><span class="s">"%Y-%m-%dT%H:%M:%S"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># test_lookup_data = []
+# for i in range(10):
+#     test_lookup_data+=[a for a in tb_news.scan(
+#                 row_start= f'00{i}_{start_dt}', row_stop = f'00{i}_{stop_dt}')]
+</span>    
+<span class="c1">#     (filter="SingleColumnValueFilter ('blah','blouh',=,'regexstring:^batman$')")
+</span></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">samplenews</span> <span class="o">=</span> <span class="p">[</span><span class="n">value</span> <span class="p">[</span><span class="sa">b</span><span class="s">'CF02:PARSED_CONTENT'</span><span class="p">].</span><span class="n">decode</span><span class="p">()</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">tb_news</span><span class="p">.</span><span class="n">scan</span><span class="p">(</span><span class="n">limit</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)]</span>
+</code></pre></div></div>
+
+<h2 id="1-gatener">1. GATENER</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://cloud-api.gate.ac.uk/process-document/annie-named-entity-recognizer"</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'text/plain'</span><span class="p">}</span>
+<span class="k">def</span> <span class="nf">gatener</span><span class="p">(</span><span class="n">original</span><span class="p">):</span>
+    <span class="n">gatelist</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">sentence</span> <span class="o">=</span> <span class="n">original</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">)</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">sentence</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">).</span><span class="n">json</span><span class="p">()</span>
+
+    <span class="kn">import</span> <span class="nn">json</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">orgdict</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="n">loads</span><span class="p">(</span><span class="n">result</span><span class="p">)[</span><span class="s">'entities'</span><span class="p">][</span><span class="s">'Organization'</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">orgdict</span><span class="p">:</span>
+            <span class="n">gatelist</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">original</span><span class="p">[</span><span class="n">d</span><span class="p">[</span><span class="s">'indices'</span><span class="p">][</span><span class="mi">0</span><span class="p">]:</span><span class="n">d</span><span class="p">[</span><span class="s">'indices'</span><span class="p">][</span><span class="mi">1</span><span class="p">]])</span>
+                        
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'None'</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">gatelist</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">gatelist</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">sentence</span> <span class="o">=</span> <span class="n">samplenews</span><span class="p">[</span><span class="mi">8</span><span class="p">].</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">sentence</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">).</span><span class="n">json</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">json</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">orgdict</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="n">loads</span><span class="p">(</span><span class="n">result</span><span class="p">)[</span><span class="s">'entities'</span><span class="p">][</span><span class="s">'Organization'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">orgdict</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="n">loads</span><span class="p">(</span><span class="n">result</span><span class="p">)[</span><span class="s">'entities'</span><span class="p">][</span><span class="s">'Organization'</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">orgdict</span><span class="p">:</span>
+    <span class="n">organization</span> <span class="o">=</span> <span class="n">samplenews</span><span class="p">[</span><span class="mi">8</span><span class="p">][</span><span class="n">d</span><span class="p">[</span><span class="s">'indices'</span><span class="p">][</span><span class="mi">0</span><span class="p">]:</span><span class="n">d</span><span class="p">[</span><span class="s">'indices'</span><span class="p">][</span><span class="mi">1</span><span class="p">]]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">organization</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'Republicans'
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">gatener</span><span class="p">(</span><span class="n">samplenews</span><span class="p">[</span><span class="mi">6</span><span class="p">])))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>['IIT', 'Hindustan Times', 'Indian Institute of Technology', 'Twitter']
+</code></pre></div></div>
+
+<h1 id="2-stanford-core-nlp">2. Stanford Core NLP</h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">!</span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">spacy</span> <span class="n">download</span> <span class="n">en_core_web_lg</span>
+<span class="kn">import</span> <span class="nn">spacy</span>
+<span class="n">sp_lg</span> <span class="o">=</span> <span class="n">spacy</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="s">'en_core_web_lg'</span><span class="p">)</span> 
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Requirement already satisfied: en_core_web_lg==2.2.5 from https://github.com/explosion/spacy-models/releases/download/en_core_web_lg-2.2.5/en_core_web_lg-2.2.5.tar.gz#egg=en_core_web_lg==2.2.5 in /data/venv/lib/python3.6/site-packages (2.2.5)
+Requirement already satisfied: spacy&gt;=2.2.2 in /data/venv/lib/python3.6/site-packages (from en_core_web_lg==2.2.5) (2.2.3)
+Requirement already satisfied: blis&lt;0.5.0,&gt;=0.4.0 in /data/venv/lib/python3.6/site-packages (from spacy&gt;=2.2.2-&gt;en_core_web_lg==2.2.5) (0.4.1)
+Requirement already satisfied: thinc&lt;7.4.0,&gt;=7.3.0 in /data/venv/lib/python3.6/site-packages (from spacy&gt;=2.2.2-&gt;en_core_web_lg==2.2.5) (7.3.1)
+Requirement already satisfied: plac&lt;1.2.0,&gt;=0.9.6 in /data/venv/lib/python3.6/site-packages (from spacy&gt;=2.2.2-&gt;en_core_web_lg==2.2.5) (1.1.3)
+Requirement already satisfied: preshed&lt;3.1.0,&gt;=3.0.2 in /data/venv/lib/python3.6/site-packages (from spacy&gt;=2.2.2-&gt;en_core_web_lg==2.2.5) (3.0.2)
+Requirement already satisfied: numpy&gt;=1.15.0 in /data/venv/lib/python3.6/site-packages (from spacy&gt;=2.2.2-&gt;en_core_web_lg==2.2.5) (1.18.0)
+Requirement already satisfied: catalogue&lt;1.1.0,&gt;=0.0.7 in /data/venv/lib/python3.6/site-packages (from spacy&gt;=2.2.2-&gt;en_core_web_lg==2.2.5) (1.0.0)
+Requirement already satisfied: murmurhash&lt;1.1.0,&gt;=0.28.0 in /data/venv/lib/python3.6/site-packages (from spacy&gt;=2.2.2-&gt;en_core_web_lg==2.2.5) (1.0.2)
+Requirement already satisfied: cymem&lt;2.1.0,&gt;=2.0.2 in /data/venv/lib/python3.6/site-packages (from spacy&gt;=2.2.2-&gt;en_core_web_lg==2.2.5) (2.0.3)
+Requirement already satisfied: requests&lt;3.0.0,&gt;=2.13.0 in /data/venv/lib/python3.6/site-packages (from spacy&gt;=2.2.2-&gt;en_core_web_lg==2.2.5) (2.22.0)
+Requirement already satisfied: setuptools in /data/venv/lib/python3.6/site-packages (from spacy&gt;=2.2.2-&gt;en_core_web_lg==2.2.5) (50.3.2)
+Requirement already satisfied: srsly&lt;1.1.0,&gt;=0.1.0 in /data/venv/lib/python3.6/site-packages (from spacy&gt;=2.2.2-&gt;en_core_web_lg==2.2.5) (1.0.2)
+Requirement already satisfied: wasabi&lt;1.1.0,&gt;=0.4.0 in /data/venv/lib/python3.6/site-packages (from spacy&gt;=2.2.2-&gt;en_core_web_lg==2.2.5) (0.8.0)
+Requirement already satisfied: tqdm&lt;5.0.0,&gt;=4.10.0 in /data/venv/lib/python3.6/site-packages (from thinc&lt;7.4.0,&gt;=7.3.0-&gt;spacy&gt;=2.2.2-&gt;en_core_web_lg==2.2.5) (4.41.1)
+Requirement already satisfied: importlib-metadata&gt;=0.20; python_version &lt; "3.8" in /data/venv/lib/python3.6/site-packages (from catalogue&lt;1.1.0,&gt;=0.0.7-&gt;spacy&gt;=2.2.2-&gt;en_core_web_lg==2.2.5) (1.7.0)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /data/venv/lib/python3.6/site-packages (from requests&lt;3.0.0,&gt;=2.13.0-&gt;spacy&gt;=2.2.2-&gt;en_core_web_lg==2.2.5) (2018.8.24)
+Requirement already satisfied: chardet&lt;3.1.0,&gt;=3.0.2 in /data/venv/lib/python3.6/site-packages (from requests&lt;3.0.0,&gt;=2.13.0-&gt;spacy&gt;=2.2.2-&gt;en_core_web_lg==2.2.5) (3.0.4)
+Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,&lt;1.26,&gt;=1.21.1 in /data/venv/lib/python3.6/site-packages (from requests&lt;3.0.0,&gt;=2.13.0-&gt;spacy&gt;=2.2.2-&gt;en_core_web_lg==2.2.5) (1.23)
+Requirement already satisfied: idna&lt;2.9,&gt;=2.5 in /data/venv/lib/python3.6/site-packages (from requests&lt;3.0.0,&gt;=2.13.0-&gt;spacy&gt;=2.2.2-&gt;en_core_web_lg==2.2.5) (2.7)
+Requirement already satisfied: zipp&gt;=0.5 in /data/venv/lib/python3.6/site-packages (from importlib-metadata&gt;=0.20; python_version &lt; "3.8"-&gt;catalogue&lt;1.1.0,&gt;=0.0.7-&gt;spacy&gt;=2.2.2-&gt;en_core_web_lg==2.2.5) (3.1.0)
+[33mWARNING: You are using pip version 20.2.4; however, version 20.3.3 is available.
+You should consider upgrading via the '/data/venv/bin/python3 -m pip install --upgrade pip' command.[0m
+[38;5;2m✔ Download and installation successful[0m
+You can now load the model via spacy.load('en_core_web_lg')
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">spacy_large_ner</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
+    <span class="n">listss</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span><span class="n">ent</span><span class="p">.</span><span class="n">text</span><span class="p">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">sp_lg</span><span class="p">(</span><span class="n">document</span><span class="p">).</span><span class="n">ents</span> <span class="k">if</span> <span class="n">ent</span><span class="p">.</span><span class="n">label_</span> <span class="o">==</span><span class="s">'ORG'</span><span class="p">]))</span>
+    <span class="k">return</span>  <span class="n">listss</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">spacy_large_ner</span><span class="p">(</span><span class="n">samplenews</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="c1"># print(dd)
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>['The Washington Post',
+ 'the Department of Health and Human Services',
+ 'SARS-CoV-2',
+ 'Amazon',
+ 'Sacramento County Superior Court']
+</code></pre></div></div>
+
+<h1 id="3-fair">3. Fair</h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">flair.data</span> <span class="kn">import</span> <span class="n">Sentence</span>
+<span class="kn">from</span> <span class="nn">flair.models</span> <span class="kn">import</span> <span class="n">SequenceTagger</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/data/venv/lib64/python3.6/site-packages/torch/cuda/__init__.py:52: UserWarning: CUDA initialization: The NVIDIA driver on your system is too old (found version 9000). Please update your GPU driver by downloading and installing a new version from the URL: http://www.nvidia.com/Download/index.aspx Alternatively, go to: https://pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver. (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
+  return torch._C._cuda_getDeviceCount() &gt; 0
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">flairner</span><span class="p">(</span><span class="n">sent</span><span class="p">):</span>
+    <span class="n">sentence</span> <span class="o">=</span> <span class="n">Sentence</span><span class="p">(</span><span class="n">sent</span><span class="p">)</span>
+    <span class="n">tagger</span> <span class="o">=</span> <span class="n">SequenceTagger</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="s">'ner'</span><span class="p">)</span>
+    <span class="n">tagger</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>
+    <span class="n">flairnerlist</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">).</span><span class="n">split</span><span class="p">(</span><span class="s">'</span><span class="se">\"</span><span class="s">'</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">sentence</span><span class="p">.</span><span class="n">get_spans</span><span class="p">(</span><span class="s">'ner'</span><span class="p">)</span> <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">).</span><span class="n">split</span><span class="p">(</span><span class="s">'</span><span class="se">\"</span><span class="s">'</span><span class="p">)[</span><span class="mi">2</span><span class="p">][</span><span class="mi">14</span><span class="p">:</span><span class="mi">17</span><span class="p">]</span> <span class="o">==</span><span class="s">'ORG'</span><span class="p">]))</span>
+    <span class="k">return</span> <span class="n">flairnerlist</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">flairner</span><span class="p">(</span><span class="n">samplenews</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2021-01-05 10:36:33,052 loading file /home/ailab/.flair/models/en-ner-conll03-v0.4.pt
+
+
+
+
+
+['Becerra',
+ 'The Washington Post',
+ 'Amazon',
+ 'Department of Health and Human Services',
+ 'Attorney General',
+ 'Sacramento County Superior Court']
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+
+<h1 id="4-conll">4. CONLL</h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">AutoModelForTokenClassification</span><span class="p">,</span> <span class="n">AutoTokenizer</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">AutoModelForTokenClassification</span><span class="p">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s">"dbmdz/bert-large-cased-finetuned-conll03-english"</span><span class="p">)</span>
+<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="p">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s">"bert-base-cased"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">label_list</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s">"O"</span><span class="p">,</span>       <span class="c1"># Outside of a named entity
+</span>    <span class="s">"B-MISC"</span><span class="p">,</span>  <span class="c1"># Beginning of a miscellaneous entity right after another miscellaneous entity
+</span>    <span class="s">"I-MISC"</span><span class="p">,</span>  <span class="c1"># Miscellaneous entity
+</span>    <span class="s">"B-PER"</span><span class="p">,</span>   <span class="c1"># Beginning of a person's name right after another person's name
+</span>    <span class="s">"I-PER"</span><span class="p">,</span>   <span class="c1"># Person's name
+</span>    <span class="s">"B-ORG"</span><span class="p">,</span>   <span class="c1"># Beginning of an organisation right after another organisation
+</span>    <span class="s">"I-ORG"</span><span class="p">,</span>   <span class="c1"># Organisation
+</span>    <span class="s">"B-LOC"</span><span class="p">,</span>   <span class="c1"># Beginning of a location right after another location
+</span>    <span class="s">"I-LOC"</span>    <span class="c1"># Location
+</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">conllner</span><span class="p">(</span><span class="n">sentence</span><span class="p">):</span>
+    <span class="n">words</span><span class="o">=</span><span class="s">''</span>
+    <span class="n">tokens</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">tokenizer</span><span class="p">.</span><span class="n">decode</span><span class="p">(</span><span class="n">tokenizer</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="n">sentence</span><span class="p">)))</span>
+
+    <span class="n">inputs</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">.</span><span class="n">encode_plus</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>
+    <span class="n">inin</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">FloatTensor</span><span class="p">([</span><span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">inputs</span><span class="p">.</span><span class="n">items</span><span class="p">()])</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">torch</span><span class="p">.</span><span class="n">LongTensor</span><span class="p">([</span><span class="n">inputs</span><span class="p">[</span><span class="s">'input_ids'</span><span class="p">][:</span><span class="mi">512</span><span class="p">]]))[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">predictions</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">wordtag</span> <span class="o">=</span> <span class="p">[(</span><span class="n">token</span><span class="p">,</span> <span class="n">label_list</span><span class="p">[</span><span class="n">prediction</span><span class="p">])</span> <span class="k">for</span> <span class="n">token</span><span class="p">,</span> <span class="n">prediction</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">tokens</span><span class="p">,</span> <span class="n">predictions</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">tolist</span><span class="p">())]</span>
+
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">wordtag</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">wordtag</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span><span class="s">'I-ORG'</span><span class="p">:</span>
+            <span class="n">words</span> <span class="o">+=</span> <span class="n">wordtag</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">wordtag</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="s">'I-ORG'</span><span class="p">:</span>
+                <span class="n">words</span> <span class="o">+=</span> <span class="s">','</span>
+    <span class="n">wordlist</span>  <span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span><span class="n">a</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">words</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'##'</span><span class="p">,</span><span class="s">''</span><span class="p">).</span><span class="n">split</span><span class="p">(</span><span class="s">','</span><span class="p">)</span> <span class="k">if</span> <span class="n">a</span> <span class="o">!=</span><span class="s">''</span><span class="p">]))</span>
+    <span class="k">return</span> <span class="n">wordlist</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">gatener</span><span class="p">(</span><span class="n">samplenews</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>No Orgnization within Sentence
+[]
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">spacy_large_ner</span><span class="p">(</span><span class="n">samplenews</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>['Kilbeggan Original', 'Kilbeggan Single Grain', 'Bettmann Archive', 'getty']
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">flairner</span><span class="p">(</span><span class="n">samplenews</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2021-01-05 10:10:50,578 loading file /home/ailab/.flair/models/en-ner-conll03-v0.4.pt
+
+
+
+
+
+['Bettmann Archive', 'Kilbeggan']
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">conllner</span><span class="p">(</span><span class="n">samplenews</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">sent</span> <span class="ow">in</span> <span class="n">samplenews</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'gatener: '</span><span class="p">,</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">gatener</span><span class="p">(</span><span class="n">sent</span><span class="p">))))</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'spacy: '</span> <span class="p">,</span><span class="n">spacy_large_ner</span><span class="p">(</span><span class="n">sent</span><span class="p">))</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'flair: '</span> <span class="p">,</span><span class="n">flairner</span><span class="p">(</span><span class="n">sent</span><span class="p">))</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'conllner: '</span><span class="p">,</span><span class="n">conllner</span><span class="p">(</span><span class="n">sent</span><span class="p">))</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'-------------------------------------------------'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>None
+gatener:  []
+spacy:  ['Kilbeggan Original', 'Kilbeggan Single Grain', 'Bettmann Archive', 'getty']
+2021-01-05 15:52:58,662 loading file /home/ailab/.flair/models/en-ner-conll03-v0.4.pt
+flair:  ['Bettmann Archive', 'Kilbeggan']
+conllner:  []
+-------------------------------------------------
+gatener:  ['World Health Organization']
+spacy:  ['The World Health Organization']
+2021-01-05 15:53:30,897 loading file /home/ailab/.flair/models/en-ner-conll03-v0.4.pt
+flair:  ['World Health Organization', 'The Wisdom of Crowds']
+conllner:  []
+-------------------------------------------------
+gatener:  ['BHP Group', 'Bloomberg L.P.', 'Bloomberg', 'SolGold Plc', 'Resources Inc', 'SolGold', 'Newcrest', 'Newcrest Mining Ltd', 'BHP', 'BHP and Cornerstone Capital']
+spacy:  ['BHP Group', 'bloomberg.comSubscribe', 'Newcrest Mining Ltd.', 'Bloomberg L.P.', 'SolGold Plc', 'Newcrest', 'SolGold', 'Cornerstone Capital Resources Inc.', 'Cornerstone', 'BHP']
+2021-01-05 15:54:03,257 loading file /home/ailab/.flair/models/en-ner-conll03-v0.4.pt
+flair:  ['Newcrest Mining Ltd.', 'cost.SolGold', 'Bloomberg L.P', 'SolGold Plc', 'Newcrest', 'SolGold', 'time.BHP', 'Cornerstone Capital Resources Inc.', 'Cascabel', 'Cornerstone', 'BHP', 'decisions.BHP Group', 'SolGold.']
+conllner:  ['BHPGroup', 'NewcrestMiningLtd', 'Bloomberg', 'Newcrest', 'SolGold', 'SolGoldPlc', 'Sol', 'Cornerstone', 'BHP', 'C', 'CornerstoneCapitalResourcesInc', 'SolG']
+-------------------------------------------------
+gatener:  ['Department of Health and Human Services', 'Washington Post', 'Sacramento County Superior Court']
+spacy:  ['The Washington Post', 'the Department of Health and Human Services', 'SARS-CoV-2', 'Amazon', 'Sacramento County Superior Court']
+2021-01-05 15:54:27,602 loading file /home/ailab/.flair/models/en-ner-conll03-v0.4.pt
+flair:  ['Becerra', 'The Washington Post', 'Amazon', 'Department of Health and Human Services', 'Attorney General', 'Sacramento County Superior Court']
+conllner:  ['Be', 'TheWashingtonPost', 'CountySuperiorCourt', 'DepartmentofHealthandHumanServices', 'Amazon', 'D', 'ra']
+-------------------------------------------------
+gatener:  ['Reuters', 'Electoral College']
+spacy:  ['the Electoral College', 'Calderón', 'Getty', 'Electoral College', 'Trump']
+2021-01-05 15:54:45,140 loading file /home/ailab/.flair/models/en-ner-conll03-v0.4.pt
+flair:  ['Reuters', 'Getty Images', 'Electoral College', 'Axios', 'Nacional']
+conllner:  ['Reuters', 'dor', 'pa', 'F', 'GettyImages', 'yotz', 'Watch', 'lson', 'ElectoralCollege', 'Nacional']
+-------------------------------------------------
+gatener:  ['Coinbase', 'CNBC', 'Treasury Department', 'Twitter']
+spacy:  ['the Treasury Department', 'Brooks', 'CNBC', 'PayPal', 'Twitter', 'Coinbase']
+2021-01-05 15:55:05,220 loading file /home/ailab/.flair/models/en-ner-conll03-v0.4.pt
+flair:  ['CNBC', 'Twitter', 'PayPal', 'Coinbase', 'Treasury Department']
+conllner:  ['TreasuryDepartment', 'CNBC', 'kBox', 'Tudor', 'S', 'PayPal', 'Coinbase', 'Stanley']
+-------------------------------------------------
+gatener:  ['IIT', 'Hindustan Times', 'Indian Institute of Technology', 'Twitter']
+spacy:  ['IIT', 'AFP', 'Co Founder', 'the Indian Institute of Technology', 'Twitter', 'Twitter CEO', 'Mayors for a Guaranteed Income', 'Amal KS | Hindustan', '| Getty']
+2021-01-05 15:55:29,650 loading file /home/ailab/.flair/models/en-ner-conll03-v0.4.pt
+flair:  ['IIT', 'AFP', 'Dorsey', 'Amal KS', 'Getty Images', 'Indian Institute of Technology', 'Co', 'Twitter', 'Hindustan Times']
+conllner:  ['IIT', 'AFP', 'GettyImages', 'rant', 'IndianInstituteofTechnology', 'HindustanTimes', 'Twitter', 'Inc', 'KS', 'MayorsforaG']
+-------------------------------------------------
+gatener:  ['Reuters', 'Caixin Insight Group', 'Caixin', 'Engine Manufacturing Co']
+spacy:  ['Reuters', 'the Harbin Dongan Automotive Engine Manufacturing Co., Ltd', 'Caixin Insight Group', 'Caixin', "The Caixin/Markit Manufacturing Purchasing Managers'"]
+2021-01-05 15:56:05,654 loading file /home/ailab/.flair/models/en-ner-conll03-v0.4.pt
+flair:  ['Caixin Insight Group', 'Reuters', 'Harbin Dongan Automotive Engine Manufacturing Co.', 'Ltd']
+conllner:  ['Reuters', 'inDonganAutomotiveEngineManufacturingCo.', 'Ha', 'CaixinInsightGroup', '/', 'Ltd']
+-------------------------------------------------
+gatener:  ['Congress', 'Arizona Republican Party', 'Arizona Court', 'Superior Court', 'Electoral College', 'Supreme Court', 'Republican', 'U.S. Supreme Court', 'Arizona Supreme Court', 'Arizona GOP', 'Twitter', 'Republicans', 'GOP', 'Arizona Republicans']
+spacy:  ['the Electoral College', 'Getty', 'Republican Party', 'Congress', 'Crucial Quote', 'Forbes', 'AZ Central', 'Topline', 'Superior Court', 'the Supreme Court', 'Electoral College', 'Supreme Court', 'Twitter', 'Tangent', 'Trump', 'Arizona Supreme Court', 'the U.S. Supreme Court', 'GOP', 'Ward', 'Arizona Court']
+2021-01-05 15:56:24,773 loading file /home/ailab/.flair/models/en-ner-conll03-v0.4.pt
+flair:  ['Forbes', 'Arizona Republican Party', 'Reading Arizona Court', 'Getty Images Key Facts Ward', 'Superior Court', 'Electoral College', 'Supreme Court', 'U.S. Supreme Court', 'Trump', 'Arizona Supreme Court', 'Arizona And Wisconsin Judges', 'Congress', 'AZ Central']
+conllner:  ['Congress', 'SupremeCourt', 'GettyImages', 'S.SupremeCourt', 'ArizonaRepublicanParty', 'Freso', 'U', 'ElectoralCollege', 'SuperiorCourt', 'P']
+-------------------------------------------------
+gatener:  ['FIFA', 'Premier', 'UEFA', 'Sport Club']
+spacy:  ['Bayern Munich', 'Getty', 'FIFA', 'Atletico Madrid', 'Midfield - Barbara Bonansea', 'FC Bayern Muenchen', 'FC Bayern/Pool', 'Spurs', 'World Soccer’s', 'Juventus', 'the UEFA Men’s Player', 'Paris St. Germain', 'GK - Alisson Becker', 'Leeds United’s', 'Burnley', 'GK - Christiane Endler', 'Olympique Lyon', 'FIFA Awards', "FIFA Men's", 'Best FIFA Men']
+2021-01-05 15:56:58,081 loading file /home/ailab/.flair/models/en-ner-conll03-v0.4.pt
+flair:  ['FIFA', 'Manchester City', 'UEFA', 'Burnley', 'Leeds United', 'Real Madrid', 'Sport Club do Recife', 'Spurs', 'Chicago Red Stars', 'World Soccer', 'Bayern Munich', 'Lyon', 'Atletico Madrid', 'Paris St. Germain', 'Marco Donato-FC Bayern', 'Olympique Lyon', 'Chelsea', 'FC Bayern Muenchen', 'Getty Images', 'Best', 'Barcelona']
+conllner:  ['FIFA', 'N', 'UEFA', 'GettyImages', 'Biel', 'Pool', 'WorldSoccer', 'Lyon', 'FCBayern', 'O', 'iqueLyon', 'RealMadrid', 'LeedsUnited', 'BayernMunich', 'Chelsea', 'F', 'Liverpool', 'ManchesterCity', 'Barcelona', 'FIFAFIF', 'Juventus']
+-------------------------------------------------
+</code></pre></div></div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#code" class="page__taxonomy-item" rel="tag">code</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#nlp" class="page__taxonomy-item" rel="tag">NLP</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-11-05T00:00:00+09:00">November 5, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=NLP+%EB%AA%A8%EB%8D%B8+%EB%B9%84%EA%B5%90%20http%3A%2F%2Flocalhost%3A4000%2Fnlp%2FNLPcomp%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fnlp%2FNLPcomp%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fnlp%2FNLPcomp%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/nlp/NMT/" class="pagination--pager" title="Neural Machine Translator ( 신경망 기계 번역 )
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/nlp/NMT/" rel="permalink">Neural Machine Translator ( 신경망 기계 번역 )
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">기계번역 : 기존 번역 모델 vs. 신경망 기계번역
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/nlp/OpenNLPmodels/" rel="permalink">Open NLP Model 비교
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          6 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">```python
+example_document1 = ‘'’Baidu’s Apollo Project is one of the world’s leading autonomous driving and AI programs, with one of the largest partner eco...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/codetest/%EC%B5%9C%EB%8B%A8%EA%B2%BD%EB%A1%9C/" rel="permalink">최단경로
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">최단 경로 : 가장 빠른 길 찾기
+모든 지점에서 다른 모든 지점까지의 최단 경로를 모두 구해야하는 경우
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/recommendation/Finegrained/" rel="permalink">Fine-grained Interest Matching for Neural News Recommendation
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Review on Youtube
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:irenee.jy93@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/irenejy93" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 Irene Kim. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

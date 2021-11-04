@@ -1,4 +1,816 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-11-04T23:29:14+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Scribbling every Miscellaneous thing</title><subtitle> website.</subtitle><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><entry><title type="html">최단경로</title><link href="http://localhost:4000/codetest/%EC%B5%9C%EB%8B%A8%EA%B2%BD%EB%A1%9C/" rel="alternate" type="text/html" title="최단경로" /><published>2021-11-03T00:00:00+09:00</published><updated>2021-11-03T00:00:00+09:00</updated><id>http://localhost:4000/codetest/%EC%B5%9C%EB%8B%A8%EA%B2%BD%EB%A1%9C</id><content type="html" xml:base="http://localhost:4000/codetest/%EC%B5%9C%EB%8B%A8%EA%B2%BD%EB%A1%9C/">&lt;h4 id=&quot;최단-경로--가장-빠른-길-찾기&quot;&gt;최단 경로 : 가장 빠른 길 찾기&lt;/h4&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-11-05T00:05:07+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Scribbling every Miscellaneous thing</title><subtitle> website.</subtitle><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><entry><title type="html">NLP 모델 비교</title><link href="http://localhost:4000/nlp/NLPcomp/" rel="alternate" type="text/html" title="NLP 모델 비교" /><published>2021-11-05T00:00:00+09:00</published><updated>2021-11-05T00:00:00+09:00</updated><id>http://localhost:4000/nlp/NLPcomp</id><content type="html" xml:base="http://localhost:4000/nlp/NLPcomp/">&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;random&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;happybase&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;hashlib&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;datetime&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;datetime&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;datetime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;timezone&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;timedelta&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;furl&lt;/span&gt;
+
+
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;json&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;npa&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;datetime&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;datetime&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;datetime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;timedelta&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pyhive&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hive&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;urllib.request&lt;/span&gt;
+
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;argparse&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;collections&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;OrderedDict&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;furl&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;furl&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;os&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;base64&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;hashlib&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;md5&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;input_dt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'20201228'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;target_dt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;datetime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strptime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;input_dt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;%Y%m%d&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;stop_dt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;target_dt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strftime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%Y-%m-%d&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;start_dt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;target_dt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;timedelta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;days&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strftime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%Y-%m-%d&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;regions_n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;test_data_size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;hb_conn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;happybase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Connection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'daou-bd-r01a01'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9090&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;tb_news&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hb_conn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;table&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;KWAM_NEWS&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# tb_lookup = hb_conn.table(&quot;KWAM_LOOKUP&quot;)
+&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# url = &quot;https://www.cnbc.com/2020/12/28/biden-will-invoke-defense-production-act-to-boost-covid-vaccine-production-advisor-says.html&quot;
+# enc_url = md5(url.encode()).hexdigest()
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# rct = tb_news.row(enc_url)[b'CF02:PARSED_CONTENT']
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# rct.decode()
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;regions_n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;test_data_size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;hb_conn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;happybase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Connection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'daou-bd-r01a01'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9090&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;tb_news&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hb_conn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;table&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;KWAM_NEWS&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# tb_lookup = hb_conn.table(&quot;KWAM_LOOKUP&quot;)
+# tb_testlookup = hb_conn.table(&quot;TEST_KWAM_LOOKUP&quot;)
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;input_dt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'20201104'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;target_dt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;datetime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strptime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;input_dt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;%Y%m%d&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;stop_dt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;target_dt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strftime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%Y-%m-%dT%H:%M:%S&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;start_dt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;target_dt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;timedelta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;days&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strftime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%Y-%m-%dT%H:%M:%S&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# test_lookup_data = []
+# for i in range(10):
+#     test_lookup_data+=[a for a in tb_news.scan(
+#                 row_start= f'00{i}_{start_dt}', row_stop = f'00{i}_{stop_dt}')]
+&lt;/span&gt;    
+&lt;span class=&quot;c1&quot;&gt;#     (filter=&quot;SingleColumnValueFilter ('blah','blouh',=,'regexstring:^batman$')&quot;)
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;samplenews&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;sa&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'CF02:PARSED_CONTENT'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;decode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tb_news&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;scan&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;limit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;1-gatener&quot;&gt;1. GATENER&lt;/h2&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;requests&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;https://cloud-api.gate.ac.uk/process-document/annie-named-entity-recognizer&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;headers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Content-Type'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'text/plain'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;gatener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;original&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;gatelist&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;sentence&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;original&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'utf-8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sentence&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+    &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;json&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dumps&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;indent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;orgdict&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loads&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'entities'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Organization'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orgdict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;gatelist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;original&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'indices'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'indices'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]])&lt;/span&gt;
+                        
+    &lt;span class=&quot;k&quot;&gt;except&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'None'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gatelist&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;gatelist&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;sentence&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;samplenews&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'utf-8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;response&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sentence&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;json&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dumps&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;indent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;orgdict&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loads&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'entities'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Organization'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;n&quot;&gt;orgdict&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loads&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'entities'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Organization'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orgdict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;organization&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;samplenews&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'indices'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'indices'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;organization&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;'Republicans'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gatener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;samplenews&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;['IIT', 'Hindustan Times', 'Indian Institute of Technology', 'Twitter']
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;2-stanford-core-nlp&quot;&gt;2. Stanford Core NLP&lt;/h1&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;python3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;spacy&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;download&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;en_core_web_lg&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;spacy&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;sp_lg&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;spacy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'en_core_web_lg'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Requirement already satisfied: en_core_web_lg==2.2.5 from https://github.com/explosion/spacy-models/releases/download/en_core_web_lg-2.2.5/en_core_web_lg-2.2.5.tar.gz#egg=en_core_web_lg==2.2.5 in /data/venv/lib/python3.6/site-packages (2.2.5)
+Requirement already satisfied: spacy&amp;gt;=2.2.2 in /data/venv/lib/python3.6/site-packages (from en_core_web_lg==2.2.5) (2.2.3)
+Requirement already satisfied: blis&amp;lt;0.5.0,&amp;gt;=0.4.0 in /data/venv/lib/python3.6/site-packages (from spacy&amp;gt;=2.2.2-&amp;gt;en_core_web_lg==2.2.5) (0.4.1)
+Requirement already satisfied: thinc&amp;lt;7.4.0,&amp;gt;=7.3.0 in /data/venv/lib/python3.6/site-packages (from spacy&amp;gt;=2.2.2-&amp;gt;en_core_web_lg==2.2.5) (7.3.1)
+Requirement already satisfied: plac&amp;lt;1.2.0,&amp;gt;=0.9.6 in /data/venv/lib/python3.6/site-packages (from spacy&amp;gt;=2.2.2-&amp;gt;en_core_web_lg==2.2.5) (1.1.3)
+Requirement already satisfied: preshed&amp;lt;3.1.0,&amp;gt;=3.0.2 in /data/venv/lib/python3.6/site-packages (from spacy&amp;gt;=2.2.2-&amp;gt;en_core_web_lg==2.2.5) (3.0.2)
+Requirement already satisfied: numpy&amp;gt;=1.15.0 in /data/venv/lib/python3.6/site-packages (from spacy&amp;gt;=2.2.2-&amp;gt;en_core_web_lg==2.2.5) (1.18.0)
+Requirement already satisfied: catalogue&amp;lt;1.1.0,&amp;gt;=0.0.7 in /data/venv/lib/python3.6/site-packages (from spacy&amp;gt;=2.2.2-&amp;gt;en_core_web_lg==2.2.5) (1.0.0)
+Requirement already satisfied: murmurhash&amp;lt;1.1.0,&amp;gt;=0.28.0 in /data/venv/lib/python3.6/site-packages (from spacy&amp;gt;=2.2.2-&amp;gt;en_core_web_lg==2.2.5) (1.0.2)
+Requirement already satisfied: cymem&amp;lt;2.1.0,&amp;gt;=2.0.2 in /data/venv/lib/python3.6/site-packages (from spacy&amp;gt;=2.2.2-&amp;gt;en_core_web_lg==2.2.5) (2.0.3)
+Requirement already satisfied: requests&amp;lt;3.0.0,&amp;gt;=2.13.0 in /data/venv/lib/python3.6/site-packages (from spacy&amp;gt;=2.2.2-&amp;gt;en_core_web_lg==2.2.5) (2.22.0)
+Requirement already satisfied: setuptools in /data/venv/lib/python3.6/site-packages (from spacy&amp;gt;=2.2.2-&amp;gt;en_core_web_lg==2.2.5) (50.3.2)
+Requirement already satisfied: srsly&amp;lt;1.1.0,&amp;gt;=0.1.0 in /data/venv/lib/python3.6/site-packages (from spacy&amp;gt;=2.2.2-&amp;gt;en_core_web_lg==2.2.5) (1.0.2)
+Requirement already satisfied: wasabi&amp;lt;1.1.0,&amp;gt;=0.4.0 in /data/venv/lib/python3.6/site-packages (from spacy&amp;gt;=2.2.2-&amp;gt;en_core_web_lg==2.2.5) (0.8.0)
+Requirement already satisfied: tqdm&amp;lt;5.0.0,&amp;gt;=4.10.0 in /data/venv/lib/python3.6/site-packages (from thinc&amp;lt;7.4.0,&amp;gt;=7.3.0-&amp;gt;spacy&amp;gt;=2.2.2-&amp;gt;en_core_web_lg==2.2.5) (4.41.1)
+Requirement already satisfied: importlib-metadata&amp;gt;=0.20; python_version &amp;lt; &quot;3.8&quot; in /data/venv/lib/python3.6/site-packages (from catalogue&amp;lt;1.1.0,&amp;gt;=0.0.7-&amp;gt;spacy&amp;gt;=2.2.2-&amp;gt;en_core_web_lg==2.2.5) (1.7.0)
+Requirement already satisfied: certifi&amp;gt;=2017.4.17 in /data/venv/lib/python3.6/site-packages (from requests&amp;lt;3.0.0,&amp;gt;=2.13.0-&amp;gt;spacy&amp;gt;=2.2.2-&amp;gt;en_core_web_lg==2.2.5) (2018.8.24)
+Requirement already satisfied: chardet&amp;lt;3.1.0,&amp;gt;=3.0.2 in /data/venv/lib/python3.6/site-packages (from requests&amp;lt;3.0.0,&amp;gt;=2.13.0-&amp;gt;spacy&amp;gt;=2.2.2-&amp;gt;en_core_web_lg==2.2.5) (3.0.4)
+Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,&amp;lt;1.26,&amp;gt;=1.21.1 in /data/venv/lib/python3.6/site-packages (from requests&amp;lt;3.0.0,&amp;gt;=2.13.0-&amp;gt;spacy&amp;gt;=2.2.2-&amp;gt;en_core_web_lg==2.2.5) (1.23)
+Requirement already satisfied: idna&amp;lt;2.9,&amp;gt;=2.5 in /data/venv/lib/python3.6/site-packages (from requests&amp;lt;3.0.0,&amp;gt;=2.13.0-&amp;gt;spacy&amp;gt;=2.2.2-&amp;gt;en_core_web_lg==2.2.5) (2.7)
+Requirement already satisfied: zipp&amp;gt;=0.5 in /data/venv/lib/python3.6/site-packages (from importlib-metadata&amp;gt;=0.20; python_version &amp;lt; &quot;3.8&quot;-&amp;gt;catalogue&amp;lt;1.1.0,&amp;gt;=0.0.7-&amp;gt;spacy&amp;gt;=2.2.2-&amp;gt;en_core_web_lg==2.2.5) (3.1.0)
+[33mWARNING: You are using pip version 20.2.4; however, version 20.3.3 is available.
+You should consider upgrading via the '/data/venv/bin/python3 -m pip install --upgrade pip' command.[0m
+[38;5;2m✔ Download and installation successful[0m
+You can now load the model via spacy.load('en_core_web_lg')
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;spacy_large_ner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;listss&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ent&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sp_lg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ents&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;label_&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ORG'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;listss&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;spacy_large_ner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;samplenews&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# print(dd)
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;['The Washington Post',
+ 'the Department of Health and Human Services',
+ 'SARS-CoV-2',
+ 'Amazon',
+ 'Sacramento County Superior Court']
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;3-fair&quot;&gt;3. Fair&lt;/h1&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;flair.data&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Sentence&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;flair.models&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SequenceTagger&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/data/venv/lib64/python3.6/site-packages/torch/cuda/__init__.py:52: UserWarning: CUDA initialization: The NVIDIA driver on your system is too old (found version 9000). Please update your GPU driver by downloading and installing a new version from the URL: http://www.nvidia.com/Download/index.aspx Alternatively, go to: https://pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver. (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
+  return torch._C._cuda_getDeviceCount() &amp;gt; 0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;flairner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;sentence&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Sentence&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;tagger&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SequenceTagger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ner'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;tagger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;predict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sentence&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;flairnerlist&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sentence&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_spans&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ner'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;14&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;17&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ORG'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flairnerlist&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;flairner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;samplenews&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;2021-01-05 10:36:33,052 loading file /home/ailab/.flair/models/en-ner-conll03-v0.4.pt
+
+
+
+
+
+['Becerra',
+ 'The Washington Post',
+ 'Amazon',
+ 'Department of Health and Human Services',
+ 'Attorney General',
+ 'Sacramento County Superior Court']
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;4-conll&quot;&gt;4. CONLL&lt;/h1&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;transformers&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AutoModelForTokenClassification&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AutoTokenizer&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;torch&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AutoModelForTokenClassification&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;from_pretrained&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;dbmdz/bert-large-cased-finetuned-conll03-english&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;tokenizer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AutoTokenizer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;from_pretrained&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;bert-base-cased&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;n&quot;&gt;label_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;&quot;O&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;       &lt;span class=&quot;c1&quot;&gt;# Outside of a named entity
+&lt;/span&gt;    &lt;span class=&quot;s&quot;&gt;&quot;B-MISC&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# Beginning of a miscellaneous entity right after another miscellaneous entity
+&lt;/span&gt;    &lt;span class=&quot;s&quot;&gt;&quot;I-MISC&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# Miscellaneous entity
+&lt;/span&gt;    &lt;span class=&quot;s&quot;&gt;&quot;B-PER&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;# Beginning of a person's name right after another person's name
+&lt;/span&gt;    &lt;span class=&quot;s&quot;&gt;&quot;I-PER&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;# Person's name
+&lt;/span&gt;    &lt;span class=&quot;s&quot;&gt;&quot;B-ORG&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;# Beginning of an organisation right after another organisation
+&lt;/span&gt;    &lt;span class=&quot;s&quot;&gt;&quot;I-ORG&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;# Organisation
+&lt;/span&gt;    &lt;span class=&quot;s&quot;&gt;&quot;B-LOC&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;# Beginning of a location right after another location
+&lt;/span&gt;    &lt;span class=&quot;s&quot;&gt;&quot;I-LOC&quot;&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# Location
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;conllner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sentence&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;words&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;''&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;tokens&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tokenizer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tokenize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tokenizer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;decode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tokenizer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sentence&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;inputs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tokenizer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encode_plus&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sentence&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;inin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FloatTensor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inputs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()])&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;output&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;LongTensor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inputs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'input_ids'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;512&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]))[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;predictions&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;argmax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dim&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;wordtag&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;token&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;label_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prediction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;token&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prediction&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;zip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tokens&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;predictions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tolist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())]&lt;/span&gt;
+
+
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;wordtag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wordtag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'I-ORG'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;words&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wordtag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wordtag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'I-ORG'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;words&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;','&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;wordlist&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;words&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'##'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;','&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wordlist&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;gatener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;samplenews&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;No Orgnization within Sentence
+[]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;spacy_large_ner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;samplenews&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;['Kilbeggan Original', 'Kilbeggan Single Grain', 'Bettmann Archive', 'getty']
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;flairner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;samplenews&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;2021-01-05 10:10:50,578 loading file /home/ailab/.flair/models/en-ner-conll03-v0.4.pt
+
+
+
+
+
+['Bettmann Archive', 'Kilbeggan']
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;conllner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;samplenews&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sent&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;samplenews&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'gatener: '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gatener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))))&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'spacy: '&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;spacy_large_ner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'flair: '&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;flairner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'conllner: '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;conllner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'-------------------------------------------------'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;None
+gatener:  []
+spacy:  ['Kilbeggan Original', 'Kilbeggan Single Grain', 'Bettmann Archive', 'getty']
+2021-01-05 15:52:58,662 loading file /home/ailab/.flair/models/en-ner-conll03-v0.4.pt
+flair:  ['Bettmann Archive', 'Kilbeggan']
+conllner:  []
+-------------------------------------------------
+gatener:  ['World Health Organization']
+spacy:  ['The World Health Organization']
+2021-01-05 15:53:30,897 loading file /home/ailab/.flair/models/en-ner-conll03-v0.4.pt
+flair:  ['World Health Organization', 'The Wisdom of Crowds']
+conllner:  []
+-------------------------------------------------
+gatener:  ['BHP Group', 'Bloomberg L.P.', 'Bloomberg', 'SolGold Plc', 'Resources Inc', 'SolGold', 'Newcrest', 'Newcrest Mining Ltd', 'BHP', 'BHP and Cornerstone Capital']
+spacy:  ['BHP Group', 'bloomberg.comSubscribe', 'Newcrest Mining Ltd.', 'Bloomberg L.P.', 'SolGold Plc', 'Newcrest', 'SolGold', 'Cornerstone Capital Resources Inc.', 'Cornerstone', 'BHP']
+2021-01-05 15:54:03,257 loading file /home/ailab/.flair/models/en-ner-conll03-v0.4.pt
+flair:  ['Newcrest Mining Ltd.', 'cost.SolGold', 'Bloomberg L.P', 'SolGold Plc', 'Newcrest', 'SolGold', 'time.BHP', 'Cornerstone Capital Resources Inc.', 'Cascabel', 'Cornerstone', 'BHP', 'decisions.BHP Group', 'SolGold.']
+conllner:  ['BHPGroup', 'NewcrestMiningLtd', 'Bloomberg', 'Newcrest', 'SolGold', 'SolGoldPlc', 'Sol', 'Cornerstone', 'BHP', 'C', 'CornerstoneCapitalResourcesInc', 'SolG']
+-------------------------------------------------
+gatener:  ['Department of Health and Human Services', 'Washington Post', 'Sacramento County Superior Court']
+spacy:  ['The Washington Post', 'the Department of Health and Human Services', 'SARS-CoV-2', 'Amazon', 'Sacramento County Superior Court']
+2021-01-05 15:54:27,602 loading file /home/ailab/.flair/models/en-ner-conll03-v0.4.pt
+flair:  ['Becerra', 'The Washington Post', 'Amazon', 'Department of Health and Human Services', 'Attorney General', 'Sacramento County Superior Court']
+conllner:  ['Be', 'TheWashingtonPost', 'CountySuperiorCourt', 'DepartmentofHealthandHumanServices', 'Amazon', 'D', 'ra']
+-------------------------------------------------
+gatener:  ['Reuters', 'Electoral College']
+spacy:  ['the Electoral College', 'Calderón', 'Getty', 'Electoral College', 'Trump']
+2021-01-05 15:54:45,140 loading file /home/ailab/.flair/models/en-ner-conll03-v0.4.pt
+flair:  ['Reuters', 'Getty Images', 'Electoral College', 'Axios', 'Nacional']
+conllner:  ['Reuters', 'dor', 'pa', 'F', 'GettyImages', 'yotz', 'Watch', 'lson', 'ElectoralCollege', 'Nacional']
+-------------------------------------------------
+gatener:  ['Coinbase', 'CNBC', 'Treasury Department', 'Twitter']
+spacy:  ['the Treasury Department', 'Brooks', 'CNBC', 'PayPal', 'Twitter', 'Coinbase']
+2021-01-05 15:55:05,220 loading file /home/ailab/.flair/models/en-ner-conll03-v0.4.pt
+flair:  ['CNBC', 'Twitter', 'PayPal', 'Coinbase', 'Treasury Department']
+conllner:  ['TreasuryDepartment', 'CNBC', 'kBox', 'Tudor', 'S', 'PayPal', 'Coinbase', 'Stanley']
+-------------------------------------------------
+gatener:  ['IIT', 'Hindustan Times', 'Indian Institute of Technology', 'Twitter']
+spacy:  ['IIT', 'AFP', 'Co Founder', 'the Indian Institute of Technology', 'Twitter', 'Twitter CEO', 'Mayors for a Guaranteed Income', 'Amal KS | Hindustan', '| Getty']
+2021-01-05 15:55:29,650 loading file /home/ailab/.flair/models/en-ner-conll03-v0.4.pt
+flair:  ['IIT', 'AFP', 'Dorsey', 'Amal KS', 'Getty Images', 'Indian Institute of Technology', 'Co', 'Twitter', 'Hindustan Times']
+conllner:  ['IIT', 'AFP', 'GettyImages', 'rant', 'IndianInstituteofTechnology', 'HindustanTimes', 'Twitter', 'Inc', 'KS', 'MayorsforaG']
+-------------------------------------------------
+gatener:  ['Reuters', 'Caixin Insight Group', 'Caixin', 'Engine Manufacturing Co']
+spacy:  ['Reuters', 'the Harbin Dongan Automotive Engine Manufacturing Co., Ltd', 'Caixin Insight Group', 'Caixin', &quot;The Caixin/Markit Manufacturing Purchasing Managers'&quot;]
+2021-01-05 15:56:05,654 loading file /home/ailab/.flair/models/en-ner-conll03-v0.4.pt
+flair:  ['Caixin Insight Group', 'Reuters', 'Harbin Dongan Automotive Engine Manufacturing Co.', 'Ltd']
+conllner:  ['Reuters', 'inDonganAutomotiveEngineManufacturingCo.', 'Ha', 'CaixinInsightGroup', '/', 'Ltd']
+-------------------------------------------------
+gatener:  ['Congress', 'Arizona Republican Party', 'Arizona Court', 'Superior Court', 'Electoral College', 'Supreme Court', 'Republican', 'U.S. Supreme Court', 'Arizona Supreme Court', 'Arizona GOP', 'Twitter', 'Republicans', 'GOP', 'Arizona Republicans']
+spacy:  ['the Electoral College', 'Getty', 'Republican Party', 'Congress', 'Crucial Quote', 'Forbes', 'AZ Central', 'Topline', 'Superior Court', 'the Supreme Court', 'Electoral College', 'Supreme Court', 'Twitter', 'Tangent', 'Trump', 'Arizona Supreme Court', 'the U.S. Supreme Court', 'GOP', 'Ward', 'Arizona Court']
+2021-01-05 15:56:24,773 loading file /home/ailab/.flair/models/en-ner-conll03-v0.4.pt
+flair:  ['Forbes', 'Arizona Republican Party', 'Reading Arizona Court', 'Getty Images Key Facts Ward', 'Superior Court', 'Electoral College', 'Supreme Court', 'U.S. Supreme Court', 'Trump', 'Arizona Supreme Court', 'Arizona And Wisconsin Judges', 'Congress', 'AZ Central']
+conllner:  ['Congress', 'SupremeCourt', 'GettyImages', 'S.SupremeCourt', 'ArizonaRepublicanParty', 'Freso', 'U', 'ElectoralCollege', 'SuperiorCourt', 'P']
+-------------------------------------------------
+gatener:  ['FIFA', 'Premier', 'UEFA', 'Sport Club']
+spacy:  ['Bayern Munich', 'Getty', 'FIFA', 'Atletico Madrid', 'Midfield - Barbara Bonansea', 'FC Bayern Muenchen', 'FC Bayern/Pool', 'Spurs', 'World Soccer’s', 'Juventus', 'the UEFA Men’s Player', 'Paris St. Germain', 'GK - Alisson Becker', 'Leeds United’s', 'Burnley', 'GK - Christiane Endler', 'Olympique Lyon', 'FIFA Awards', &quot;FIFA Men's&quot;, 'Best FIFA Men']
+2021-01-05 15:56:58,081 loading file /home/ailab/.flair/models/en-ner-conll03-v0.4.pt
+flair:  ['FIFA', 'Manchester City', 'UEFA', 'Burnley', 'Leeds United', 'Real Madrid', 'Sport Club do Recife', 'Spurs', 'Chicago Red Stars', 'World Soccer', 'Bayern Munich', 'Lyon', 'Atletico Madrid', 'Paris St. Germain', 'Marco Donato-FC Bayern', 'Olympique Lyon', 'Chelsea', 'FC Bayern Muenchen', 'Getty Images', 'Best', 'Barcelona']
+conllner:  ['FIFA', 'N', 'UEFA', 'GettyImages', 'Biel', 'Pool', 'WorldSoccer', 'Lyon', 'FCBayern', 'O', 'iqueLyon', 'RealMadrid', 'LeedsUnited', 'BayernMunich', 'Chelsea', 'F', 'Liverpool', 'ManchesterCity', 'Barcelona', 'FIFAFIF', 'Juventus']
+-------------------------------------------------
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><category term="NLP" /><category term="code" /><summary type="html">```python import random import happybase import hashlib import datetime from datetime import datetime, timezone,timedelta import furl</summary></entry><entry><title type="html">Neural Machine Translator ( 신경망 기계 번역 )</title><link href="http://localhost:4000/nlp/NMT/" rel="alternate" type="text/html" title="Neural Machine Translator ( 신경망 기계 번역 )" /><published>2021-11-05T00:00:00+09:00</published><updated>2021-11-05T00:00:00+09:00</updated><id>http://localhost:4000/nlp/NMT</id><content type="html" xml:base="http://localhost:4000/nlp/NMT/">&lt;h1 id=&quot;기계번역--기존-번역-모델-vs-신경망-기계번역&quot;&gt;기계번역 : 기존 번역 모델 vs. 신경망 기계번역&lt;/h1&gt;
+
+&lt;p&gt;기계번역 : 기계를 이용하여 특정 언어를 다른 언어로 번역해주는 기술&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;기존의 번역 모델: 구글 번역기나 네이버 번역기들이 사용하던 모델로, 단어나 말뭉치가 가지고잇는 의미를 저장하여 문장의 구조상 확률적으로 가장 높은 확률을 가지고있는 단어나 말뭉치의 조합으로 번역시켜주는 모델
+    &lt;ul&gt;
+      &lt;li&gt;통계 기반 번역 (Statistical Machine Translator)&lt;/li&gt;
+      &lt;li&gt;규칙 기반 번역 (Rule Based Machine Translation)&lt;/li&gt;
+      &lt;li&gt;구문 기반 번역 (Phrase Based Machine Translation)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;이런 번역 모델들은 단어가 가지고잇는 이중적인 의미를 분간하지 못하거나, 문장의 맥락에 대한 학습이 불가하여 번역했을때 문장의 구조에 어색함이 있다.
+    &lt;ul&gt;
+      &lt;li&gt;예) I have discussed my concern about this project with my coworkers –&amp;gt; 나는 대화하다 나의 걱정 이 프로젝트에 대하여 나의 파트너와함께&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;신경망 기계 번역 : 신경망 기계 번역은 단어, 순서, 문맥과 문장을 모델링하여 번역하는 인공 신경망 모델
+    &lt;ul&gt;
+      &lt;li&gt;문장의 각 단어의 뜻 뿐만 아니라 이중적인 의미, 문장의 흐름밑 문맥을 학습 하여 영어와 한국어와 같이 어순이 다른 언어의 번역에도 어색함이없다.&lt;/li&gt;
+      &lt;li&gt;예) 이 프로젝트에 대한 우려 사항을 파트너와 논의했습니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;neutro-machine-translator-의-구조&quot;&gt;Neutro Machine Translator 의 구조&lt;/h1&gt;
+
+&lt;h2 id=&quot;1-auto-encoder&quot;&gt;1. auto-encoder&lt;/h2&gt;
+
+&lt;p&gt;신경망 기계번역의 기본적인 구조는 자기 지도학습의 가장 대표적인 모델인 encoder 와 decoder 의 조합의 autoencoder로 이루어져 있다. 
+&lt;br /&gt;&amp;lt;/br&amp;gt; 
+&lt;img src=&quot;https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F995AB9425B59E44805&quot; width=&quot;700&quot; height=&quot;500&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Encoder : vector화 (숫자의 조합)가 된 문장을 encoder 에 입력 시키면, 입력된 vector는 낮은 차원으로 압축되어 기존값에 포함되어있었던 노이즈나 불필요한 값들은 최소화 또는 제거 된다.
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Encoder(tf.keras.Model):
+  def __init__(self, vocab_size, embedding_dim, enc_units, batch_sz):
+      super(Encoder, self).__init__()
+      self.batch_sz = batch_sz
+      self.enc_units = enc_units
+      self.embedding = tf.keras.layers.Embedding(vocab_size, embedding_dim)
+      self.gru = tf.keras.layers.GRU(self.enc_units,
+                                     return_sequences=True,
+                                     return_state=True,
+                                     recurrent_initializer='glorot_uniform')
+
+  def call(self, x, hidden):
+      x = self.embedding(x)
+      output, state = self.gru(x, initial_state = hidden)
+      return output, state
+
+  def initialize_hidden_state(self):
+      return tf.zeros((self.batch_sz, self.enc_units))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;decoder : encode 되어 압축된 데이터를 decoder 에 입력 원래 형태의 차원으로 복원시켜 중요한 또는 의미있는 데이터의 값이 가중화된 기존 형태의 데이터로 출력한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Decoder(tf.keras.Model):
+        def __init__(self, vocab_size, embedding_dim, dec_units, batch_sz):
+            super(Decoder, self).__init__()
+            self.batch_sz = batch_sz
+            self.dec_units = dec_units
+            self.embedding = tf.keras.layers.Embedding(vocab_size, embedding_dim)
+            self.gru = tf.keras.layers.GRU(self.dec_units,
+                                           return_sequences=True,
+                                           return_state=True,
+                                           recurrent_initializer='glorot_uniform')
+            self.fc = tf.keras.layers.Dense(vocab_size)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;autoencoder 는 기계번역 뿐만아닌 다양한 방면에서 사용된다
+    &lt;ul&gt;
+      &lt;li&gt;문서 복원 , 이상탐지 etc&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;autoencoder-의-단점&quot;&gt;autoencoder 의 단점:&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;autoencoder는 모델구조상, 중요한 정보의 입력은 첫번째 decoder 를 지나 깊은 decoder layer 을 지날수록, 처음 입력했던 정보의 가중치가 줄어듬&lt;/li&gt;
+  &lt;li&gt;길이가 긴 입력 데이터의 정보를 보존하여 기억하지 못함.&lt;/li&gt;
+  &lt;li&gt;출력층은 마지막 encoder 의 hidden layer 에만 의존하여 긴 문장을 기억하는데 어려움을 겪는다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2-attention&quot;&gt;2. Attention&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;어텐션은 모델에서 중요한 factor 에 집중하여 오래 기억할수있게 도와주는 machanism 으로 seq2seq(autoencoder) 와 같은 경우 모델이 깊어져 여러개의 encoder-decoder 를 지날수록 점차 처음에 입력한 단어, 또는 데이터의 중요도를 잊어버리는 단점을 보안한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;문장 번역에 있어, 하나의 언어에서 다른 언어로 번역할때는 단어하나가아닌 여러 단어의 조합을 구조화 하고 예측하는것이 중요하다.&lt;/li&gt;
+  &lt;li&gt;Attention 은 문장속 중요한 단어 (i.e.주어, 목적어) 등에 가중치를 주어 해당 단어의 의미 뿐만아닌 문맥속 위치, 다른 단어와의의 조합등을 집중하여 기억하도록 한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2-1-bahdanau-attention-mechanism&quot;&gt;2-1 Bahdanau Attention Mechanism&lt;/h3&gt;
+&lt;p&gt;해당 모델에서 이용한 Bahdanau Attention Mechnism 은 bahdanau 가 개발한 모델로, encoder 와 decoder 를 선형 연결 시켜 encoder의 압축된 결과를 이전에 decoding 된 결과와 linear combination 시켜 ,context vector 를 생성한다. 그렇게 계산된 결과를 softmax 를 통해 1 과 0 의 결과로 계산하여, 중요한 단어에 가중치를 더해준다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/1400/1*gHyQZ4bFEoDkTbMZkptuYA.png&quot; width=&quot;700&quot; height=&quot;500&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;``` class BahdanauAttention(tf.keras.layers.Layer):
+    def &lt;strong&gt;init&lt;/strong&gt;(self, units):
+        super(BahdanauAttention, self).&lt;strong&gt;init&lt;/strong&gt;()
+        self.W1 = tf.keras.layers.Dense(units)
+        self.W2 = tf.keras.layers.Dense(units)
+        self.V = tf.keras.layers.Dense(1)&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;def call(self, query, values):
+    
+    query_with_time_axis = tf.expand_dims(query, 1)
+
+  
+    score = self.V(tf.nn.tanh(
+        self.W1(query_with_time_axis) + self.W2(values)))
+
+    attention_weights = tf.nn.softmax(score, axis=1)
+
+    context_vector = attention_weights * values
+    context_vector = tf.reduce_sum(context_vector, axis=1)
+
+    return context_vector, attention_weights ```
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;English Korean 번역을 위한 English - Spanish Trial&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;attachment:image.png&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;</content><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><category term="NLP" /><category term="code" /><category term="Method" /><summary type="html">기계번역 : 기존 번역 모델 vs. 신경망 기계번역</summary></entry><entry><title type="html">Open NLP Model 비교</title><link href="http://localhost:4000/nlp/OpenNLPmodels/" rel="alternate" type="text/html" title="Open NLP Model 비교" /><published>2021-11-04T00:00:00+09:00</published><updated>2021-11-04T00:00:00+09:00</updated><id>http://localhost:4000/nlp/OpenNLPmodels</id><content type="html" xml:base="http://localhost:4000/nlp/OpenNLPmodels/">&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;example_document1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'''Baidu's Apollo Project is one of the world's leading autonomous driving and AI programs, with one of the largest partner ecosystems and over 100 global partners as of 2018, including BYD, Dongfeng, Microsoft, Intel, Nvidia, Daimler AG, ZTE, Grab, Ford, Hyundai and Honda.'''&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;news1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'- BuzzFeed on Thursday bought news website HuffPost from Verizon Communications Inc VZ.N in the latest sign of consolidation in the online media world.'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;example_document3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'The company sped up the development schedules for 12 vehicle programs: the Hummer electric truck, three other GMC Ultium variants that include an EV pickup, four Chevrolet electric vehicles that also includes a pickup and compact crossover, and four Cadillacs.'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;example_document2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'''Scientists say that the press-released results share a few more details than last weeks positive announcements from Pfizer and BioNTech, which are together working on a rival RNA vaccine, and from the Russian developers behind the controversial ‘Sputnik V’ vaccine. Moderna released figures suggesting that its vaccine is likely to prevent severe COVID-19 infections, something that was not clear from the other developers’ announcements.'''&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;news4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'''
+Tesla is getting added to the S&amp;amp;P 500, shares surge on the news
+Julia La Roche
+Julia La Roche·Correspondent
+Tue, November 17, 2020, 7:41 AM GMT+9
+Shares of Telsa (TSLA) jumped more than 10% in the after-hours session on the news that the electric carmaker is set to join the S&amp;amp;P 500.
+
+On Monday evening, the S&amp;amp;P Dow Jones Indices announced that Tesla will be added to the closely-followed stock index on Monday, Dec. 21 before the market opens to coincide with the December quarterly rebalance.'''&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;news5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'''A bipartisan group of U.S. states plans to file an antitrust lawsuit against Google as early as next month, according to two people briefed on the matter, potentially beating a more widely anticipated lawsuit from a different group of states led by Texas.'''&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+&lt;h2 id=&quot;gate-api--annie--rule-based-&quot;&gt;Gate API ( ANNIE : rule based )&lt;/h2&gt;
+
+&lt;p&gt;Gate 라고불리는 Gate cloud 에서 데이터를 가져와서 룰 기반 으로 회사명, 날짜, 돈, 위치 등을 인식한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;requests&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://cloud-api.gate.ac.uk/process-document/annie-named-entity-recognizer&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Gate cloud 주소 
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;headers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Content-Type'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'text/plain'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;GATENER&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;original&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;ll&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;sentence&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;original&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'utf-8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 문장 utf-8 인코딩
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sentence&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 인코딩한 문장 해당 클라우드에 입력 및 개체명 찾기
+&lt;/span&gt;
+    &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;json&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dumps&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;indent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 결과 json 형태로 수집 
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;orgdict&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loads&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'entities'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Organization'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 수집된 데이터에서 organization 태그 된 단어 추출 
+&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orgdict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;organization&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;original&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'indices'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'indices'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;ll&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;organization&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;except&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'No Orgnization within Sentence'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ll&lt;/span&gt;
+
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GATENER&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;example_document1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;['Apollo Project', 'Microsoft', 'Intel', 'Nvidia', 'Daimler AG', 'Hyundai', 'Honda']
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;GATENER&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;news2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;No Orgnization within Sentence
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;GATENER&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;news3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Pfizer
+BioNTech
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;GATENER&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;news4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;No Orgnization within Sentence
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;GATENER&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;news5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Google
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;nltk&quot;&gt;NLTK&lt;/h2&gt;
+
+&lt;p&gt;NLTK 에서 지원하는 개체명 인식기&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;nltk&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# NLTK 에서 재공하는 NER 분석을 위한 데이터 다운로드
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nltk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;download&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'punkt'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;nltk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;download&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'averaged_perceptron_tagger'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;nltk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;download&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'maxent_ne_chunker'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;nltk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;download&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'words'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;nltkner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;original&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;dicts&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;' '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;chunk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;chunk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+             &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;chunk&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nltk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ne_chunk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nltk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pos_tag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nltk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;word_tokenize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;original&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# NLTK 사용, 문장 tokenize (형태소별로 문장 쪼개기)
+&lt;/span&gt;             &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;hasattr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;chunk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'label'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 쪼갠 단어 객체명 붙여주기
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;orglist&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dicts&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ORGANIZATION'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 객체명중 ORGNAIZATION 인 단어 찾기 
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;orglist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dicts&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orglist&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;dicts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orglist&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nltkner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;example_document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    ['AI', 'BYD', 'Intel', 'ZTE', 'Ford']
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;dicts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orglist&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nltkner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;news1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    ['BuzzFeed', 'HuffPost', 'Verizon Communications Inc'] ```python dicts, orglist = nltkner(news3) ```
+    ['BioNTech', 'RNA'] ```python dicts, orglist = nltkner(news4) ```
+    ['Finance Tesla', 'TSLA']
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;stanford-core-nlp&quot;&gt;Stanford Core NLP&lt;/h2&gt;
+
+&lt;p&gt;스탠포드 어학사전에를 기반으로 하는 룰기반의 개체명 인식 모델.
+ 사람, 장소, 위치, 돈, 숫자, 순서, 퍼센트 등등의 12개의 개체로 인식한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;wget&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nlp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stanford&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;edu&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;software&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stanford&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ner&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2015&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;04&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;20.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;zip&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#  Stanford 어학사전 다운로드
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;unzip&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stanford&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ner&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2015&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;04&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;20.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;zip&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 다운로드 된 압축파일 해체
+&lt;/span&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;nltk.tag.stanford&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StanfordNERTagger&lt;/span&gt; 
+&lt;span class=&quot;n&quot;&gt;jar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;stanford-ner-2015-04-20/stanford-ner-3.5.2.jar&quot;&lt;/span&gt; 
+&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;stanford-ner-2015-04-20/classifiers/&quot;&lt;/span&gt; 
+
+&lt;span class=&quot;n&quot;&gt;st_3class&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StanfordNERTagger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;english.all.3class.distsim.crf.ser.gz&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                              &lt;span class=&quot;n&quot;&gt;jar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;encoding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'utf8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# stanford 어학사전중 장소, 사람, 조직 tag 로된 사전만 불러오기 
+&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;st_3class&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StanfordNERTagger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;english.all.3class.distsim.crf.ser.gz&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;encoding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'utf8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+&lt;span class=&quot;n&quot;&gt;st_4class&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StanfordNERTagger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;english.conll.4class.distsim.crf.ser.gz&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;encoding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'utf8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+&lt;span class=&quot;n&quot;&gt;st_7class&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StanfordNERTagger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;english.muc.7class.distsim.crf.ser.gz&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;encoding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'utf8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;st_3class&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;example_document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ORGANIZATION'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    ['Hyundai']
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;st_4class&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;news1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ORGANIZATION'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    ['HuffPost', 'Verizon', 'Communications', 'Inc'] ```python [a[0] for a in st_3class.tag(news2.split()) if a[1]=='ORGANIZATION'] ```
+    ['Chevrolet']
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;st_3class&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;news3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ORGANIZATION'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    ['Pfizer'] ```python [a[0] for a in st_3class.tag(news4.split()) if a[1]=='ORGANIZATION'] ```
+    ['Yahoo', 'Finance', 'Tesla', 'S&amp;amp;P', 'S&amp;amp;P', 'S&amp;amp;P', 'Dow', 'Jones', 'Indices']
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;st_3class&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;news5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ORGANIZATION'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    ['Google']
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;spacy&quot;&gt;Spacy&lt;/h2&gt;
+
+&lt;p&gt;spaCy는 파이썬의 자연어처리를 위한 오픈 소스 기반 라이브러리다.
+문장을 tokenize 한후, 각 token의 역활과 관계표현을 통해 개체명인식 , TEXT SIMILARITY 등을 계산해준다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;err&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;python3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;spacy&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;download&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;en_core_web_lg&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 라이브러리 다운로드
+&lt;/span&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;spacy&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;sp_lg&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;spacy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'en_core_web_lg'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;spacy_large_ner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;listss&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ent&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sp_lg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ents&lt;/span&gt; 
+              &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;label_&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ORG'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 문장 쪼개고, 해당 문장 spacy 에 입력후, 기관으로 개체 테그 붙어있는 단어 추출
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;listss&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;spacy_large_ner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;listss&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ent&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sp_lg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ents&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;label_&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ORG'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;listss&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;dd&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;spacy_large_ner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;example_document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    ['Baidu', 'Apollo Project', 'BYD', 'Dongfeng', 'Microsoft', 'Intel', 'Nvidia', 'Daimler AG', 'ZTE', 'Ford', 'Hyundai', 'Honda']
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;dd&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;spacy_large_ner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;news1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    ['Baidu',  'Apollo Project',  'BYD',  'Dongfeng',  'Microsoft',  'Intel',  'Nvidia',  'Daimler AG',  'ZTE',  'Ford',  'Hyundai',  'Honda']
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;spacy_large_ner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;example_document3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    ['GMC', 'Ultium', 'Chevrolet', 'Cadillacs']
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;spacy_large_ner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;example_document2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    ['GMC', 'Ultium', 'Chevrolet', 'Cadillacs']
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;dd&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;spacy_large_ner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;news4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    ['Pfizer', 'RNA'] ```python dd = spacy_large_ner(news5) ```
+    ['Yahoo Finance', 'Telsa', 'TSLA', 'S&amp;amp;P', 'Tesla']
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;polyglot&quot;&gt;Polyglot&lt;/h2&gt;
+
+&lt;p&gt;위키피디아 및 FREEBASE 에서 얻은 데이터를 통해, 감성 SEMENTIC 및 문장 구조 SYNTACTIC 를 임베딩하여, 여러 언어를 인식하는 제네럴한 모델&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;polyglot&lt;/span&gt;
+
+&lt;span class=&quot;err&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;polyglot&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;download&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TASK&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ner2&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# # pip install tkinter
+# ERROR: Could not find a version that satisfies the requirement tkinter (from versions: none)
+# ERROR: No matching distribution found for tkinter
+&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;tkinter&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sa&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;In Großbritannien war Gandhi mit dem westlichen Lebensstil vertraut geworden&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;entities&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;flair--ner-부분-3위&quot;&gt;Flair : NER 부분 3위&lt;/h2&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;flair.data&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Sentence&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 전이 학습 제공된 모델 import 
+&lt;/span&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;flair.models&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SequenceTagger&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;flairner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;sentence&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Sentence&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;tagger&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SequenceTagger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ner'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# import 한 모델중 개체명분석 모델 불러오기
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;tagger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;predict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sentence&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 입력된 문장에 대한 개체명 분석 예측
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;flairnerlist&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sentence&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_spans&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ner'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;14&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;17&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ORG'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; 
+    &lt;span class=&quot;c1&quot;&gt;# 개체명이 기관(회사) 인 단어 추출
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flairnerlist&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;flairner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;example_document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Baidu'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+         &lt;span class=&quot;s&quot;&gt;'Apollo Project'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+         &lt;span class=&quot;s&quot;&gt;'AI'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+         &lt;span class=&quot;s&quot;&gt;'BYD'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+         &lt;span class=&quot;s&quot;&gt;'Dongfeng'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+         &lt;span class=&quot;s&quot;&gt;'Microsoft'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+         &lt;span class=&quot;s&quot;&gt;'Intel'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+         &lt;span class=&quot;s&quot;&gt;'Nvidia'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+         &lt;span class=&quot;s&quot;&gt;'Daimler AG'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+         &lt;span class=&quot;s&quot;&gt;'ZTE'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+         &lt;span class=&quot;s&quot;&gt;'Grab'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+         &lt;span class=&quot;s&quot;&gt;'Ford'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+         &lt;span class=&quot;s&quot;&gt;'Hyundai'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+         &lt;span class=&quot;s&quot;&gt;'Honda'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;flairner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;news1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'BuzzFeed'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'HuffPost'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Verizon Communications Inc'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;flairner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;example_document3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Pfizer'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'BioNTech'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Moderna'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;flairner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;example_document2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;flairner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;news4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Yahoo Finance Tesla'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Julia La Roche Julia La Roche'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Telsa'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'TSLA'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'S &amp;amp; P Dow Jones Indices'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Tesla'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;flairner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;news5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Google'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;deeppavlov&quot;&gt;DEEPPAVLOV&lt;/h2&gt;
+&lt;p&gt;DEEP NEURAL NETWORK MODEL FOR THE TASK OF NAME ENTITY RECOGNITION&lt;/p&gt;
+
+&lt;p&gt;DeepPavlov is an open-source conversational AI library built on TensorFlow, Keras and PyTorch.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pip&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;q&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;deeppavlov&lt;/span&gt;
+
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;deeppavlov&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;configs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;build_model&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;ner_model&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;build_model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;configs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ner_ontonotes_bert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;download&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;ner_model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;example_document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;elmo&quot;&gt;ELMO&lt;/h2&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;allennlp.predictors&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Predictor&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;predictor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Predictor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;from_path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://allennlp.s3.amazonaws.com/models/ner-model-2018.04.26.tar.gz&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;results&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;predictor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;predict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sentence&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Did Uriah honestly think he could beat The Legend of Zelda in under three hours?&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tag&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;zip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;words&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;tags&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sa&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\t&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tag&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;simplest-bert-model-roberta&quot;&gt;SIMPLEST BERT MODEL RoBERTa&lt;/h3&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;simpletransformers.ner&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NERModel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NERArgs&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;model_args&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NERArgs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;model_args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;labels_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;PERSON&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;LOCATION&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;ORGANIZATION&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NERModel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;&quot;roberta&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;&quot;roberta-base&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model_args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;use_cuda&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;bertsimplener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sentence&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;orligst&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;predictions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;raw_outputs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;predict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sentence&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;predictions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ORGANIZATION'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;orligst&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orligst&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;bertsimplener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;example_document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Apollo'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Project'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'the'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'autonomous'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'driving'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'and'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'programs,'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'partner'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ecosystems'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'over'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'global'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+     &lt;span class=&quot;s&quot;&gt;'partners'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'as'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'of'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'2018,'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'BYD,'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Daimler'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ZTE,'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'and'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Honda.'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;conll&quot;&gt;CONLL&lt;/h3&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;conllner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sentence&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;words&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;''&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;tokens&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tokenizer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tokenize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tokenizer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;decode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tokenizer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sentence&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 문장 형태소 분석
+&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;inputs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tokenizer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encode_plus&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sentence&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 형태소 별로 자른 단어 모음을 Tensor 형태로 변화
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;inin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FloatTensor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inputs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()])&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# Tensor 형태 데이터를 모델에 입력
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;output&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;LongTensor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inputs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'input_ids'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]))[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;predictions&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;argmax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dim&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 예측값을 1 과 0 사이의 값으로 축소
+&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# 각 단어별 예측값에 따른 label 맞춰주기
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;wordtag&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;token&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;label_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prediction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;token&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prediction&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;zip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tokens&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;predictions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tolist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())]&lt;/span&gt;
+
+
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;wordtag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# label 된 단어중 ,기관 개체명 가진 단어 추출 
+&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wordtag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'I-ORG'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;words&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wordtag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wordtag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'I-ORG'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;words&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;','&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;wordlist&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;words&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'##'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;','&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wordlist&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;conllner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;example_document1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Baidu'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'BYD'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Dongfeng'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Microsoft'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Intel'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Nvidia'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'DaimlerAG'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'ZTE'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Grab'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Ford'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Hyundai'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Honda'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;conllner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;example_document2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Pfizer'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'BioNTech'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Moderna'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;conllner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;example_document3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Chevrolet'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><category term="NLP" /><category term="code" /><summary type="html">```python example_document1 = ‘'’Baidu’s Apollo Project is one of the world’s leading autonomous driving and AI programs, with one of the largest partner ecosystems and over 100 global partners as of 2018, including BYD, Dongfeng, Microsoft, Intel, Nvidia, Daimler AG, ZTE, Grab, Ford, Hyundai and Honda.’’’ news1 = ‘- BuzzFeed on Thursday bought news website HuffPost from Verizon Communications Inc VZ.N in the latest sign of consolidation in the online media world.’ example_document3 = ‘The company sped up the development schedules for 12 vehicle programs: the Hummer electric truck, three other GMC Ultium variants that include an EV pickup, four Chevrolet electric vehicles that also includes a pickup and compact crossover, and four Cadillacs.’ example_document2 = ‘'’Scientists say that the press-released results share a few more details than last weeks positive announcements from Pfizer and BioNTech, which are together working on a rival RNA vaccine, and from the Russian developers behind the controversial ‘Sputnik V’ vaccine. Moderna released figures suggesting that its vaccine is likely to prevent severe COVID-19 infections, something that was not clear from the other developers’ announcements.’’’ news4= ‘’’ Tesla is getting added to the S&amp;amp;P 500, shares surge on the news Julia La Roche Julia La Roche·Correspondent Tue, November 17, 2020, 7:41 AM GMT+9 Shares of Telsa (TSLA) jumped more than 10% in the after-hours session on the news that the electric carmaker is set to join the S&amp;amp;P 500.</summary></entry><entry><title type="html">최단경로</title><link href="http://localhost:4000/codetest/%EC%B5%9C%EB%8B%A8%EA%B2%BD%EB%A1%9C/" rel="alternate" type="text/html" title="최단경로" /><published>2021-11-03T00:00:00+09:00</published><updated>2021-11-03T00:00:00+09:00</updated><id>http://localhost:4000/codetest/%EC%B5%9C%EB%8B%A8%EA%B2%BD%EB%A1%9C</id><content type="html" xml:base="http://localhost:4000/codetest/%EC%B5%9C%EB%8B%A8%EA%B2%BD%EB%A1%9C/">&lt;h4 id=&quot;최단-경로--가장-빠른-길-찾기&quot;&gt;최단 경로 : 가장 빠른 길 찾기&lt;/h4&gt;
 &lt;p&gt;모든 지점에서 다른 모든 지점까지의 최단 경로를 모두 구해야하는 경우&lt;/p&gt;
 
 &lt;ol&gt;
@@ -343,7 +1155,24 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><category term="CodeTest" /><category term="code" /><summary type="html">최단 경로 : 가장 빠른 길 찾기 모든 지점에서 다른 모든 지점까지의 최단 경로를 모두 구해야하는 경우</summary></entry><entry><title type="html">Fine-grained Interest Matching for Neural News Recommendation</title><link href="http://localhost:4000/recommendation/Finegrained/" rel="alternate" type="text/html" title="Fine-grained Interest Matching for Neural News Recommendation" /><published>2021-11-02T00:00:00+09:00</published><updated>2021-11-02T00:00:00+09:00</updated><id>http://localhost:4000/recommendation/Finegrained</id><content type="html" xml:base="http://localhost:4000/recommendation/Finegrained/">&lt;p&gt;&lt;a href=&quot;https://youtu.be/XW93QvbFlaQ&quot;&gt;Review on Youtube&lt;/a&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><category term="CodeTest" /><category term="code" /><summary type="html">최단 경로 : 가장 빠른 길 찾기 모든 지점에서 다른 모든 지점까지의 최단 경로를 모두 구해야하는 경우</summary></entry><entry><title type="html">Self Learning improves NLU</title><link href="http://localhost:4000/nlp/self_learning_improves_NLU/" rel="alternate" type="text/html" title="Self Learning improves NLU" /><published>2021-11-02T00:00:00+09:00</published><updated>2021-11-02T00:00:00+09:00</updated><id>http://localhost:4000/nlp/self_learning_improves_NLU</id><content type="html" xml:base="http://localhost:4000/nlp/self_learning_improves_NLU/">&lt;p&gt;&lt;a href=&quot;https://youtu.be/9iJLzmrUN-8&quot;&gt;youtube review&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-0.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-1.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-2.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-3.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-4.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-5.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-6.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-7.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-8.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-9.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-10.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-11.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-12.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-13.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-14.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-15.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;</content><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><category term="NLP" /><category term="Paper" /><summary type="html">youtube review</summary></entry><entry><title type="html">Fine-grained Interest Matching for Neural News Recommendation</title><link href="http://localhost:4000/recommendation/Finegrained/" rel="alternate" type="text/html" title="Fine-grained Interest Matching for Neural News Recommendation" /><published>2021-11-02T00:00:00+09:00</published><updated>2021-11-02T00:00:00+09:00</updated><id>http://localhost:4000/recommendation/Finegrained</id><content type="html" xml:base="http://localhost:4000/recommendation/Finegrained/">&lt;p&gt;&lt;a href=&quot;https://youtu.be/XW93QvbFlaQ&quot;&gt;Review on Youtube&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/NeuralNewsRec/pg-0.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
 &lt;img src=&quot;http://localhost:4000/assets/NeuralNewsRec/pg-1.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
@@ -362,127 +1191,95 @@
 &lt;img src=&quot;http://localhost:4000/assets/NeuralNewsRec/pg-14.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
 &lt;img src=&quot;http://localhost:4000/assets/NeuralNewsRec/pg-15.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
 &lt;img src=&quot;http://localhost:4000/assets/NeuralNewsRec/pg-16.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
-&lt;img src=&quot;http://localhost:4000/assets/NeuralNewsRec/pg-17.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;</content><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><category term="Recommendation" /><category term="Paper" /><summary type="html">Review on Youtube</summary></entry><entry><title type="html">Self Learning improves NLU</title><link href="http://localhost:4000/nlp/self_learning_improves_NLU/" rel="alternate" type="text/html" title="Self Learning improves NLU" /><published>2021-11-02T00:00:00+09:00</published><updated>2021-11-02T00:00:00+09:00</updated><id>http://localhost:4000/nlp/self_learning_improves_NLU</id><content type="html" xml:base="http://localhost:4000/nlp/self_learning_improves_NLU/">&lt;p&gt;&lt;a href=&quot;https://youtu.be/9iJLzmrUN-8&quot;&gt;youtube review&lt;/a&gt;&lt;/p&gt;
+&lt;img src=&quot;http://localhost:4000/assets/NeuralNewsRec/pg-17.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;</content><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><category term="Recommendation" /><category term="Paper" /><summary type="html">Review on Youtube</summary></entry><entry><title type="html">Deep Learning over Multi-field Cateogorical Data</title><link href="http://localhost:4000/recommendation/multi_field_category/" rel="alternate" type="text/html" title="Deep Learning over Multi-field Cateogorical Data" /><published>2021-07-15T00:00:00+09:00</published><updated>2021-07-15T00:00:00+09:00</updated><id>http://localhost:4000/recommendation/multi_field_category</id><content type="html" xml:base="http://localhost:4000/recommendation/multi_field_category/">&lt;h2 id=&quot;deep-learning-over-multi-field-cateogorical-data&quot;&gt;Deep Learning over Multi-field Cateogorical Data&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-0.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
-&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-1.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
-&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-2.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
-&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-3.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
-&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-4.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
-&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-5.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
-&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-6.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
-&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-7.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
-&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-8.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
-&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-9.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
-&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-10.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
-&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-11.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
-&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-12.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
-&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-13.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
-&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-14.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
-&lt;img src=&quot;http://localhost:4000/assets/self_training_improves_NLU/pg-15.jpg&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;</content><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><category term="NLP" /><category term="Paper" /><summary type="html">youtube review</summary></entry><entry><title type="html">DeepFM</title><link href="http://localhost:4000/recommendation/Deepfm/" rel="alternate" type="text/html" title="DeepFM" /><published>2021-07-15T00:00:00+09:00</published><updated>2021-07-15T00:00:00+09:00</updated><id>http://localhost:4000/recommendation/Deepfm</id><content type="html" xml:base="http://localhost:4000/recommendation/Deepfm/">&lt;h1 id=&quot;deepfm&quot;&gt;DeepFM&lt;/h1&gt;
-&lt;h5 id=&quot;a-factorization-machine-based-neural-network&quot;&gt;A Factorization-Machine based Neural Network&lt;/h5&gt;
-&lt;h2 id=&quot;01-what-is-ctr-&quot;&gt;01. what is CTR ?&lt;/h2&gt;
-&lt;h4 id=&quot;ctr--click-through--rate&quot;&gt;CTR : click Through  rate&lt;/h4&gt;
+&lt;h2 id=&quot;1-ctr-모델&quot;&gt;1. CTR 모델&lt;/h2&gt;
 
-&lt;p&gt;CTR 이란 ?&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;사용자의 클릭 안에 숨겨져 있는 사용자의 특성 또는 어플의 특성 사이의 상관관계 학습&lt;/li&gt;
-  &lt;li&gt;예) 식사 시간 에 음식 배달 어플의 다운로드 수 증가 ( 2 차 상관관계)
+&lt;ol&gt;
+  &lt;li&gt;모델 비교
     &lt;ul&gt;
-      &lt;li&gt;10대 남자는 총 게임 과 RPG 게임을 선호 ( 3 차 상관관계 )&lt;/li&gt;
+      &lt;li&gt;기존 CTR 예측 선형 모델 : : Logistic linear regression, naïve Bayes, FTRL logistic regression
+        &lt;ul&gt;
+          &lt;li&gt;장점 : 쉬운 활용법&lt;/li&gt;
+          &lt;li&gt;단점 : 낮은 효율성, 독립적인 입력데이터의 상관관계를 찾지 못함&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;기존 CTR 예측 비선형 모델 : Factorization Machine, Gradient Boosting Tree
+        &lt;ul&gt;
+          &lt;li&gt;장점 : 다른 특성들의 상관관계를 찾을수있음&lt;/li&gt;
+          &lt;li&gt;단점 :
+            &lt;ul&gt;
+              &lt;li&gt;모든 특성의 상관관계를 찾지는 못함&lt;/li&gt;
+              &lt;li&gt;각 모델에 특성화된 input 을 제공 해야함&lt;/li&gt;
+              &lt;li&gt;복잡하고 무거운 데이터를 표현하는데 제한된 모델&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;사용자의 클릭 습관은 저,고차원의 특성 상관관계를 가지고 있다.&lt;/li&gt;
-  &lt;li&gt;효율적인 특성상관관계 모델링 방법:
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;2-deep-learning&quot;&gt;2. Deep Learning&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Deep Learning :
     &lt;ul&gt;
-      &lt;li&gt;대부분의 특성 상관관계의 원인을 특정하기 어려움&lt;/li&gt;
-      &lt;li&gt;저 / 고차원의 상관관계를 모두 효율적으로 출력&lt;/li&gt;
+      &lt;li&gt;고차원의 feature 를 저 차원의 feature 로 변형&lt;/li&gt;
+      &lt;li&gt;Sparse data  dense data&lt;/li&gt;
+      &lt;li&gt;데이터간의 연관성 탐색 (local dependency)&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;선형 모델
+  &lt;li&gt;비지도 학습 ( Unsupervised Learning )
     &lt;ul&gt;
-      &lt;li&gt;고차원의 상관관계 추출이 어려움&lt;/li&gt;
-      &lt;li&gt;E.g. FM&lt;/li&gt;
+      &lt;li&gt;고차원의 희소한 데이터를 저 차원의 밀집한 데이터로 학습시키는 Embedding method&lt;/li&gt;
+      &lt;li&gt;숨겨진 데이터 패턴 탐색&lt;/li&gt;
+      &lt;li&gt;DNN : Factorization Machine&lt;/li&gt;
+      &lt;li&gt;SNN : SNN-RBM, SNN-DAE&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;Deep neural network e.g. CNN, RNN
+  &lt;li&gt;지도학습 ( Supervised Learning )
     &lt;ul&gt;
-      &lt;li&gt;CNN : biased to the interaction between neighboring features&lt;/li&gt;
-      &lt;li&gt;RNN suitable for click dta with sequential dependency&lt;/li&gt;
-      &lt;li&gt;FNN &amp;amp; PNN : 저차원의 상관관계를 잘 찾지 못함&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Hybrid network structure : linear model and deep model 의 합친? 모델
-    &lt;ul&gt;
-      &lt;li&gt;Wide : linear, Deep : deep network model&lt;/li&gt;
-      &lt;li&gt;단점 : 전문적인 feature engineering 이 필요함&lt;/li&gt;
+      &lt;li&gt;역전파 (Backpropagation) 지도 학습을 통한 fine-tuning&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;1-unsupervised-learning&quot;&gt;1. Unsupervised Learning&lt;/h3&gt;
+&lt;p&gt;Factorization- machine supported Neural Network ( RNN ) 
+&lt;img src=&quot;http://localhost:4000/assets/images/snn.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;02-what-is-deep-fm&quot;&gt;02 WHAT IS DEEP FM?&lt;/h2&gt;
-
-&lt;h4 id=&quot;deep-fm--a-factorization-machine-based-neural-network-for-ctr-prediction&quot;&gt;Deep FM : A factorization-Machine based Neural Network for CTR Prediction&lt;/h4&gt;
-
-&lt;h6 id=&quot;deep-fm-이란&quot;&gt;Deep FM 이란?:&lt;/h6&gt;
-
+&lt;p&gt;구성 :&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;FM 과  DNN 을 통합시킨 구조
+  &lt;li&gt;입력층은 Factorization machine층을 지나 희소한 데이터가 dense 한 데이터로 학습&lt;/li&gt;
+  &lt;li&gt;Tanh 활성화 함수를 이용한 은닉층
     &lt;ul&gt;
-      &lt;li&gt;2차원 특성 상관관계 FM&lt;/li&gt;
-      &lt;li&gt;고차원 특성 상관관계 DNN&lt;/li&gt;
-      &lt;li&gt;$\hat{𝑌} =𝑠𝑖𝑔𝑚𝑜𝑖𝑑(𝑦_{𝐹𝑀}+𝑦_{𝐷𝑁𝑁})$&lt;/li&gt;
+      &lt;li&gt;큰 데이터에서 가장 빠르게 수렴됨(converges faster)&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;wide&amp;amp; Deep 모델과의 차이점 : feature engineering 이 필요가없음&lt;/li&gt;
-  &lt;li&gt;두개의 입력층이 아닌, 하나의 입력층,&lt;/li&gt;
-  &lt;li&gt;목표 : 저차원과 고차원의 상관관계 학습&lt;/li&gt;
+  &lt;li&gt;Sigmoid 활성화 함수를 이용한 출력층&lt;/li&gt;
+  &lt;li&gt;각각의 입력 데이터가 은닉층의 specific 한 필드와 연결&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h6 id=&quot;입력-데이터-x&quot;&gt;입력 데이터 X:&lt;/h6&gt;
+&lt;h4 id=&quot;contrasting-unsupervised-learning&quot;&gt;Contrasting Unsupervised Learning&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/ctrrate.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;사용자와 아이템의 Multifield data&lt;/li&gt;
-  &lt;li&gt;범주형데이터(성별, 위치), 연속형 데이터(나이) 으로 이루어진 복합데이터
-    &lt;ul&gt;
-      &lt;li&gt;범주형 데이터는 one hot encoding 으로 변환&lt;/li&gt;
-      &lt;li&gt;연속형 데이터는 각 값 또는 범주형 데이터로 변형 후 one hot encoding 으로 표현&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;최종 형태 : X = [xfield1, xfield2, xfield3, …, xfieldm]&lt;/li&gt;
-  &lt;li&gt;D – 차원의 벡터 형태 데이터 , 고차원 + extremely sparse&lt;/li&gt;
+  &lt;li&gt;AUC (area under ROC curve) 결과, Logistic regression 과 Factorial Machine 에 비해 FNN 과 SNN-DAE 와 SNN-RBM 이 더 나은 결과를 가짐&lt;/li&gt;
+  &lt;li&gt;FNN 제일 좋은 테스트 결과를 가짐&lt;/li&gt;
+  &lt;li&gt;SNN-DAE 와 SNN-RBM은 비슷한 결과를 가짐&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h6 id=&quot;structure--embedding-layer&quot;&gt;Structure : Embedding Layer&lt;/h6&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/deepfm/struct1.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;h5 id=&quot;fm-component&quot;&gt;FM component&lt;/h5&gt;
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/deepfm/struct2.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;h5 id=&quot;deep-component&quot;&gt;Deep component&lt;/h5&gt;
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/deepfm/struct3.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;h5 id=&quot;deepfm-model&quot;&gt;DeepFM model&lt;/h5&gt;
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/deepfm/struct4.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;03-contrast&quot;&gt;03 Contrast&lt;/h2&gt;
-
-&lt;h4 id=&quot;contrast-with-existing-models&quot;&gt;Contrast with existing models&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/deepfm/cont1.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;h5 id=&quot;효율성-비교&quot;&gt;효율성 비교&lt;/h5&gt;
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/deepfm/cont2.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/deepfm/cont3.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;</content><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><category term="Recommendation" /><category term="Paper" /><summary type="html">DeepFM A Factorization-Machine based Neural Network 01. what is CTR ? CTR : click Through rate</summary></entry><entry><title type="html">Survival Ensembles</title><link href="http://localhost:4000/churnprediction/Survival_Ensembels/" rel="alternate" type="text/html" title="Survival Ensembles" /><published>2021-07-15T00:00:00+09:00</published><updated>2021-07-15T00:00:00+09:00</updated><id>http://localhost:4000/churnprediction/Survival_Ensembels</id><content type="html" xml:base="http://localhost:4000/churnprediction/Survival_Ensembels/">&lt;h4 id=&quot;churn-prediction&quot;&gt;Churn Prediction&lt;/h4&gt;
+&lt;h4 id=&quot;2-supervised-learning&quot;&gt;2. Supervised Learning&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;가중치 업데이트&lt;/li&gt;
+  &lt;li&gt;Back-propagation 을 이용한 비용함수 최적화&lt;/li&gt;
+  &lt;li&gt;Drop-out 정규화로 overfit 관리&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><category term="Recommendation" /><category term="Paper" /><summary type="html">Deep Learning over Multi-field Cateogorical Data</summary></entry><entry><title type="html">Survival Ensembles</title><link href="http://localhost:4000/churnprediction/Survival_Ensembels/" rel="alternate" type="text/html" title="Survival Ensembles" /><published>2021-07-15T00:00:00+09:00</published><updated>2021-07-15T00:00:00+09:00</updated><id>http://localhost:4000/churnprediction/Survival_Ensembels</id><content type="html" xml:base="http://localhost:4000/churnprediction/Survival_Ensembels/">&lt;h4 id=&quot;churn-prediction&quot;&gt;Churn Prediction&lt;/h4&gt;
 &lt;h1 id=&quot;survival-ensembles&quot;&gt;Survival Ensembles&lt;/h1&gt;
 
 &lt;h2 id=&quot;01-introduction&quot;&gt;01. Introduction&lt;/h2&gt;
@@ -875,352 +1672,4 @@
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><category term="NLP" /><category term="Method" /><category term="code" /><summary type="html">Bert vs. TextRank Text Summarization 01. Text Summarization</summary></entry><entry><title type="html">Deep Learning over Multi-field Cateogorical Data</title><link href="http://localhost:4000/recommendation/multi_field_category/" rel="alternate" type="text/html" title="Deep Learning over Multi-field Cateogorical Data" /><published>2021-07-15T00:00:00+09:00</published><updated>2021-07-15T00:00:00+09:00</updated><id>http://localhost:4000/recommendation/multi_field_category</id><content type="html" xml:base="http://localhost:4000/recommendation/multi_field_category/">&lt;h2 id=&quot;deep-learning-over-multi-field-cateogorical-data&quot;&gt;Deep Learning over Multi-field Cateogorical Data&lt;/h2&gt;
-
-&lt;h2 id=&quot;1-ctr-모델&quot;&gt;1. CTR 모델&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;모델 비교
-    &lt;ul&gt;
-      &lt;li&gt;기존 CTR 예측 선형 모델 : : Logistic linear regression, naïve Bayes, FTRL logistic regression
-        &lt;ul&gt;
-          &lt;li&gt;장점 : 쉬운 활용법&lt;/li&gt;
-          &lt;li&gt;단점 : 낮은 효율성, 독립적인 입력데이터의 상관관계를 찾지 못함&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;기존 CTR 예측 비선형 모델 : Factorization Machine, Gradient Boosting Tree
-        &lt;ul&gt;
-          &lt;li&gt;장점 : 다른 특성들의 상관관계를 찾을수있음&lt;/li&gt;
-          &lt;li&gt;단점 :
-            &lt;ul&gt;
-              &lt;li&gt;모든 특성의 상관관계를 찾지는 못함&lt;/li&gt;
-              &lt;li&gt;각 모델에 특성화된 input 을 제공 해야함&lt;/li&gt;
-              &lt;li&gt;복잡하고 무거운 데이터를 표현하는데 제한된 모델&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;2-deep-learning&quot;&gt;2. Deep Learning&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Deep Learning :
-    &lt;ul&gt;
-      &lt;li&gt;고차원의 feature 를 저 차원의 feature 로 변형&lt;/li&gt;
-      &lt;li&gt;Sparse data  dense data&lt;/li&gt;
-      &lt;li&gt;데이터간의 연관성 탐색 (local dependency)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;비지도 학습 ( Unsupervised Learning )
-    &lt;ul&gt;
-      &lt;li&gt;고차원의 희소한 데이터를 저 차원의 밀집한 데이터로 학습시키는 Embedding method&lt;/li&gt;
-      &lt;li&gt;숨겨진 데이터 패턴 탐색&lt;/li&gt;
-      &lt;li&gt;DNN : Factorization Machine&lt;/li&gt;
-      &lt;li&gt;SNN : SNN-RBM, SNN-DAE&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;지도학습 ( Supervised Learning )
-    &lt;ul&gt;
-      &lt;li&gt;역전파 (Backpropagation) 지도 학습을 통한 fine-tuning&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;1-unsupervised-learning&quot;&gt;1. Unsupervised Learning&lt;/h3&gt;
-&lt;p&gt;Factorization- machine supported Neural Network ( RNN ) 
-&lt;img src=&quot;http://localhost:4000/assets/images/snn.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;구성 :&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;입력층은 Factorization machine층을 지나 희소한 데이터가 dense 한 데이터로 학습&lt;/li&gt;
-  &lt;li&gt;Tanh 활성화 함수를 이용한 은닉층
-    &lt;ul&gt;
-      &lt;li&gt;큰 데이터에서 가장 빠르게 수렴됨(converges faster)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Sigmoid 활성화 함수를 이용한 출력층&lt;/li&gt;
-  &lt;li&gt;각각의 입력 데이터가 은닉층의 specific 한 필드와 연결&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;contrasting-unsupervised-learning&quot;&gt;Contrasting Unsupervised Learning&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/ctrrate.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;AUC (area under ROC curve) 결과, Logistic regression 과 Factorial Machine 에 비해 FNN 과 SNN-DAE 와 SNN-RBM 이 더 나은 결과를 가짐&lt;/li&gt;
-  &lt;li&gt;FNN 제일 좋은 테스트 결과를 가짐&lt;/li&gt;
-  &lt;li&gt;SNN-DAE 와 SNN-RBM은 비슷한 결과를 가짐&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;2-supervised-learning&quot;&gt;2. Supervised Learning&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;가중치 업데이트&lt;/li&gt;
-  &lt;li&gt;Back-propagation 을 이용한 비용함수 최적화&lt;/li&gt;
-  &lt;li&gt;Drop-out 정규화로 overfit 관리&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><category term="Recommendation" /><category term="Paper" /><summary type="html">Deep Learning over Multi-field Cateogorical Data</summary></entry><entry><title type="html">Factorization Machine</title><link href="http://localhost:4000/recommendation/Factorization_Machine/" rel="alternate" type="text/html" title="Factorization Machine" /><published>2021-07-15T00:00:00+09:00</published><updated>2021-07-15T00:00:00+09:00</updated><id>http://localhost:4000/recommendation/Factorization_Machine</id><content type="html" xml:base="http://localhost:4000/recommendation/Factorization_Machine/">&lt;h2 id=&quot;factorization-machine&quot;&gt;Factorization Machine&lt;/h2&gt;
-
-&lt;h3 id=&quot;01-factorization-matrix&quot;&gt;01. Factorization Matrix&lt;/h3&gt;
-&lt;h4 id=&quot;01--sparse-data&quot;&gt;01 ) sparse Data&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;대부분의 x 의 element xi 가 0 인 희소한 (sparse) 한 데이터
-    &lt;ul&gt;
-      &lt;li&gt;추천 시스템, 텍스트 분석&lt;/li&gt;
-      &lt;li&gt;범주형 변수&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;사용자 = {영희(A), 바둑이(B), 철수(C) … } , 영화아이템 = {타이타닉(TI), 노팅힐(NH), 스타워즈(SW), 스타트렉(ST)}
-&lt;a href=&quot;http://localhost:4000/assets/images/factorizemachine/factor1.png&quot; class=&quot;align-center&quot;&gt;Git repository 신규 생성 이미지&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;02--factorization-matrix&quot;&gt;02 ) Factorization Matrix&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://localhost:4000/assets/images/factorizemachine/factor2.png&quot; class=&quot;align-center&quot;&gt;Git repository 신규 생성 이미지&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;factorization matrix 는 위의 데이터 처럼  희소하지만 User - Item matrix 를 행렬분해를 통해 User matrix, Item matrix 로 분해하여 각 사용자의 잠재요인(latent factor)를 찾아낸다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;factorization-machine--svm--fms&quot;&gt;Factorization Machine : SVM + FMs&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;SVM 과 다른 factorization model의 장점을 접목시킨 새로운 모델&lt;/li&gt;
-  &lt;li&gt;factorized parameter 를 이용하여, 여러 상호작용을 모델링&lt;/li&gt;
-  &lt;li&gt;희소한 (sparse) 한 데이터에서도 상호작용 예측가능&lt;/li&gt;
-  &lt;li&gt;‘선형 시간’ 계산복잡도
-    &lt;ul&gt;
-      &lt;li&gt;입력한 길이 n 에 대하여 선형 알고리즘 실행시간이 O(n)&lt;/li&gt;
-      &lt;li&gt;최적화 및 훈련 데이터에 저장할 필요없이 모델 저장&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;입력에 따라, 다양한 factorzation model 과 비슷한 형태의 모델을 준의&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;𝑦 ̂”(x) := + “ 𝑤_0 “ +” ∑&lt;em&gt;(𝑖=1)^𝑛▒〖𝑤_𝑖 𝑥_𝑖 〗+∑&lt;/em&gt;(𝑖=1)^𝑛▒〖∑_(𝑗=𝑖+1)^𝑛▒〖&amp;lt;𝑣_𝑖,𝑣_𝑗&amp;gt;〗 𝑥_𝑖 𝑥_𝑗 〗&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;편향 + 각 변수 가중치 + 상관관계&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Matrix Factorization 을 통해 , 하나의 상관관계를 이용하여 다른 상관관계를 예측한다.
-    &lt;ul&gt;
-      &lt;li&gt;영희는 스타트랙을 좋아한다&lt;/li&gt;
-      &lt;li&gt;철수와 바둑이는 스타워즈를 좋아한다.&lt;/li&gt;
-      &lt;li&gt;바둑이는 스타트랙도 좋다한다, 영희와 바둑이가 비슷한정도로 스타트랙을 좋아한다&lt;/li&gt;
-      &lt;li&gt;영희는 바둑이가 스타워즈를 좋아하는만큼 좋아할것이다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;각 interaction matrix 를 인수분해함을 통해, 데이터가 희소하더라도 𝑦 ̂고차함수의 상관관계 역시  interaction matrix를 표현할수있다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;fm-vs-svm&quot;&gt;FM vs. SVM&lt;/h2&gt;
-
-&lt;h3 id=&quot;svm--support-vector-machine-&quot;&gt;SVM ( Support Vector Machine )&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;SVM : 데이터를 분류하는 hyperplane 을 찾는 알고리즘&lt;/li&gt;
-  &lt;li&gt;다중차원의 희소한 데이터에서 적합한 hyperplane 을 찾을수없다&lt;/li&gt;
-  &lt;li&gt;훈련데이터에 의존하여 예측 
-&lt;a href=&quot;http://localhost:4000/assets/images/factorizemachine/factor3.png&quot; class=&quot;align-center&quot;&gt;Git repository 신규 생성 이미지&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;fm-vs-svms&quot;&gt;FM vs. SVMs&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;SVM
-    &lt;ul&gt;
-      &lt;li&gt;dense 한 훈련데이터&lt;/li&gt;
-      &lt;li&gt;dual form = SVM은 저차원에서 고차원으로 mapping 후 내적 (inner product)&lt;/li&gt;
-      &lt;li&gt;독립적인 상관관계&lt;/li&gt;
-      &lt;li&gt;Linear SVM : 해당 USER, ITEM 의 편향&lt;/li&gt;
-      &lt;li&gt;Polynomial SVM : 해당 User, Item 의 상관관계&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Factorization Machine
-    &lt;ul&gt;
-      &lt;li&gt;Overlapping 하는 의존적인 상관관계&lt;/li&gt;
-      &lt;li&gt;Sparse 한 데이터&lt;/li&gt;
-      &lt;li&gt;Primal form&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;fm-vs-fms&quot;&gt;FM vs. FMs&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;http://localhost:4000/assets/images/factorizemachine/factor4.png&quot; class=&quot;align-center&quot;&gt;Git repository 신규 생성 이미지&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;factorization-machine--svm--fm&quot;&gt;Factorization Machine = SVM + FM&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://localhost:4000/assets/images/factorizemachine/factor5.png&quot; class=&quot;align-center&quot;&gt;Git repository 신규 생성 이미지&lt;/a&gt;
-A.Matrix Factorization model&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;추천시스템의 협업시스템Collaborative filtering algorithm&lt;/li&gt;
-  &lt;li&gt;User-item 의 matrix 에서 하위 matrix 로 행렬 인수분해 하여 비평가 된 항목을 채움&lt;/li&gt;
-  &lt;li&gt;Matrix Factorization 은 범주형 이진 입력 데이터가 필요함&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;fm--vs-svd&quot;&gt;FM  vs. SVD++&lt;/h2&gt;
-
-&lt;p&gt;B) SVD++&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;명백한 피드백 : 사용자와 영화에 준 평점에 대해 높은평점을 받은 영화와 낮은 평점을 받은 영화를 부여한다 이를 명백한 피드백이라고 함&lt;/li&gt;
-  &lt;li&gt;암묵적인 피드백 : 사용자가 점수를 준 영화와 점수를 주지 않은 영화에도 의미를 부여한다.&lt;/li&gt;
-  &lt;li&gt;아직 선택하지 않은 영화에 대하여 점수를 예측&lt;/li&gt;
-  &lt;li&gt;FM can mimic this model by using   &lt;a href=&quot;http://localhost:4000/assets/images/factorizemachine/factor6.png&quot; class=&quot;align-center&quot;&gt;Git repository 신규 생성 이미지&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;table&gt;
-          &lt;tbody&gt;
-            &lt;tr&gt;
-              &lt;td&gt;Nu&lt;/td&gt;
-              &lt;td&gt;는 한번이라도 평점을 준 모든영화&lt;/td&gt;
-            &lt;/tr&gt;
-          &lt;/tbody&gt;
-        &lt;/table&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;fm--vs-pitf-for-tag-recommendation&quot;&gt;FM  vs. PITF for tag Recommendation&lt;/h3&gt;
-
-&lt;p&gt;C) PITF&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;User 와 item 짝의 ranking tag 예측&lt;/li&gt;
-  &lt;li&gt;FM 의 이진변수 모델에 ranking 변수 tA 를 tB 추가&lt;/li&gt;
-  &lt;li&gt;(u,I,tA) 와 (u,I,tB)의 차이점을 예측한 모델이 PITF 모델과 흡사하다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;fm--vs-fpmc-factorized-personalized-markov-chains-&quot;&gt;FM  vs. FPMC (Factorized Personalized Markov Chains )&lt;/h3&gt;
-&lt;p&gt;D)FPMC&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;사용자의 지난 구매 이력으로 현재 구매순위를 예측&lt;/li&gt;
-  &lt;li&gt;FM can mimic this model by using 
-&lt;a href=&quot;http://localhost:4000/assets/images/factorizemachine/factor7.png&quot; class=&quot;align-center&quot;&gt;Git repository 신규 생성 이미지&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;
-    &lt;table&gt;
-      &lt;tbody&gt;
-        &lt;tr&gt;
-          &lt;td&gt;𝐵_(𝑡−1)^𝑢&lt;/td&gt;
-          &lt;td&gt;는 지난번에 장바구니에 넣어졌던 아이템&lt;/td&gt;
-        &lt;/tr&gt;
-      &lt;/tbody&gt;
-    &lt;/table&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><category term="Recommendation" /><category term="Paper" /><summary type="html">Factorization Machine</summary></entry><entry><title type="html">Product-based Neural Network</title><link href="http://localhost:4000/recommendation/Product-based/" rel="alternate" type="text/html" title="Product-based Neural Network" /><published>2021-07-15T00:00:00+09:00</published><updated>2021-07-15T00:00:00+09:00</updated><id>http://localhost:4000/recommendation/Product-based</id><content type="html" xml:base="http://localhost:4000/recommendation/Product-based/">&lt;h2 id=&quot;product-based-neural-network&quot;&gt;Product-based Neural Network&lt;/h2&gt;
-
-&lt;h3 id=&quot;01--multi-field-dataset&quot;&gt;01 . Multi-field Dataset&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;클릭률 모델 입력 데이터 : multiple field categorical data
-    &lt;ul&gt;
-      &lt;li&gt;e.g. [weekday = Tuesday , Gender = Male, city=London]&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;One-hot encoding  고차원의 희소 데이터
-    &lt;ul&gt;
-      &lt;li&gt;e.g. [0, 1, 0, 0, 0] [0, 1]&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;기존 모델: logistic regression, 비선형 gradient boosting trees , Factorization machine
-    &lt;ul&gt;
-      &lt;li&gt;고차원의 희소한 데이터에서 특성의 패턴을 추려내기가 어려움&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;02-기존-ctr-모델&quot;&gt;02. 기존 CTR 모델&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;factorization machine supported neural network (FNN):
-    &lt;ul&gt;
-      &lt;li&gt;Deep learning Neural Network with factorization machine pre-training&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Convolutional Click Prediction Model (CCPM):
-    &lt;ul&gt;
-      &lt;li&gt;Convolutional Neural Network 을 이용한 예측&lt;/li&gt;
-      &lt;li&gt;Non-neighbor feature 과의 상관관계 분석 불가&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Product unit neural network (PUNN)
-    &lt;ul&gt;
-      &lt;li&gt;특성사이의 의존도 학습 불가&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;03-product-based-neural-network&quot;&gt;03. Product-based Neural Network&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Product-based Neural Network (PNN)
-&lt;img src=&quot;http://localhost:4000/assets/images/pdnn/struct1.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;Pre- training 없이, 각 field 에서 embedding layer 로 특성연결&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;각 특성 간의 연관관계를 inner product 또는 outer product-based neural network 를 product Layer 로 pair-wise 연결&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;고차원의 특성들을 hidden layer 에 전부 연결,패턴 추출
-        &lt;ul&gt;
-          &lt;li&gt;Relu 활성화 함수&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;지도 학습을 통해, 비용함수 최적화 및 CTR 예측&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;inner-product-based-neural-network-ipnn&quot;&gt;Inner Product-based Neural Network (IPNN)&lt;/h3&gt;
-
-&lt;p&gt;Inner product –based neural network&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;입력: Linear information signal 𝑙&lt;/li&gt;
-  &lt;li&gt;Pairwise feature interaction 𝑔(𝑓_𝑖, 𝑓_𝑗 )= &amp;lt;𝑓_𝑖, 𝑓_𝑗&amp;gt; 정의&lt;/li&gt;
-  &lt;li&gt;Linear 형태의 𝑙_z + 상관관계 𝑙_p 신경망 학습&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Inner product&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;𝑙_z  : inner product 형태의 가중치와 선형정보 보존&lt;/li&gt;
-  &lt;li&gt;𝑙_p  : Pairwise feature interaction 의 inner product ;  이차원의 square matrix
-    &lt;ul&gt;
-      &lt;li&gt;행렬 분해 (decomposition) 통한 시간 및 공간 복잡도 축소&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;outer-product-based-neural-network-opnn&quot;&gt;Outer Product-based Neural Network (OPNN)&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;각 선형 vector 데이터 의 Pair 의 Outer product&lt;/li&gt;
-  &lt;li&gt;Matrix 형태의 출력
-    &lt;ul&gt;
-      &lt;li&gt;시간, 공간 복잡도 증가&lt;/li&gt;
-      &lt;li&gt;Element-wise superposition 를 통한 시간및 공간 복잡도 축소 
-  Eelement-wise : 두벡터의 행렬이 같은 원소 끼리 계산&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/pdnn/struct2.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Superposition :&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;T(cu)=cT(u)&lt;/li&gt;
-  &lt;li&gt;T(u+v)=T(u)+T(v)&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;기존-모델과-성능-비교&quot;&gt;기존 모델과 성능 비교&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/pdnn/struct3.png&quot; alt=&quot;Git repository 신규 생성 이미지&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;</content><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><category term="Recommendation" /><category term="Paper" /><summary type="html">Product-based Neural Network</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>Irene Kim</name><email>irenee.jy93@gmail.com</email></author><category term="NLP" /><category term="Method" /><category term="code" /><summary type="html">Bert vs. TextRank Text Summarization 01. Text Summarization</summary></entry></feed>

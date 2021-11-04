@@ -76,4 +76,22 @@ var store = [{
         "tags": ["code"],
         "url": "http://localhost:4000/codetest/%EC%B5%9C%EB%8B%A8%EA%B2%BD%EB%A1%9C/",
         "teaser": null
+      },{
+        "title": "Open NLP Model 비교",
+        "excerpt":"example_document1 = '''Baidu's Apollo Project is one of the world's leading autonomous driving and AI programs, with one of the largest partner ecosystems and over 100 global partners as of 2018, including BYD, Dongfeng, Microsoft, Intel, Nvidia, Daimler AG, ZTE, Grab, Ford, Hyundai and Honda.''' news1 = '- BuzzFeed on...","categories": ["NLP"],
+        "tags": ["code"],
+        "url": "http://localhost:4000/nlp/OpenNLPmodels/",
+        "teaser": null
+      },{
+        "title": "Neural Machine Translator ( 신경망 기계 번역 )",
+        "excerpt":"기계번역 : 기존 번역 모델 vs. 신경망 기계번역 기계번역 : 기계를 이용하여 특정 언어를 다른 언어로 번역해주는 기술 기존의 번역 모델: 구글 번역기나 네이버 번역기들이 사용하던 모델로, 단어나 말뭉치가 가지고잇는 의미를 저장하여 문장의 구조상 확률적으로 가장 높은 확률을 가지고있는 단어나 말뭉치의 조합으로 번역시켜주는 모델 통계 기반 번역 (Statistical Machine Translator)...","categories": ["NLP"],
+        "tags": ["code","Method"],
+        "url": "http://localhost:4000/nlp/NMT/",
+        "teaser": null
+      },{
+        "title": "NLP 모델 비교",
+        "excerpt":"import random import happybase import hashlib import datetime from datetime import datetime, timezone,timedelta import furl import requests, json import numpy as npa import datetime from datetime import datetime, timedelta from pyhive import hive import urllib.request import argparse from collections import OrderedDict from furl import furl import os import base64 from...","categories": ["NLP"],
+        "tags": ["code"],
+        "url": "http://localhost:4000/nlp/NLPcomp/",
+        "teaser": null
       }]

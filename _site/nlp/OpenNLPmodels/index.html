@@ -1,0 +1,1009 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.20.1 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Open NLP Model 비교 - Scribbling every Miscellaneous thing</title>
+<meta name="description" content="```python example_document1 = ‘&#39;’Baidu’s Apollo Project is one of the world’s leading autonomous driving and AI programs, with one of the largest partner ecosystems and over 100 global partners as of 2018, including BYD, Dongfeng, Microsoft, Intel, Nvidia, Daimler AG, ZTE, Grab, Ford, Hyundai and Honda.’’’ news1 = ‘- BuzzFeed on Thursday bought news website HuffPost from Verizon Communications Inc VZ.N in the latest sign of consolidation in the online media world.’ example_document3 = ‘The company sped up the development schedules for 12 vehicle programs: the Hummer electric truck, three other GMC Ultium variants that include an EV pickup, four Chevrolet electric vehicles that also includes a pickup and compact crossover, and four Cadillacs.’ example_document2 = ‘&#39;’Scientists say that the press-released results share a few more details than last weeks positive announcements from Pfizer and BioNTech, which are together working on a rival RNA vaccine, and from the Russian developers behind the controversial ‘Sputnik V’ vaccine. Moderna released figures suggesting that its vaccine is likely to prevent severe COVID-19 infections, something that was not clear from the other developers’ announcements.’’’ news4= ‘’’ Tesla is getting added to the S&amp;P 500, shares surge on the news Julia La Roche Julia La Roche·Correspondent Tue, November 17, 2020, 7:41 AM GMT+9 Shares of Telsa (TSLA) jumped more than 10% in the after-hours session on the news that the electric carmaker is set to join the S&amp;P 500.">
+
+
+  <meta name="author" content="Irene Kim">
+  
+  <meta property="article:author" content="Irene Kim">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Scribbling every Miscellaneous thing">
+<meta property="og:title" content="Open NLP Model 비교">
+<meta property="og:url" content="http://localhost:4000/nlp/OpenNLPmodels/">
+
+
+  <meta property="og:description" content="```python example_document1 = ‘&#39;’Baidu’s Apollo Project is one of the world’s leading autonomous driving and AI programs, with one of the largest partner ecosystems and over 100 global partners as of 2018, including BYD, Dongfeng, Microsoft, Intel, Nvidia, Daimler AG, ZTE, Grab, Ford, Hyundai and Honda.’’’ news1 = ‘- BuzzFeed on Thursday bought news website HuffPost from Verizon Communications Inc VZ.N in the latest sign of consolidation in the online media world.’ example_document3 = ‘The company sped up the development schedules for 12 vehicle programs: the Hummer electric truck, three other GMC Ultium variants that include an EV pickup, four Chevrolet electric vehicles that also includes a pickup and compact crossover, and four Cadillacs.’ example_document2 = ‘&#39;’Scientists say that the press-released results share a few more details than last weeks positive announcements from Pfizer and BioNTech, which are together working on a rival RNA vaccine, and from the Russian developers behind the controversial ‘Sputnik V’ vaccine. Moderna released figures suggesting that its vaccine is likely to prevent severe COVID-19 infections, something that was not clear from the other developers’ announcements.’’’ news4= ‘’’ Tesla is getting added to the S&amp;P 500, shares surge on the news Julia La Roche Julia La Roche·Correspondent Tue, November 17, 2020, 7:41 AM GMT+9 Shares of Telsa (TSLA) jumped more than 10% in the after-hours session on the news that the electric carmaker is set to join the S&amp;P 500.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-11-04T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/nlp/OpenNLPmodels/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Irene Kim",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Scribbling every Miscellaneous thing Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Irene in Wonder_AI&
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/posts/">연도별 포스트</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#nlp" itemprop="item"><span itemprop="name">Nlp</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">Open NLP Model 비교</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/my_icon.jpeg" alt="Irene Kim" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Irene Kim</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Voyage to be Data Scientist</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Somewhere over the Rainbow</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/irenejy93" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:irenee.jy93@gmail.com">
+            <meta itemprop="email" content="irenee.jy93@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Open NLP Model 비교">
+    <meta itemprop="description" content="```pythonexample_document1 = ‘&#39;’Baidu’s Apollo Project is one of the world’s leading autonomous driving and AI programs, with one of the largest partner ecosystems and over 100 global partners as of 2018, including BYD, Dongfeng, Microsoft, Intel, Nvidia, Daimler AG, ZTE, Grab, Ford, Hyundai and Honda.’’’news1 = ‘- BuzzFeed on Thursday bought news website HuffPost from Verizon Communications Inc VZ.N in the latest sign of consolidation in the online media world.’example_document3 = ‘The company sped up the development schedules for 12 vehicle programs: the Hummer electric truck, three other GMC Ultium variants that include an EV pickup, four Chevrolet electric vehicles that also includes a pickup and compact crossover, and four Cadillacs.’example_document2 = ‘&#39;’Scientists say that the press-released results share a few more details than last weeks positive announcements from Pfizer and BioNTech, which are together working on a rival RNA vaccine, and from the Russian developers behind the controversial ‘Sputnik V’ vaccine. Moderna released figures suggesting that its vaccine is likely to prevent severe COVID-19 infections, something that was not clear from the other developers’ announcements.’’’news4= ‘’’Tesla is getting added to the S&amp;P 500, shares surge on the newsJulia La RocheJulia La Roche·CorrespondentTue, November 17, 2020, 7:41 AM GMT+9Shares of Telsa (TSLA) jumped more than 10% in the after-hours session on the news that the electric carmaker is set to join the S&amp;P 500.">
+    <meta itemprop="datePublished" content="2021-11-04T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Open NLP Model 비교
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          6 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">example_document1</span> <span class="o">=</span> <span class="s">'''Baidu's Apollo Project is one of the world's leading autonomous driving and AI programs, with one of the largest partner ecosystems and over 100 global partners as of 2018, including BYD, Dongfeng, Microsoft, Intel, Nvidia, Daimler AG, ZTE, Grab, Ford, Hyundai and Honda.'''</span>
+<span class="n">news1</span> <span class="o">=</span> <span class="s">'- BuzzFeed on Thursday bought news website HuffPost from Verizon Communications Inc VZ.N in the latest sign of consolidation in the online media world.'</span>
+<span class="n">example_document3</span> <span class="o">=</span> <span class="s">'The company sped up the development schedules for 12 vehicle programs: the Hummer electric truck, three other GMC Ultium variants that include an EV pickup, four Chevrolet electric vehicles that also includes a pickup and compact crossover, and four Cadillacs.'</span>
+<span class="n">example_document2</span> <span class="o">=</span> <span class="s">'''Scientists say that the press-released results share a few more details than last weeks positive announcements from Pfizer and BioNTech, which are together working on a rival RNA vaccine, and from the Russian developers behind the controversial ‘Sputnik V’ vaccine. Moderna released figures suggesting that its vaccine is likely to prevent severe COVID-19 infections, something that was not clear from the other developers’ announcements.'''</span>
+<span class="n">news4</span><span class="o">=</span> <span class="s">'''
+Tesla is getting added to the S&amp;P 500, shares surge on the news
+Julia La Roche
+Julia La Roche·Correspondent
+Tue, November 17, 2020, 7:41 AM GMT+9
+Shares of Telsa (TSLA) jumped more than 10% in the after-hours session on the news that the electric carmaker is set to join the S&amp;P 500.
+
+On Monday evening, the S&amp;P Dow Jones Indices announced that Tesla will be added to the closely-followed stock index on Monday, Dec. 21 before the market opens to coincide with the December quarterly rebalance.'''</span>
+
+<span class="n">news5</span><span class="o">=</span> <span class="s">'''A bipartisan group of U.S. states plans to file an antitrust lawsuit against Google as early as next month, according to two people briefed on the matter, potentially beating a more widely anticipated lawsuit from a different group of states led by Texas.'''</span>
+</code></pre></div></div>
+
+<hr />
+<h2 id="gate-api--annie--rule-based-">Gate API ( ANNIE : rule based )</h2>
+
+<p>Gate 라고불리는 Gate cloud 에서 데이터를 가져와서 룰 기반 으로 회사명, 날짜, 돈, 위치 등을 인식한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">url</span><span class="o">=</span><span class="s">"https://cloud-api.gate.ac.uk/process-document/annie-named-entity-recognizer"</span> <span class="c1"># Gate cloud 주소 
+</span><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'text/plain'</span><span class="p">}</span>
+
+<span class="k">def</span> <span class="nf">GATENER</span><span class="p">(</span><span class="n">original</span><span class="p">):</span>
+    <span class="n">ll</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">sentence</span> <span class="o">=</span> <span class="n">original</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">)</span> <span class="c1"># 문장 utf-8 인코딩
+</span>    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">sentence</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">).</span><span class="n">json</span><span class="p">()</span> <span class="c1"># 인코딩한 문장 해당 클라우드에 입력 및 개체명 찾기
+</span>
+    <span class="kn">import</span> <span class="nn">json</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># 결과 json 형태로 수집 
+</span>    <span class="k">try</span><span class="p">:</span>
+        <span class="n">orgdict</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="n">loads</span><span class="p">(</span><span class="n">result</span><span class="p">)[</span><span class="s">'entities'</span><span class="p">][</span><span class="s">'Organization'</span><span class="p">]</span> <span class="c1"># 수집된 데이터에서 organization 태그 된 단어 추출 
+</span>        <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">orgdict</span><span class="p">:</span>
+            <span class="n">organization</span> <span class="o">=</span> <span class="n">original</span><span class="p">[</span><span class="n">d</span><span class="p">[</span><span class="s">'indices'</span><span class="p">][</span><span class="mi">0</span><span class="p">]:</span><span class="n">d</span><span class="p">[</span><span class="s">'indices'</span><span class="p">][</span><span class="mi">1</span><span class="p">]]</span>
+            <span class="n">ll</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">organization</span><span class="p">)</span>
+    <span class="k">except</span> <span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'No Orgnization within Sentence'</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ll</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="n">GATENER</span><span class="p">(</span><span class="n">example_document1</span><span class="p">))</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>['Apollo Project', 'Microsoft', 'Intel', 'Nvidia', 'Daimler AG', 'Hyundai', 'Honda']
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">GATENER</span><span class="p">(</span><span class="n">news2</span><span class="p">)</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>No Orgnization within Sentence
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">GATENER</span><span class="p">(</span><span class="n">news3</span><span class="p">)</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Pfizer
+BioNTech
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">GATENER</span><span class="p">(</span><span class="n">news4</span><span class="p">)</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>No Orgnization within Sentence
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">GATENER</span><span class="p">(</span><span class="n">news5</span><span class="p">)</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Google
+</code></pre></div></div>
+
+<h2 id="nltk">NLTK</h2>
+
+<p>NLTK 에서 지원하는 개체명 인식기</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">nltk</span> <span class="c1"># NLTK 에서 재공하는 NER 분석을 위한 데이터 다운로드
+</span><span class="n">nltk</span><span class="p">.</span><span class="n">download</span><span class="p">(</span><span class="s">'punkt'</span><span class="p">)</span>
+<span class="n">nltk</span><span class="p">.</span><span class="n">download</span><span class="p">(</span><span class="s">'averaged_perceptron_tagger'</span><span class="p">)</span>
+<span class="n">nltk</span><span class="p">.</span><span class="n">download</span><span class="p">(</span><span class="s">'maxent_ne_chunker'</span><span class="p">)</span>
+<span class="n">nltk</span><span class="p">.</span><span class="n">download</span><span class="p">(</span><span class="s">'words'</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">nltkner</span><span class="p">(</span><span class="n">original</span><span class="p">):</span>
+    <span class="n">dicts</span> <span class="o">=</span> <span class="p">[(</span><span class="s">' '</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">chunk</span><span class="p">),</span> <span class="n">chunk</span><span class="p">.</span><span class="n">label</span><span class="p">()</span> <span class="p">)</span> 
+             <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">nltk</span><span class="p">.</span><span class="n">ne_chunk</span><span class="p">(</span><span class="n">nltk</span><span class="p">.</span><span class="n">pos_tag</span><span class="p">(</span><span class="n">nltk</span><span class="p">.</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">original</span><span class="p">)))</span> <span class="c1"># NLTK 사용, 문장 tokenize (형태소별로 문장 쪼개기)
+</span>             <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">chunk</span><span class="p">,</span> <span class="s">'label'</span><span class="p">)]</span> <span class="c1"># 쪼갠 단어 객체명 붙여주기
+</span>    <span class="n">orglist</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">dicts</span> <span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="s">'ORGANIZATION'</span><span class="p">]</span> <span class="c1"># 객체명중 ORGNAIZATION 인 단어 찾기 
+</span>    <span class="k">print</span><span class="p">(</span><span class="n">orglist</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">dicts</span> <span class="p">,</span> <span class="n">orglist</span>
+
+<span class="n">dicts</span><span class="p">,</span> <span class="n">orglist</span> <span class="o">=</span> <span class="n">nltkner</span><span class="p">(</span><span class="n">example_document</span><span class="p">)</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    ['AI', 'BYD', 'Intel', 'ZTE', 'Ford']
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dicts</span><span class="p">,</span> <span class="n">orglist</span> <span class="o">=</span> <span class="n">nltkner</span><span class="p">(</span><span class="n">news1</span><span class="p">)</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    ['BuzzFeed', 'HuffPost', 'Verizon Communications Inc'] ```python dicts, orglist = nltkner(news3) ```
+    ['BioNTech', 'RNA'] ```python dicts, orglist = nltkner(news4) ```
+    ['Finance Tesla', 'TSLA']
+</code></pre></div></div>
+
+<h2 id="stanford-core-nlp">Stanford Core NLP</h2>
+
+<p>스탠포드 어학사전에를 기반으로 하는 룰기반의 개체명 인식 모델.
+ 사람, 장소, 위치, 돈, 숫자, 순서, 퍼센트 등등의 12개의 개체로 인식한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">!</span><span class="n">wget</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">nlp</span><span class="p">.</span><span class="n">stanford</span><span class="p">.</span><span class="n">edu</span><span class="o">/</span><span class="n">software</span><span class="o">/</span><span class="n">stanford</span><span class="o">-</span><span class="n">ner</span><span class="o">-</span><span class="mi">2015</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mf">20.</span><span class="nb">zip</span> <span class="c1">#  Stanford 어학사전 다운로드
+</span><span class="err">!</span><span class="n">unzip</span> <span class="n">stanford</span><span class="o">-</span><span class="n">ner</span><span class="o">-</span><span class="mi">2015</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mf">20.</span><span class="nb">zip</span> <span class="c1"># 다운로드 된 압축파일 해체
+</span><span class="kn">from</span> <span class="nn">nltk.tag.stanford</span> <span class="kn">import</span> <span class="n">StanfordNERTagger</span> 
+<span class="n">jar</span> <span class="o">=</span> <span class="s">"stanford-ner-2015-04-20/stanford-ner-3.5.2.jar"</span> 
+<span class="n">model</span> <span class="o">=</span> <span class="s">"stanford-ner-2015-04-20/classifiers/"</span> 
+
+<span class="n">st_3class</span> <span class="o">=</span> <span class="n">StanfordNERTagger</span><span class="p">(</span><span class="n">model</span> <span class="o">+</span> <span class="s">"english.all.3class.distsim.crf.ser.gz"</span><span class="p">,</span>
+                              <span class="n">jar</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s">'utf8'</span><span class="p">)</span> <span class="c1"># stanford 어학사전중 장소, 사람, 조직 tag 로된 사전만 불러오기 
+</span>
+
+<span class="n">st_3class</span> <span class="o">=</span> <span class="n">StanfordNERTagger</span><span class="p">(</span><span class="n">model</span> <span class="o">+</span> <span class="s">"english.all.3class.distsim.crf.ser.gz"</span><span class="p">,</span> <span class="n">jar</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s">'utf8'</span><span class="p">)</span> 
+<span class="n">st_4class</span> <span class="o">=</span> <span class="n">StanfordNERTagger</span><span class="p">(</span><span class="n">model</span> <span class="o">+</span> <span class="s">"english.conll.4class.distsim.crf.ser.gz"</span><span class="p">,</span> <span class="n">jar</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s">'utf8'</span><span class="p">)</span> 
+<span class="n">st_7class</span> <span class="o">=</span> <span class="n">StanfordNERTagger</span><span class="p">(</span><span class="n">model</span> <span class="o">+</span> <span class="s">"english.muc.7class.distsim.crf.ser.gz"</span><span class="p">,</span> <span class="n">jar</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s">'utf8'</span><span class="p">)</span>
+
+<span class="p">[</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">st_3class</span><span class="p">.</span><span class="n">tag</span><span class="p">(</span><span class="n">example_document</span><span class="p">.</span><span class="n">split</span><span class="p">())</span> <span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="s">'ORGANIZATION'</span><span class="p">]</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    ['Hyundai']
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">st_4class</span><span class="p">.</span><span class="n">tag</span><span class="p">(</span><span class="n">news1</span><span class="p">.</span><span class="n">split</span><span class="p">())</span> <span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="s">'ORGANIZATION'</span><span class="p">]</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    ['HuffPost', 'Verizon', 'Communications', 'Inc'] ```python [a[0] for a in st_3class.tag(news2.split()) if a[1]=='ORGANIZATION'] ```
+    ['Chevrolet']
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">st_3class</span><span class="p">.</span><span class="n">tag</span><span class="p">(</span><span class="n">news3</span><span class="p">.</span><span class="n">split</span><span class="p">())</span> <span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="s">'ORGANIZATION'</span><span class="p">]</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    ['Pfizer'] ```python [a[0] for a in st_3class.tag(news4.split()) if a[1]=='ORGANIZATION'] ```
+    ['Yahoo', 'Finance', 'Tesla', 'S&amp;P', 'S&amp;P', 'S&amp;P', 'Dow', 'Jones', 'Indices']
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">st_3class</span><span class="p">.</span><span class="n">tag</span><span class="p">(</span><span class="n">news5</span><span class="p">.</span><span class="n">split</span><span class="p">())</span> <span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="s">'ORGANIZATION'</span><span class="p">]</span>
+
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    ['Google']
+</code></pre></div></div>
+
+<h2 id="spacy">Spacy</h2>
+
+<p>spaCy는 파이썬의 자연어처리를 위한 오픈 소스 기반 라이브러리다.
+문장을 tokenize 한후, 각 token의 역활과 관계표현을 통해 개체명인식 , TEXT SIMILARITY 등을 계산해준다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="err">!</span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">spacy</span> <span class="n">download</span> <span class="n">en_core_web_lg</span> <span class="c1"># 라이브러리 다운로드
+</span><span class="kn">import</span> <span class="nn">spacy</span>
+<span class="n">sp_lg</span> <span class="o">=</span> <span class="n">spacy</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="s">'en_core_web_lg'</span><span class="p">)</span> 
+
+<span class="k">def</span> <span class="nf">spacy_large_ner</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
+    <span class="n">listss</span> <span class="o">=</span> <span class="p">[</span><span class="n">ent</span><span class="p">.</span><span class="n">text</span><span class="p">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">sp_lg</span><span class="p">(</span><span class="n">document</span><span class="p">).</span><span class="n">ents</span> 
+              <span class="k">if</span> <span class="n">ent</span><span class="p">.</span><span class="n">label_</span> <span class="o">==</span><span class="s">'ORG'</span><span class="p">]</span> <span class="c1"># 문장 쪼개고, 해당 문장 spacy 에 입력후, 기관으로 개체 테그 붙어있는 단어 추출
+</span>    <span class="k">return</span>  <span class="n">listss</span>
+
+<span class="k">def</span> <span class="nf">spacy_large_ner</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
+    <span class="n">listss</span> <span class="o">=</span> <span class="p">[</span><span class="n">ent</span><span class="p">.</span><span class="n">text</span><span class="p">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">sp_lg</span><span class="p">(</span><span class="n">document</span><span class="p">).</span><span class="n">ents</span> <span class="k">if</span> <span class="n">ent</span><span class="p">.</span><span class="n">label_</span> <span class="o">==</span><span class="s">'ORG'</span><span class="p">]</span>
+    <span class="k">return</span>  <span class="n">listss</span>
+
+<span class="n">dd</span> <span class="o">=</span> <span class="n">spacy_large_ner</span><span class="p">(</span><span class="n">example_document</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">dd</span><span class="p">)</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    ['Baidu', 'Apollo Project', 'BYD', 'Dongfeng', 'Microsoft', 'Intel', 'Nvidia', 'Daimler AG', 'ZTE', 'Ford', 'Hyundai', 'Honda']
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dd</span> <span class="o">=</span> <span class="n">spacy_large_ner</span><span class="p">(</span><span class="n">news1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">dd</span><span class="p">)</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    ['Baidu',  'Apollo Project',  'BYD',  'Dongfeng',  'Microsoft',  'Intel',  'Nvidia',  'Daimler AG',  'ZTE',  'Ford',  'Hyundai',  'Honda']
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">spacy_large_ner</span><span class="p">(</span><span class="n">example_document3</span><span class="p">)</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    ['GMC', 'Ultium', 'Chevrolet', 'Cadillacs']
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">spacy_large_ner</span><span class="p">(</span><span class="n">example_document2</span><span class="p">)</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    ['GMC', 'Ultium', 'Chevrolet', 'Cadillacs']
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dd</span> <span class="o">=</span> <span class="n">spacy_large_ner</span><span class="p">(</span><span class="n">news4</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">dd</span><span class="p">)</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    ['Pfizer', 'RNA'] ```python dd = spacy_large_ner(news5) ```
+    ['Yahoo Finance', 'Telsa', 'TSLA', 'S&amp;P', 'Tesla']
+</code></pre></div></div>
+
+<h2 id="polyglot">Polyglot</h2>
+
+<p>위키피디아 및 FREEBASE 에서 얻은 데이터를 통해, 감성 SEMENTIC 및 문장 구조 SYNTACTIC 를 임베딩하여, 여러 언어를 인식하는 제네럴한 모델</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">polyglot</span>
+
+<span class="err">!</span><span class="n">polyglot</span> <span class="n">download</span> <span class="n">TASK</span><span class="p">:</span><span class="n">ner2</span>
+<span class="c1"># # pip install tkinter
+# ERROR: Could not find a version that satisfies the requirement tkinter (from versions: none)
+# ERROR: No matching distribution found for tkinter
+</span>
+<span class="kn">import</span> <span class="nn">tkinter</span>
+<span class="n">text</span> <span class="o">=</span> <span class="n">Text</span><span class="p">(</span><span class="sa">u</span><span class="s">"In Großbritannien war Gandhi mit dem westlichen Lebensstil vertraut geworden"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">text</span><span class="p">.</span><span class="n">entities</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<h2 id="flair--ner-부분-3위">Flair : NER 부분 3위</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">from</span> <span class="nn">flair.data</span> <span class="kn">import</span> <span class="n">Sentence</span> <span class="c1"># 전이 학습 제공된 모델 import 
+</span><span class="kn">from</span> <span class="nn">flair.models</span> <span class="kn">import</span> <span class="n">SequenceTagger</span>
+
+<span class="k">def</span> <span class="nf">flairner</span><span class="p">(</span><span class="n">sent</span><span class="p">):</span>
+    <span class="n">sentence</span> <span class="o">=</span> <span class="n">Sentence</span><span class="p">(</span><span class="n">sent</span><span class="p">)</span>
+    <span class="n">tagger</span> <span class="o">=</span> <span class="n">SequenceTagger</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="s">'ner'</span><span class="p">)</span> <span class="c1"># import 한 모델중 개체명분석 모델 불러오기
+</span>    <span class="n">tagger</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span> <span class="c1"># 입력된 문장에 대한 개체명 분석 예측
+</span>    <span class="n">flairnerlist</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">).</span><span class="n">split</span><span class="p">(</span><span class="s">'</span><span class="se">\"</span><span class="s">'</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">sentence</span><span class="p">.</span><span class="n">get_spans</span><span class="p">(</span><span class="s">'ner'</span><span class="p">)</span> <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">).</span><span class="n">split</span><span class="p">(</span><span class="s">'</span><span class="se">\"</span><span class="s">'</span><span class="p">)[</span><span class="mi">2</span><span class="p">][</span><span class="mi">14</span><span class="p">:</span><span class="mi">17</span><span class="p">]</span> <span class="o">==</span><span class="s">'ORG'</span><span class="p">]</span> 
+    <span class="c1"># 개체명이 기관(회사) 인 단어 추출
+</span>    <span class="k">return</span> <span class="n">flairnerlist</span>
+
+<span class="n">flairner</span><span class="p">(</span><span class="n">example_document</span><span class="p">)</span>
+        <span class="p">[</span><span class="s">'Baidu'</span><span class="p">,</span>
+         <span class="s">'Apollo Project'</span><span class="p">,</span>
+         <span class="s">'AI'</span><span class="p">,</span>
+         <span class="s">'BYD'</span><span class="p">,</span>
+         <span class="s">'Dongfeng'</span><span class="p">,</span>
+         <span class="s">'Microsoft'</span><span class="p">,</span>
+         <span class="s">'Intel'</span><span class="p">,</span>
+         <span class="s">'Nvidia'</span><span class="p">,</span>
+         <span class="s">'Daimler AG'</span><span class="p">,</span>
+         <span class="s">'ZTE'</span><span class="p">,</span>
+         <span class="s">'Grab'</span><span class="p">,</span>
+         <span class="s">'Ford'</span><span class="p">,</span>
+         <span class="s">'Hyundai'</span><span class="p">,</span>
+         <span class="s">'Honda'</span><span class="p">]</span>
+<span class="n">flairner</span><span class="p">(</span><span class="n">news1</span><span class="p">)</span>
+    <span class="p">[</span><span class="s">'BuzzFeed'</span><span class="p">,</span> <span class="s">'HuffPost'</span><span class="p">,</span> <span class="s">'Verizon Communications Inc'</span><span class="p">]</span>
+<span class="n">flairner</span><span class="p">(</span><span class="n">example_document3</span><span class="p">)</span>
+    <span class="p">[</span><span class="s">'Pfizer'</span><span class="p">,</span> <span class="s">'BioNTech'</span><span class="p">,</span> <span class="s">'Moderna'</span><span class="p">]</span>
+<span class="n">flairner</span><span class="p">(</span><span class="n">example_document2</span><span class="p">)</span>
+<span class="n">flairner</span><span class="p">(</span><span class="n">news4</span><span class="p">)</span>
+    <span class="p">[</span><span class="s">'Yahoo Finance Tesla'</span><span class="p">,</span><span class="s">'Julia La Roche Julia La Roche'</span><span class="p">,</span><span class="s">'Telsa'</span><span class="p">,</span> <span class="s">'TSLA'</span><span class="p">,</span> <span class="s">'S &amp; P Dow Jones Indices'</span><span class="p">,</span> <span class="s">'Tesla'</span><span class="p">]</span>
+<span class="n">flairner</span><span class="p">(</span><span class="n">news5</span><span class="p">)</span>
+    <span class="p">[</span><span class="s">'Google'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<h2 id="deeppavlov">DEEPPAVLOV</h2>
+<p>DEEP NEURAL NETWORK MODEL FOR THE TASK OF NAME ENTITY RECOGNITION</p>
+
+<p>DeepPavlov is an open-source conversational AI library built on TensorFlow, Keras and PyTorch.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">q</span> <span class="n">deeppavlov</span>
+
+<span class="kn">from</span> <span class="nn">deeppavlov</span> <span class="kn">import</span> <span class="n">configs</span><span class="p">,</span> <span class="n">build_model</span>
+
+<span class="n">ner_model</span> <span class="o">=</span> <span class="n">build_model</span><span class="p">(</span><span class="n">configs</span><span class="p">.</span><span class="n">ner</span><span class="p">.</span><span class="n">ner_ontonotes_bert</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="n">ner_model</span><span class="p">(</span><span class="n">example_document</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="elmo">ELMO</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">allennlp.predictors</span> <span class="kn">import</span> <span class="n">Predictor</span>
+<span class="n">predictor</span> <span class="o">=</span> <span class="n">Predictor</span><span class="p">.</span><span class="n">from_path</span><span class="p">(</span><span class="s">"https://allennlp.s3.amazonaws.com/models/ner-model-2018.04.26.tar.gz"</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">predictor</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">sentence</span><span class="o">=</span><span class="s">"Did Uriah honestly think he could beat The Legend of Zelda in under three hours?"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">word</span><span class="p">,</span> <span class="n">tag</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s">"words"</span><span class="p">],</span> <span class="n">results</span><span class="p">[</span><span class="s">"tags"</span><span class="p">]):</span>
+    <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">word</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">tag</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="simplest-bert-model-roberta">SIMPLEST BERT MODEL RoBERTa</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">from</span> <span class="nn">simpletransformers.ner</span> <span class="kn">import</span> <span class="n">NERModel</span><span class="p">,</span> <span class="n">NERArgs</span>
+<span class="n">model_args</span> <span class="o">=</span> <span class="n">NERArgs</span><span class="p">()</span>
+<span class="n">model_args</span><span class="p">.</span><span class="n">labels_list</span> <span class="o">=</span> <span class="p">[</span><span class="s">"PERSON"</span><span class="p">,</span> <span class="s">"LOCATION"</span><span class="p">,</span> <span class="s">"ORGANIZATION"</span><span class="p">]</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">NERModel</span><span class="p">(</span>
+    <span class="s">"roberta"</span><span class="p">,</span>
+    <span class="s">"roberta-base"</span><span class="p">,</span>
+    <span class="n">args</span><span class="o">=</span><span class="n">model_args</span><span class="p">,</span> <span class="n">use_cuda</span><span class="o">=</span><span class="bp">False</span>
+<span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">bertsimplener</span><span class="p">(</span><span class="n">sentence</span><span class="p">):</span>
+    <span class="n">orligst</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">predictions</span><span class="p">,</span> <span class="n">raw_outputs</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">predict</span><span class="p">([</span><span class="n">sentence</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">predictions</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">a</span><span class="p">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">v</span><span class="o">==</span><span class="s">'ORGANIZATION'</span><span class="p">:</span>
+                <span class="n">orligst</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">orligst</span>
+
+<span class="n">bertsimplener</span><span class="p">(</span><span class="n">example_document</span><span class="p">)</span>
+    <span class="p">[</span><span class="s">'Apollo'</span><span class="p">,</span><span class="s">'Project'</span><span class="p">,</span><span class="s">'the'</span><span class="p">,</span><span class="s">'autonomous'</span><span class="p">,</span><span class="s">'driving'</span><span class="p">,</span><span class="s">'and'</span><span class="p">,</span><span class="s">'programs,'</span><span class="p">,</span><span class="s">'partner'</span><span class="p">,</span><span class="s">'ecosystems'</span><span class="p">,</span><span class="s">'over'</span><span class="p">,</span><span class="s">'global'</span><span class="p">,</span>
+     <span class="s">'partners'</span><span class="p">,</span><span class="s">'as'</span><span class="p">,</span><span class="s">'of'</span><span class="p">,</span><span class="s">'2018,'</span><span class="p">,</span><span class="s">'BYD,'</span><span class="p">,</span><span class="s">'Daimler'</span><span class="p">,</span><span class="s">'ZTE,'</span><span class="p">,</span><span class="s">'and'</span><span class="p">,</span><span class="s">'Honda.'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<h3 id="conll">CONLL</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">conllner</span><span class="p">(</span><span class="n">sentence</span><span class="p">):</span>
+    <span class="n">words</span><span class="o">=</span><span class="s">''</span>
+    <span class="n">tokens</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">tokenizer</span><span class="p">.</span><span class="n">decode</span><span class="p">(</span><span class="n">tokenizer</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="n">sentence</span><span class="p">)))</span> <span class="c1"># 문장 형태소 분석
+</span>
+    <span class="n">inputs</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">.</span><span class="n">encode_plus</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span> <span class="c1"># 형태소 별로 자른 단어 모음을 Tensor 형태로 변화
+</span>    <span class="n">inin</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">FloatTensor</span><span class="p">([</span><span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">inputs</span><span class="p">.</span><span class="n">items</span><span class="p">()])</span><span class="c1"># Tensor 형태 데이터를 모델에 입력
+</span>    <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">torch</span><span class="p">.</span><span class="n">LongTensor</span><span class="p">([</span><span class="n">inputs</span><span class="p">[</span><span class="s">'input_ids'</span><span class="p">]]))[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">predictions</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># 예측값을 1 과 0 사이의 값으로 축소
+</span>    <span class="c1"># 각 단어별 예측값에 따른 label 맞춰주기
+</span>    <span class="n">wordtag</span> <span class="o">=</span> <span class="p">[(</span><span class="n">token</span><span class="p">,</span> <span class="n">label_list</span><span class="p">[</span><span class="n">prediction</span><span class="p">])</span> <span class="k">for</span> <span class="n">token</span><span class="p">,</span> <span class="n">prediction</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">tokens</span><span class="p">,</span> <span class="n">predictions</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">tolist</span><span class="p">())]</span>
+
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">wordtag</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span> <span class="c1"># label 된 단어중 ,기관 개체명 가진 단어 추출 
+</span>        <span class="k">if</span> <span class="n">wordtag</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span><span class="s">'I-ORG'</span><span class="p">:</span>
+            <span class="n">words</span> <span class="o">+=</span> <span class="n">wordtag</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">wordtag</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="s">'I-ORG'</span><span class="p">:</span>
+                <span class="n">words</span> <span class="o">+=</span> <span class="s">','</span>
+    <span class="n">wordlist</span>  <span class="o">=</span> <span class="p">[</span><span class="n">a</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">words</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'##'</span><span class="p">,</span><span class="s">''</span><span class="p">).</span><span class="n">split</span><span class="p">(</span><span class="s">','</span><span class="p">)</span> <span class="k">if</span> <span class="n">a</span> <span class="o">!=</span><span class="s">''</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">wordlist</span>
+
+<span class="n">conllner</span><span class="p">(</span><span class="n">example_document1</span><span class="p">)</span>
+    <span class="p">[</span><span class="s">'Baidu'</span><span class="p">,</span> <span class="s">'BYD'</span><span class="p">,</span> <span class="s">'Dongfeng'</span><span class="p">,</span> <span class="s">'Microsoft'</span><span class="p">,</span> <span class="s">'Intel'</span><span class="p">,</span> <span class="s">'Nvidia'</span><span class="p">,</span> <span class="s">'DaimlerAG'</span><span class="p">,</span> <span class="s">'ZTE'</span><span class="p">,</span> <span class="s">'Grab'</span><span class="p">,</span> <span class="s">'Ford'</span><span class="p">,</span> <span class="s">'Hyundai'</span><span class="p">,</span> <span class="s">'Honda'</span><span class="p">]</span>
+<span class="n">conllner</span><span class="p">(</span><span class="n">example_document2</span><span class="p">)</span>
+    <span class="p">[</span><span class="s">'Pfizer'</span><span class="p">,</span> <span class="s">'BioNTech'</span><span class="p">,</span> <span class="s">'Moderna'</span><span class="p">]</span>
+<span class="n">conllner</span><span class="p">(</span><span class="n">example_document3</span><span class="p">)</span>
+    <span class="p">[</span><span class="s">'Chevrolet'</span><span class="p">]</span>
+
+
+</code></pre></div></div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#code" class="page__taxonomy-item" rel="tag">code</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#nlp" class="page__taxonomy-item" rel="tag">NLP</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-11-04T00:00:00+09:00">November 4, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Open+NLP+Model+%EB%B9%84%EA%B5%90%20http%3A%2F%2Flocalhost%3A4000%2Fnlp%2FOpenNLPmodels%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fnlp%2FOpenNLPmodels%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fnlp%2FOpenNLPmodels%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/codetest/%EC%B5%9C%EB%8B%A8%EA%B2%BD%EB%A1%9C/" class="pagination--pager" title="최단경로
+">Previous</a>
+    
+    
+      <a href="/nlp/NMT/" class="pagination--pager" title="Neural Machine Translator ( 신경망 기계 번역 )
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/nlp/NLPcomp/" rel="permalink">NLP 모델 비교
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          7 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">```python
+import random
+import happybase
+import hashlib
+import datetime
+from datetime import datetime, timezone,timedelta
+import furl
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/nlp/NMT/" rel="permalink">Neural Machine Translator ( 신경망 기계 번역 )
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">기계번역 : 기존 번역 모델 vs. 신경망 기계번역
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/codetest/%EC%B5%9C%EB%8B%A8%EA%B2%BD%EB%A1%9C/" rel="permalink">최단경로
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">최단 경로 : 가장 빠른 길 찾기
+모든 지점에서 다른 모든 지점까지의 최단 경로를 모두 구해야하는 경우
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/recommendation/Finegrained/" rel="permalink">Fine-grained Interest Matching for Neural News Recommendation
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Review on Youtube
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:irenee.jy93@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/irenejy93" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 Irene Kim. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

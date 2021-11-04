@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Bert paper Review - Scribbling every Miscellaneous thing</title>
-<meta name="description" content="01 what is Bert? BERT ( Bi-directional Encoder Representation from Transformers) 기존 자연어 처리 신경망">
+<!-- begin _includes/seo.html --><title>Neural Machine Translator ( 신경망 기계 번역 ) - Scribbling every Miscellaneous thing</title>
+<meta name="description" content="기계번역 : 기존 번역 모델 vs. 신경망 기계번역">
 
 
   <meta name="author" content="Irene Kim">
@@ -22,30 +22,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Scribbling every Miscellaneous thing">
-<meta property="og:title" content="Bert paper Review">
-<meta property="og:url" content="http://localhost:4000/nlp/Bert-paper-Review/">
+<meta property="og:title" content="Neural Machine Translator ( 신경망 기계 번역 )">
+<meta property="og:url" content="http://localhost:4000/nlp/NMT/">
 
 
-  <meta property="og:description" content="01 what is Bert? BERT ( Bi-directional Encoder Representation from Transformers) 기존 자연어 처리 신경망">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2020-09-03T00:00:00+09:00">
+  <meta property="og:description" content="기계번역 : 기존 번역 모델 vs. 신경망 기계번역">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2021-11-05T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/nlp/Bert-paper-Review/">
+
+<link rel="canonical" href="http://localhost:4000/nlp/NMT/">
 
 
 
@@ -185,7 +185,7 @@
     
       
       
-        <li class="current">Bert paper Review</li>
+        <li class="current">Neural Machine Translator ( 신경망 기계 번역 )</li>
       
     
   </ol>
@@ -321,15 +321,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Bert paper Review">
-    <meta itemprop="description" content="01 what is Bert?BERT ( Bi-directional Encoder Representation from Transformers)기존 자연어 처리 신경망">
-    <meta itemprop="datePublished" content="2020-09-03T00:00:00+09:00">
+    <meta itemprop="headline" content="Neural Machine Translator ( 신경망 기계 번역 )">
+    <meta itemprop="description" content="기계번역 : 기존 번역 모델 vs. 신경망 기계번역">
+    <meta itemprop="datePublished" content="2021-11-05T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Bert paper Review
+          <h1 id="page-title" class="page__title" itemprop="headline">Neural Machine Translator ( 신경망 기계 번역 )
 </h1>
           
 
@@ -357,163 +357,137 @@
 
       <section class="page__content" itemprop="text">
         
-          <aside class="sidebar__right sticky">
-            <nav class="toc">
-              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> contents</h4></header>
-              <ul class="toc__menu">
-  <li><a href="#01-what-is-bert">01 what is Bert?</a>
-              - {:.} <a href="#기존-자연어-처리-신경망">기존 자연어 처리 신경망</a></li>
-  <li><a href="#02-state-of-art">02. State of Art</a></li>
-  <li><a href="#03--bert-architecture">03 . Bert Architecture</a>
+        <h1 id="기계번역--기존-번역-모델-vs-신경망-기계번역">기계번역 : 기존 번역 모델 vs. 신경망 기계번역</h1>
+
+<p>기계번역 : 기계를 이용하여 특정 언어를 다른 언어로 번역해주는 기술</p>
+<ul>
+  <li>기존의 번역 모델: 구글 번역기나 네이버 번역기들이 사용하던 모델로, 단어나 말뭉치가 가지고잇는 의미를 저장하여 문장의 구조상 확률적으로 가장 높은 확률을 가지고있는 단어나 말뭉치의 조합으로 번역시켜주는 모델
     <ul>
-      <li><a href="#1-pre-train">[1] Pre-train</a>
-        <ul>
-          <li><a href="#1-pre-training-task">1. Pre-training task</a></li>
-          <li><a href="#2-input-embedding">2. Input Embedding</a></li>
-          <li><a href="#3-encoding-layers">3. Encoding Layers</a></li>
-        </ul>
-      </li>
-      <li><a href="#2-fine-tuning">[2] Fine-tuning</a>
-        <ul>
-          <li><a href="#add--normalize">Add &amp; Normalize</a></li>
-        </ul>
-      </li>
+      <li>통계 기반 번역 (Statistical Machine Translator)</li>
+      <li>규칙 기반 번역 (Rule Based Machine Translation)</li>
+      <li>구문 기반 번역 (Phrase Based Machine Translation)</li>
     </ul>
   </li>
-</ul>
-
-            </nav>
-          </aside>
-        
-        <h1 id="01-what-is-bert">01 what is Bert?</h1>
-<p>BERT ( Bi-directional Encoder Representation from Transformers)</p>
-<h5 id="기존-자연어-처리-신경망">기존 자연어 처리 신경망</h5>
-<p><img src="http://localhost:4000/assets/images/Bert_.png" alt="Git repository 신규 생성 이미지" class="align-center" /></p>
-
-<ol>
-  <li>RNN ( 순환 신경망 ) : 각 새로운 입력층마다 hidden layer 를 저장/수정 하여 새로운 정보를 점차 업데이트 해나아가는 신경망</li>
-  <li>LSTM : RNN의 응용모델로 각 신경망에 hidden state 와 cell state 를 더해주어 오랜시간 이전 정보를 기억</li>
-  <li>Transformer (Encoder-Decoder): 기존 RNN base 모델과 다르게 문장 전체를 입력후 각 단어의 위치를 학습하여 Encoding ( 수치화 ) 후 Decoding (번역 ) 하는 신경망</li>
-  <li>Attention: Transformer 의 응용으로 문장중 중요한 단어에 가중치를 부여</li>
-  <li>Bert : Transformer의 Encoder 에 Self Attenion 을 적용한 학습법으로  단어의 양 위치 (Bi-directional) 을 학습, 문맥의 흐름을 이해</li>
-</ol>
-
-<hr />
-
-<h1 id="02-state-of-art">02. State of Art</h1>
-<p>Purpose: 문장/문단의 문맥을 이해하는 언어 이해 모델로서 사용자의 니즈에 따라 다양하게 사용할수있는 모델</p>
-
-<ul>
-  <li>기존의 좋은 평가를 받아온 ELMO 보다 좋은 성능</li>
-  <li>ELMO : Uni-directional LSTM Model</li>
-  <li>
-    <p>GPT : left to right, and right to left transformer model</p>
-  </li>
-  <li>NLP 의 11 개 테스크에서 state of art 기록</li>
-  <li>SQuAD 기록 갱신</li>
-  <li>사용자는 Transfer Learning 을 통해 학습된 모델을 가져와     Fine -tuning 을 통해 필요에 맞게 사용 가능하다.
+  <li>이런 번역 모델들은 단어가 가지고잇는 이중적인 의미를 분간하지 못하거나, 문장의 맥락에 대한 학습이 불가하여 번역했을때 문장의 구조에 어색함이 있다.
     <ul>
-      <li>Transformer 모델 기반
-      - Encoder 부분 사용
-      - Speed, Accuracy , Long-term decedency 에서 우수한 모델</li>
+      <li>예) I have discussed my concern about this project with my coworkers –&gt; 나는 대화하다 나의 걱정 이 프로젝트에 대하여 나의 파트너와함께</li>
+    </ul>
+  </li>
+  <li>신경망 기계 번역 : 신경망 기계 번역은 단어, 순서, 문맥과 문장을 모델링하여 번역하는 인공 신경망 모델
+    <ul>
+      <li>문장의 각 단어의 뜻 뿐만 아니라 이중적인 의미, 문장의 흐름밑 문맥을 학습 하여 영어와 한국어와 같이 어순이 다른 언어의 번역에도 어색함이없다.</li>
+      <li>예) 이 프로젝트에 대한 우려 사항을 파트너와 논의했습니다.</li>
     </ul>
   </li>
 </ul>
 
 <hr />
 
-<h1 id="03--bert-architecture">03 . Bert Architecture</h1>
+<h1 id="neutro-machine-translator-의-구조">Neutro Machine Translator 의 구조</h1>
 
-<p><img src="http://localhost:4000/assets/images/Transformer.png" alt="Git repository 신규 생성 이미지" class="align-center" />
-‘Attention is All’ 논문에서 발표된 Transformer 모델의 Encoding 부분 차용</p>
+<h2 id="1-auto-encoder">1. auto-encoder</h2>
 
-<p>※ 2 가지 버전 :</p>
+<p>신경망 기계번역의 기본적인 구조는 자기 지도학습의 가장 대표적인 모델인 encoder 와 decoder 의 조합의 autoencoder로 이루어져 있다. 
+<br />&lt;/br&gt; 
+<img src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F995AB9425B59E44805" width="700" height="500" /></p>
+
+<p><br /></p>
+
 <ul>
-  <li>Bert-Base ( L=12, H=768, A=12) <br /></li>
-  <li>Bert-Large( L=24, H=1024, A=16)<br /></li>
-  <li>해당 문서에서는 Base 버전 으로 진행</li>
+  <li>Encoder : vector화 (숫자의 조합)가 된 문장을 encoder 에 입력 시키면, 입력된 vector는 낮은 차원으로 압축되어 기존값에 포함되어있었던 노이즈나 불필요한 값들은 최소화 또는 제거 된다.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Encoder(tf.keras.Model):
+  def __init__(self, vocab_size, embedding_dim, enc_units, batch_sz):
+      super(Encoder, self).__init__()
+      self.batch_sz = batch_sz
+      self.enc_units = enc_units
+      self.embedding = tf.keras.layers.Embedding(vocab_size, embedding_dim)
+      self.gru = tf.keras.layers.GRU(self.enc_units,
+                                     return_sequences=True,
+                                     return_state=True,
+                                     recurrent_initializer='glorot_uniform')
+
+  def call(self, x, hidden):
+      x = self.embedding(x)
+      output, state = self.gru(x, initial_state = hidden)
+      return output, state
+
+  def initialize_hidden_state(self):
+      return tf.zeros((self.batch_sz, self.enc_units))
+</code></pre></div>    </div>
+    <p><br /></p>
+  </li>
+  <li>decoder : encode 되어 압축된 데이터를 decoder 에 입력 원래 형태의 차원으로 복원시켜 중요한 또는 의미있는 데이터의 값이 가중화된 기존 형태의 데이터로 출력한다.</li>
 </ul>
 
-<h2 id="1-pre-train">[1] Pre-train</h2>
-<h3 id="1-pre-training-task">1. Pre-training task</h3>
-
-<p><img src="http://localhost:4000/assets/images/pretrain.png" alt="Git repository 신규 생성 이미지" class="align-center" /></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Decoder(tf.keras.Model):
+        def __init__(self, vocab_size, embedding_dim, dec_units, batch_sz):
+            super(Decoder, self).__init__()
+            self.batch_sz = batch_sz
+            self.dec_units = dec_units
+            self.embedding = tf.keras.layers.Embedding(vocab_size, embedding_dim)
+            self.gru = tf.keras.layers.GRU(self.dec_units,
+                                           return_sequences=True,
+                                           return_state=True,
+                                           recurrent_initializer='glorot_uniform')
+            self.fc = tf.keras.layers.Dense(vocab_size)
+</code></pre></div></div>
 
 <ul>
-  <li>Masked Language Modelling</li>
-  <li>
-    <p>문장내의 15% 의 랜덤한 단어를 가린다 <MASK> 
-      단
-          * 80% ['MASK'] Token 
-          * 10% Random 단어, 10% 정상 단어
-          * 해당 방법을 통해, mask 뿐만 아니라 정상, 랜덤 단어 역시 학습하여 모든단어에 대한 문맥 표현을 학습</MASK></p>
-
+  <li>autoencoder 는 기계번역 뿐만아닌 다양한 방면에서 사용된다
     <ul>
-      <li>Next Sentence Prediction
-          * 문장 B 가 문장 A 의 바로 다음에 오는 문장이 맞는지에 대한 여부를 예측 
-          * 문장의 50% 비율로 두 문장의 연결을 랜덤하게 구성
-          * 문장 B가 문장 A의 이어지는 문장일경우 IsNext 라고 레이블링, 아닐경우 NotNext
-        <ul>
-          <li>예) Input = [CLS] the man went to [MASK] store [SEP] he bought a gallon [MASK] milk [SEP] LABEL = IsNext</li>
-          <li>예) Input = [CLS] the man [MASK] to the store [SEP] penguin [MASK] are flight ##less birds [SEP] Label = NotNext
-  <br />
-  <br /></li>
-        </ul>
-      </li>
+      <li>문서 복원 , 이상탐지 etc</li>
     </ul>
   </li>
 </ul>
 
-<h3 id="2-input-embedding">2. Input Embedding</h3>
-
-<p>각 단어 Token 을 Vectorize 하는 과정
-<img src="http://localhost:4000/assets/images/embedding.png" alt="Git repository 신규 생성 이미지" class="align-center" /></p>
-
-<p>Input = Token Embedding + Segment Embedding + Position Embedding</p>
-
+<h4 id="autoencoder-의-단점">autoencoder 의 단점:</h4>
 <ul>
-  <li>Position Encoding 대신 Postion embedding 사용</li>
-  <li>Token : 각 단어의 의미를 숫자세트로 표현한 Vector</li>
-  <li>Segment : 문단의 문장의 순서/위치 ( 첫번째 문장 0, 두번째 문장 1 etc)</li>
-  <li>Position:  총 문단안의 단어의 순서/위치</li>
-  <li>입력값 : 각 3개의 임베딩을 합산한 결과를 
-      * (Base 의 경우 768 차원의 Vector Large 의 경우 1024)
-      * 즉 단어의 의미 + 문장의 위치 + 단어의 위치를 뜻하는 768 차원의 vector 로 Embedding</li>
+  <li>autoencoder는 모델구조상, 중요한 정보의 입력은 첫번째 decoder 를 지나 깊은 decoder layer 을 지날수록, 처음 입력했던 정보의 가중치가 줄어듬</li>
+  <li>길이가 긴 입력 데이터의 정보를 보존하여 기억하지 못함.</li>
+  <li>출력층은 마지막 encoder 의 hidden layer 에만 의존하여 긴 문장을 기억하는데 어려움을 겪는다.</li>
 </ul>
 
-<h3 id="3-encoding-layers">3. Encoding Layers</h3>
-<p><img src="http://localhost:4000/assets/images/encoding.png" alt="Git repository 신규 생성 이미지" class="align-center" />
-<br /></p>
-<ol>
-  <li>Multi-Head Attention : 여러 문장속 동일한/연관이 높은 단어에 가중치 를 높여주는 과정
-    <ol>
-      <li>768 차원의 input vector 를 12개의 head 로 나누어 각 헤드별로 64차원의 Vector 를 Q,K,V값으로 지정한다.</li>
-      <li>Q 와 K vector의 값을 곱해 연관성을 구한다.<br />
-예) dog Q [0.3, -0.2 0.4] * ‘The’ K [0.5, -0.9, 0.2]  = 0.4</li>
-      <li>구해진 값에 soft max 를 적용하여 0~1 사이 값으로 scaling 하여 너무높은 또는 낮은 Score 값이 사라지는 문제를 줄인다<br />
-예) [0.4 0,6 -0.6] –&gt; [0.4 0.5 0.1]</li>
-      <li>각 구해진 softmax(score) 에 V vector 을 곱한다 (64차원)</li>
-      <li>나누어진 12개의 Head에 동일한 작업 진행후 나온 12개의 64차원 vector 를 sum 하여 최초와 동일한 768개의 vector 생성
-<br />
-<br /></li>
-    </ol>
-  </li>
-</ol>
+<h3 id="2-attention">2. Attention</h3>
 
-<h2 id="2-fine-tuning">[2] Fine-tuning</h2>
-<h3 id="add--normalize">Add &amp; Normalize</h3>
-<p><img src="http://localhost:4000/assets/images/addnorm.png" alt="Git repository 신규 생성 이미지" class="align-center" /></p>
 <ul>
   <li>
-    <p>ResNet : 기존의 Embedding input vector 를 Self-Attention 값에 더하고 Normalize</p>
+    <p>어텐션은 모델에서 중요한 factor 에 집중하여 오래 기억할수있게 도와주는 machanism 으로 seq2seq(autoencoder) 와 같은 경우 모델이 깊어져 여러개의 encoder-decoder 를 지날수록 점차 처음에 입력한 단어, 또는 데이터의 중요도를 잊어버리는 단점을 보안한다.</p>
   </li>
-  <li>
-    <p>Normalize: 정규화로 인해, Layer를 효과적으로 Stablize
-<br /></p>
-
-    <p>Encoding Layer  N번의 Layer 에서 반복 실행</p>
-  </li>
+  <li>문장 번역에 있어, 하나의 언어에서 다른 언어로 번역할때는 단어하나가아닌 여러 단어의 조합을 구조화 하고 예측하는것이 중요하다.</li>
+  <li>Attention 은 문장속 중요한 단어 (i.e.주어, 목적어) 등에 가중치를 주어 해당 단어의 의미 뿐만아닌 문맥속 위치, 다른 단어와의의 조합등을 집중하여 기억하도록 한다.</li>
 </ul>
+
+<h3 id="2-1-bahdanau-attention-mechanism">2-1 Bahdanau Attention Mechanism</h3>
+<p>해당 모델에서 이용한 Bahdanau Attention Mechnism 은 bahdanau 가 개발한 모델로, encoder 와 decoder 를 선형 연결 시켜 encoder의 압축된 결과를 이전에 decoding 된 결과와 linear combination 시켜 ,context vector 를 생성한다. 그렇게 계산된 결과를 softmax 를 통해 1 과 0 의 결과로 계산하여, 중요한 단어에 가중치를 더해준다.</p>
+
+<p><img src="https://miro.medium.com/max/1400/1*gHyQZ4bFEoDkTbMZkptuYA.png" width="700" height="500" /></p>
+
+<p>``` class BahdanauAttention(tf.keras.layers.Layer):
+    def <strong>init</strong>(self, units):
+        super(BahdanauAttention, self).<strong>init</strong>()
+        self.W1 = tf.keras.layers.Dense(units)
+        self.W2 = tf.keras.layers.Dense(units)
+        self.V = tf.keras.layers.Dense(1)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def call(self, query, values):
+    
+    query_with_time_axis = tf.expand_dims(query, 1)
+
+  
+    score = self.V(tf.nn.tanh(
+        self.W1(query_with_time_axis) + self.W2(values)))
+
+    attention_weights = tf.nn.softmax(score, axis=1)
+
+    context_vector = attention_weights * values
+    context_vector = tf.reduce_sum(context_vector, axis=1)
+
+    return context_vector, attention_weights ```
+</code></pre></div></div>
+
+<p>English Korean 번역을 위한 English - Spanish Trial</p>
+
+<p><img src="attachment:image.png" alt="image.png" /></p>
 
         
       </section>
@@ -534,7 +508,11 @@
     
       
       
-      <a href="/tags/#paper" class="page__taxonomy-item" rel="tag">Paper</a>
+      <a href="/tags/#code" class="page__taxonomy-item" rel="tag">code</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#method" class="page__taxonomy-item" rel="tag">Method</a>
     
     </span>
   </p>
@@ -562,7 +540,7 @@
 
 
         
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-09-03T00:00:00+09:00">September 3, 2020</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-11-05T00:00:00+09:00">November 5, 2021</time></p>
 
 
       </footer>
@@ -572,21 +550,22 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=Bert+paper+Review%20http%3A%2F%2Flocalhost%3A4000%2Fnlp%2FBert-paper-Review%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Neural+Machine+Translator+%28+%EC%8B%A0%EA%B2%BD%EB%A7%9D+%EA%B8%B0%EA%B3%84+%EB%B2%88%EC%97%AD+%29%20http%3A%2F%2Flocalhost%3A4000%2Fnlp%2FNMT%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fnlp%2FBert-paper-Review%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fnlp%2FNMT%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fnlp%2FBert-paper-Review%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fnlp%2FNMT%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="#" class="pagination--pager disabled">Previous</a>
+      <a href="/nlp/OpenNLPmodels/" class="pagination--pager" title="Open NLP Model 비교
+">Previous</a>
     
     
-      <a href="/nlp/Sentiment_anlyze/" class="pagination--pager" title="Sentiment Analysis
+      <a href="/nlp/NLPcomp/" class="pagination--pager" title="NLP 모델 비교
 ">Next</a>
     
   </nav>
@@ -643,46 +622,6 @@ import hashlib
 import datetime
 from datetime import datetime, timezone,timedelta
 import furl
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/nlp/NMT/" rel="permalink">Neural Machine Translator ( 신경망 기계 번역 )
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          2 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">기계번역 : 기존 번역 모델 vs. 신경망 기계번역
 </p>
   </article>
 </div>
@@ -755,7 +694,7 @@ example_document1 = ‘'’Baidu’s Apollo Project is one of the world’s lead
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          1 minute read
+          5 minute read
         
       </span>
     
@@ -764,6 +703,46 @@ example_document1 = ‘'’Baidu’s Apollo Project is one of the world’s lead
 
     <p class="archive__item-excerpt" itemprop="description">최단 경로 : 가장 빠른 길 찾기
 모든 지점에서 다른 모든 지점까지의 최단 경로를 모두 구해야하는 경우
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/recommendation/Finegrained/" rel="permalink">Fine-grained Interest Matching for Neural News Recommendation
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Review on Youtube
 </p>
   </article>
 </div>
